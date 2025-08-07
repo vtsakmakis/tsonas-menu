@@ -3,6 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -303,6 +310,13 @@ body {
     flex: 1;
     will-change: transform;
     transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .category-card::before {
@@ -329,23 +343,7 @@ body {
     pointer-events: none;
 }
 
-.category-card:hover::before {
-    left: 100%;
-}
-
-.category-card:hover::after {
-    opacity: 1;
-}
-
-.category-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-        0 20px 40px rgba(255, 75, 75, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 0 0 2px rgba(251, 191, 36, 0.5);
-    border-color: #fbbf24;
-    background: linear-gradient(145deg, #3f3f3f 0%, #2f2f2f 50%, #3d3d3d 100%);
-}
+/* Removed hover effects for mobile-first design */
 
 .category-icon {
     margin-bottom: 10px;
@@ -377,17 +375,7 @@ body {
     pointer-events: none;
 }
 
-.category-card:hover .category-icon i {
-    color: #fbbf24;
-    transform: scale(1.2) rotate(8deg);
-    filter: drop-shadow(0 8px 16px rgba(251, 191, 36, 0.8));
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.category-card:hover .category-image {
-    transform: scale(1.1) rotate(5deg);
-    filter: drop-shadow(0 6px 12px rgba(251, 191, 36, 0.8));
-}
+/* Removed hover effects for mobile-first design */
 
 /* Make toast icon slightly bigger to match others */
 .category-card[data-category="toast"] .category-image {
@@ -803,6 +791,13 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .selection-card::before {
@@ -816,25 +811,11 @@ body {
     transition: left 0.6s ease;
 }
 
-.selection-card:hover::before {
-    left: 100%;
-}
-
-.selection-card:hover {
-    transform: translateY(-5px);
-    border-color: #ff4b4b;
-    background: linear-gradient(145deg, #3a3a3a 0%, #2a2a2a 50%, #3d3d3d 100%);
-    box-shadow: 0 10px 30px rgba(255, 75, 75, 0.2);
-}
-
 .selection-card.custom {
     border-color: #ffd700;
 }
 
-.selection-card.custom:hover {
-    border-color: #ffd700;
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-}
+/* Removed hover effects for mobile-first design */
 
 .selection-icon {
     margin-bottom: 15px;
@@ -875,10 +856,7 @@ body {
     pointer-events: none;
 }
 
-.selection-card:hover .selection-image {
-    transform: scale(1.1);
-    filter: drop-shadow(0 6px 12px rgba(255, 75, 75, 0.5));
-}
+/* Removed hover effects for mobile-first design */
 
 .selection-card h3 {
     font-size: 1.3rem;
