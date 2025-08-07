@@ -506,7 +506,7 @@ let currentCustomOrder = {
 
 // DOM Elements
 const modalOverlay = document.getElementById('modalOverlay');
-const modalTitle = document.getElementById('modalTitle');
+// Removed modalTitle - using modal header approach instead
 const modalBody = document.getElementById('modalBody');
 const closeModal = document.getElementById('closeModal');
 const orderModal = document.getElementById('orderModal');
@@ -673,7 +673,18 @@ function showSavoryCrepes() {
 
 // Show club sandwiches
 function showClubSandwiches() {
-    modalTitle.textContent = 'Club Sandwiches';
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Club Sandwiches</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
     modalBody.innerHTML = menuData.clubSandwiches.map(sandwich => `
         <div class="menu-item">
             <div class="menu-item-info">
@@ -693,7 +704,18 @@ function showClubSandwiches() {
 
 // Show toast menu
 function showToastMenu() {
-    modalTitle.textContent = 'Κλασικά Τοστ';
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Κλασικά Τοστ</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
     modalBody.innerHTML = menuData.toast.map(toast => `
         <div class="menu-item" onclick="addToOrder('${toast.name}', ${toast.price}, '${toast.description}')">
             <div class="menu-item-info">
@@ -708,7 +730,18 @@ function showToastMenu() {
 
 // Show tortilla menu
 function showTortillaMenu() {
-    modalTitle.textContent = 'Κλασικές Τορτίγια';
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Κλασικές Τορτίγια</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
     modalBody.innerHTML = menuData.tortillas.map(tortilla => `
         <div class="menu-item" onclick="addToOrder('${tortilla.name}', ${tortilla.price}, '${tortilla.description}')">
             <div class="menu-item-info">
@@ -735,7 +768,18 @@ function showTortillaOptions() {
 
 // Show salads
 function showSalads() {
-    modalTitle.textContent = 'Σαλάτες';
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Σαλάτες</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
     modalBody.innerHTML = menuData.salads.map((salad, index) => `
         <div class="menu-item">
             <div class="menu-item-info">
@@ -765,7 +809,18 @@ function showSalads() {
 
 // Show portions
 function showPortions() {
-    modalTitle.textContent = 'Μερίδες';
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Μερίδες</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
     modalBody.innerHTML = menuData.portions.map(portion => `
         <div class="menu-item">
             <div class="menu-item-info">
@@ -785,7 +840,17 @@ function showPortions() {
 
 // Show drinks with dropdown categories
 function showDrinks() {
-    modalTitle.textContent = 'Ποτά';
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Ποτά</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
     modalBody.innerHTML = `
         <div class="drinks-container">
             <div class="drink-category">
@@ -1059,7 +1124,18 @@ function showCustomCrepe() {
 // Custom toast builder with new design
 function showCustomToast() {
     currentCustomOrder = { base: null, type: 'toast', ingredients: [], total: 0 };
-    modalTitle.textContent = 'Το Τοστ Μου';
+    
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Το Τοστ Μου</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
     modalBody.innerHTML = `
         <div class="custom-builder-new">
             <!-- Step 1: Base Selection -->
@@ -1123,7 +1199,18 @@ function showCustomToast() {
 // Custom tortilla builder with new design
 function showCustomTortilla() {
     currentCustomOrder = { base: null, type: 'tortilla', ingredients: [], total: 0 };
-    modalTitle.textContent = 'Η Τορτίγια Μου';
+    
+    // Update modal header
+    const modalHeader = document.querySelector('.modal-header');
+    modalHeader.innerHTML = `
+        <h2>Η Τορτίγια Μου</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
     modalBody.innerHTML = `
         <div class="custom-builder-new">
             <!-- Step 1: Base Selection -->
