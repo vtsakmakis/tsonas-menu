@@ -145,11 +145,9 @@ const ingredients = {
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
-        { name: "Μπριζόλα καπνιστή", price: 1.50 },
         { name: "Extra κοτόπουλο στήθος", price: 4.00 },
         { name: "Extra κοτομπουκιές", price: 3.60 },
         { name: "Extra σνίτσελ κοτόπουλο", price: 5.20 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Λαχανικά
         { name: "Ντομάτα", price: 0.30 },
@@ -187,7 +185,6 @@ const ingredients = {
         { name: "Philadelphia", price: 1.00 },
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
-        { name: "Tabasco", price: 0.20 },
         { name: "Extra μαγιονέζα", price: 0.80 },
         { name: "Extra ουγγαρέζα", price: 1.00 },
         { name: "Extra τυροσαλάτα", price: 1.60 },
@@ -203,7 +200,6 @@ const ingredients = {
         { name: "Extra ρώσικη σαλάτα", price: 1.20 },
         { name: "Extra Philadelphia", price: 2.00 },
         { name: "Extra γιαούρτι", price: 1.00 },
-        { name: "Extra Tabasco", price: 0.40 },
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
@@ -421,11 +417,9 @@ const ingredients = {
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
-        { name: "Μπριζόλα καπνιστή", price: 1.50 },
         { name: "Extra κοτόπουλο στήθος", price: 4.00 },
         { name: "Extra κοτομπουκιές", price: 3.60 },
         { name: "Extra σνίτσελ κοτόπουλο", price: 5.20 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Λαχανικά
         { name: "Ντομάτα", price: 0.40 },
@@ -463,7 +457,6 @@ const ingredients = {
         { name: "Philadelphia", price: 0.90 },
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
-        { name: "Tabasco", price: 0.10 },
         { name: "Extra μαγιονέζα", price: 0.80 },
         { name: "Extra ουγγαρέζα", price: 1.00 },
         { name: "Extra τυροσαλάτα", price: 1.60 },
@@ -479,7 +472,6 @@ const ingredients = {
         { name: "Extra ρώσικη σαλάτα", price: 1.20 },
         { name: "Extra Philadelphia", price: 1.80 },
         { name: "Extra γιαούρτι", price: 1.00 },
-        { name: "Extra Tabasco", price: 0.20 },
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
