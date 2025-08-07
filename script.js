@@ -513,7 +513,7 @@ const orderModal = document.getElementById('orderModal');
 const orderSummary = document.getElementById('orderSummary');
 const totalPrice = document.getElementById('totalPrice');
 const closeOrderModal = document.getElementById('closeOrderModal');
-const placeOrder = document.getElementById('placeOrder');
+// Removed placeOrder functionality
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
@@ -534,8 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Place order event
-    placeOrder.addEventListener('click', placeOrderHandler);
+    // Removed place order event listener
 });
 
 // Handle category clicks
@@ -1557,15 +1556,7 @@ function showOrderSummary() {
     orderModal.classList.add('active');
 }
 
-// Place order handler
-function placeOrderHandler() {
-    const total = currentOrder.reduce((sum, item) => sum + item.price, 0);
-    alert(`Η παραγγελία σας επιβεβαιώθηκε!\nΣύνολο: €${total.toFixed(2)}\n\nΕυχαριστούμε για την παραγγελία σας!`);
-    
-    // Reset order
-    currentOrder = [];
-    closeOrderModalHandler();
-}
+// Removed placeOrderHandler function
 
 // Modal handlers
 function showModal() {
