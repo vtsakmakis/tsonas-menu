@@ -1047,7 +1047,7 @@ function showCustomCrepe() {
                     <div class="base-card" data-base-name="Κλασική Βάση Κρέπας" data-base-price="3.50" data-base-type="crepe">
                         <div class="base-info">
                             <h4>Κλασική Βάση Κρέπας</h4>
-                            <div class="base-price">€3.50</div>
+                            <div class="base-price">€1.50</div>
                         </div>
                         <button class="base-btn">Διάλεξε βάση</button>
                     </div>
@@ -1140,7 +1140,7 @@ function showCustomToast() {
                     <div class="base-card" data-base-name="Ψωμί Τοστ" data-base-price="2.00" data-base-type="toast">
                         <div class="base-info">
                             <h4>Ψωμί Τοστ</h4>
-                            <div class="base-price">€2.00</div>
+                            <div class="base-price">€1.50</div>
                         </div>
                         <button class="base-btn">Διάλεξε βάση</button>
                     </div>
@@ -1215,7 +1215,7 @@ function showCustomTortilla() {
                     <div class="base-card" data-base-name="Τορτίγια" data-base-price="2.50" data-base-type="tortilla">
                         <div class="base-info">
                             <h4>Τορτίγια</h4>
-                            <div class="base-price">€2.50</div>
+                            <div class="base-price">€1.50</div>
                         </div>
                         <button class="base-btn">Διάλεξε βάση</button>
                     </div>
