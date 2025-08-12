@@ -1989,12 +1989,11 @@ function showOrderSummary() {
     
     orderModal.classList.add('active');
 
-    // Reset scroll position for order modal and page
+    // Reset scroll position for order modal only
     const orderBody = orderModal.querySelector('.modal-body');
     if (orderBody) {
         orderBody.scrollTop = 0;
     }
-    window.scrollTo(0, 0);
 }
 
 // Removed placeOrderHandler function
@@ -2002,11 +2001,10 @@ function showOrderSummary() {
 // Modal handlers
 function showModal() {
     modalOverlay.classList.add('active');
-    // Reset modal scroll and page scroll to top whenever opening content
+    // Reset modal scroll to top when opening content
     if (modalBody) {
         modalBody.scrollTop = 0;
     }
-    window.scrollTo(0, 0);
 }
 
 function closeModalHandler() {
