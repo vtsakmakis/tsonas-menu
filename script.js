@@ -86,24 +86,24 @@ const menuData = {
             { name: "Coca-Cola zero 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Fanta πορτοκαλάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Fanta λεμονάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
-            { name: "Βίκος pink grapefruit 250ml", takeAwayPrice: 1.80, dineInPrice: 2.00 },
-            { name: "Ξυνό νερό Φλώρινας 250ml", takeAwayPrice: 2.00, dineInPrice: 2.20 },
-            { name: "Νερό 500ml", takeAwayPrice: 0.50, dineInPrice: 0.70 },
-            { name: "Νερό 1.5lt", takeAwayPrice: 1.00, dineInPrice: 1.20 }
+            { name: "Βίκος pink grapefruit 250ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Ξυνό νερό Φλώρινας 250ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
+            { name: "Νερό 500ml", takeAwayPrice: 0.50, dineInPrice: 0.50 },
+            { name: "Νερό 1.5lt", takeAwayPrice: 1.00, dineInPrice: 1.00 }
         ],
         μπύρες: [
-            { name: "Άλφα 330ml", takeAwayPrice: 2.00, dineInPrice: 3.00 },
+            { name: "Άλφα 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
             { name: "Amstel 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
             { name: "Sol 330ml", takeAwayPrice: 2.70, dineInPrice: 3.50 },
             { name: "Βεργίνα 500ml", takeAwayPrice: 2.00, dineInPrice: 3.50 },
             { name: "Mythos Radler 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 }
         ],
         κρασιά: [
-            { name: "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
-            { name: "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
-            { name: "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 8.00 },
-            { name: "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
-            { name: "Ρετσίνα Γιώργου Γεωργιάδη 500ml", takeAwayPrice: 4.00, dineInPrice: 4.00 }
+            { name: "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Ρετσίνα Γιώργου Γεωργιάδη 500ml", takeAwayPrice: 3.50, dineInPrice: 4.00 }
         ],
         icedTea: [
             { name: "Lipton ice tea λεμόνι 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
