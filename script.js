@@ -1,8 +1,7 @@
 // Menu Data - Based on Tsonas menu from e-food.gr
 const menuData = {
     crepes: {
-        sweet: [
-            { name: "Κρέπα Arabian Nights", description: "Με πραλίνα Dubai με κομμάτια φυστικιού, φύλλο κανταΐφι, φράουλα & Caprice", price: 8.10 },
+        sweet: [      
             { name: "Κρέπα Τσώνας", description: "Με Lacta σοκολάτα, Oreo & μπανάνα", price: 5.80 },
             { name: "Κρέπα Λιχούδης", description: "Με Merenda & πραλίνα λευκή, Bueno, ινδοκάρυδο & αμύγδαλο", price: 6.20 },
             { name: "Κρέπα Ουράνιο Τόξο", description: "Με πραλίνα λευκή & πραλίνα φράουλα, marshmallows & Smarties", price: 5.30 },
@@ -47,54 +46,72 @@ const menuData = {
         { name: "Τορτίγια Veggie", description: "Με λαχανικά και τυρί", price: 5.00 }
     ],
     salads: [
-        { name: "Caesar's", description: "Με σνίτσελ κοτόπουλο, iceberg, μπέικον, παρμεζάνα, καλαμπόκι, τηγανητή τορτίγια με πάπρικα & Caesar`s sauce", price: 6.60 }
+        { name: "Caesar's", description: "Με σνίτσελ κοτόπουλο, iceberg, μπέικον, παρμεζάνα, καλαμπόκι, τηγανητή τορτίγια με πάπρικα & Caesar`s sauce", price: 6.30 }
     ],
     portions: [
         { name: "Μερίδα Πατάτες", description: "Πατάτες τηγανητές", price: 2.00 },
         { name: "Μερίδα Κοτομπουκιές", description: "Κοτομπουκιές χειροποίητες", price: 5.80 }
     ],
+    dips: [
+        { name: "ΜΑΓΙΟΝΕΖΑ", price: 0.70 },
+        { name: "ΣΟΣ ΜΟΥΣΤΑΡΔΑΣ", price: 0.70 },
+        { name: "ΣΟΣ ΚΟΚΤΕΙΛ", price: 0.70 },
+        { name: "GOLDEN BBQ", price: 0.80 },
+        { name: "CEASARS", price: 1.00 },
+        { name: "ΜΟΥΣΤΑΡΔΑ", price: 0.40 },
+        { name: "ΣΩΣ ΦΕΤΑΣ", price: 1.40 },
+        { name: "ΤΥΡΟΣΑΛΑΤΑ", price: 1.20 },
+        { name: "ΟΥΓΓΑΡΕΖΑ", price: 0.80 },
+        { name: "BBQ", price: 0.90 },
+        { name: "PHILADELPHIA", price: 1.70 },
+        { name: "ΓΙΑΟΥΡΤΙ", price: 0.70 },
+        { name: "ΡΩΣΙΚΗ", price: 0.90 },
+        { name: "ΚΕΤΣΑΠ", price: 0.40 },
+        { name: "SWEET CHILLY", price: 0.60 },
+        { name: "VEGAN MAYO", price: 1.00 }
+    ],
     drinks: {
         αναψυκτικά: [
-            { name: "Coca-Cola 330ml", price: 1.80 },
-            { name: "Coca-Cola zero 330ml", price: 1.80 },
-            { name: "Fanta πορτοκαλάδα 330ml", price: 1.80 },
-            { name: "Fanta λεμονάδα 330ml", price: 1.80 },
-            { name: "Sprite 330ml", price: 1.80 },
-            { name: "Tuborg soda 330ml", price: 1.80 },
-            { name: "Pepsi twist 330ml", price: 1.80 },
-            { name: "Coca-Cola 500ml", price: 2.30 },
-            { name: "Coca-Cola zero 500ml", price: 2.30 },
-            { name: "Coca-Cola 1.5lt", price: 3.30 },
-            { name: "Coca-Cola zero 1.5lt", price: 3.30 },
-            { name: "Fanta πορτοκαλάδα 1.5lt", price: 3.30 },
-            { name: "Fanta λεμονάδα 1.5lt", price: 3.30 },
-            { name: "Βίκος pink grapefruit 250ml", price: 1.80 },
-            { name: "Ξυνό νερό Φλώρινας 250ml", price: 2.00 },
-            { name: "Νερό 500ml", price: 0.50 },
-            { name: "Νερό 1.5lt", price: 1.00 }
+            { name: "Coca-Cola 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Coca-Cola zero 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Fanta πορτοκαλάδα 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Fanta λεμονάδα 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Sprite 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Tuborg soda 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Pepsi twist 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Coca-Cola 500ml", takeAwayPrice: 2.30, dineInPrice: 3.00 },
+            { name: "Coca-Cola zero 500ml", takeAwayPrice: 2.30, dineInPrice: 3.00 },
+            { name: "Coca-Cola 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
+            { name: "Coca-Cola zero 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
+            { name: "Fanta πορτοκαλάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
+            { name: "Fanta λεμονάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
+            { name: "Βίκος pink grapefruit 250ml", takeAwayPrice: 1.80, dineInPrice: 2.00 },
+            { name: "Ξυνό νερό Φλώρινας 250ml", takeAwayPrice: 2.00, dineInPrice: 2.20 },
+            { name: "Νερό 500ml", takeAwayPrice: 0.50, dineInPrice: 0.70 },
+            { name: "Νερό 1.5lt", takeAwayPrice: 1.00, dineInPrice: 1.20 }
         ],
         μπύρες: [
-            { name: "Άλφα 330ml", price: 2.00 },
-            { name: "Amstel 330ml", price: 2.00 },
-            { name: "Sol 330ml", price: 2.70 },
-            { name: "Βεργίνα 500ml", price: 2.00 },
-            { name: "Mythos Radler 330ml", price: 2.00 }
+            { name: "Άλφα 330ml", takeAwayPrice: 2.00, dineInPrice: 3.00 },
+            { name: "Amstel 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
+            { name: "Sol 330ml", takeAwayPrice: 2.70, dineInPrice: 3.50 },
+            { name: "Βεργίνα 500ml", takeAwayPrice: 2.00, dineInPrice: 3.50 },
+            { name: "Mythos Radler 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 }
         ],
         κρασιά: [
-            { name: "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", price: 6.00 },
-            { name: "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", price: 6.00 },
-            { name: "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", price: 6.00 },
-            { name: "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", price: 6.00 },
-            { name: "Ρετσίνα Γιώργου Γεωργιάδη 500ml", price: 3.50 }
+            { name: "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
+            { name: "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
+            { name: "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 8.00 },
+            { name: "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
+            { name: "Ρετσίνα Γιώργου Γεωργιάδη 500ml", takeAwayPrice: 4.00, dineInPrice: 4.00 }
         ],
         icedTea: [
-            { name: "Lipton ice tea λεμόνι 330ml", price: 1.80 },
-            { name: "Lipton ice tea ροδάκινο 330ml", price: 1.80 },
-            { name: "Lipton ice tea green lemon χωρίς ζάχαρη 330ml", price: 1.80 }
+            { name: "Lipton ice tea λεμόνι 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Lipton ice tea ροδάκινο 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Lipton ice tea green lemon χωρίς ζάχαρη 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 }
         ],
         χυμοί: [
-            { name: "Amita πορτοκάλι 250ml", price: 2.00 },
-            { name: "Amita Motion 250ml", price: 2.00 }
+            { name: "Amita πορτοκάλι 250ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
+            { name: "Amita Motion 250ml", takeAwayPrice: 2.00, dineInPrice: 2.50 }
         ]
     }
 };
@@ -102,9 +119,9 @@ const menuData = {
 // Ingredients for custom orders with sweet/salty categorization
 const ingredients = {
     bases: [
-        { name: "Κλασική Βάση Κρέπας", price: 3.50, type: "crepe" },
-        { name: "Ψωμί Τοστ", price: 2.00, type: "toast" },
-        { name: "Τορτίγια", price: 2.50, type: "tortilla" }
+        { name: "Κλασική Βάση Κρέπας", price: 1.50, type: "crepe" },
+        { name: "Ψωμί Τοστ", price: 1.50, type: "toast" },
+        { name: "Τορτίγια", price: 1.50, type: "tortilla" }
     ],
     toastIngredients: [
         // Τυριά
@@ -145,9 +162,11 @@ const ingredients = {
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
+        { name: "Μπριζόλα καπνιστή", price: 1.50 },
         { name: "Extra κοτόπουλο στήθος", price: 4.00 },
         { name: "Extra κοτομπουκιές", price: 3.60 },
         { name: "Extra σνίτσελ κοτόπουλο", price: 5.20 },
+        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Λαχανικά
         { name: "Ντομάτα", price: 0.30 },
@@ -185,6 +204,7 @@ const ingredients = {
         { name: "Philadelphia", price: 1.00 },
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
+        { name: "Tabasco", price: 0.20 },
         { name: "Extra μαγιονέζα", price: 0.80 },
         { name: "Extra ουγγαρέζα", price: 1.00 },
         { name: "Extra τυροσαλάτα", price: 1.60 },
@@ -200,6 +220,7 @@ const ingredients = {
         { name: "Extra ρώσικη σαλάτα", price: 1.20 },
         { name: "Extra Philadelphia", price: 2.00 },
         { name: "Extra γιαούρτι", price: 1.00 },
+        { name: "Extra Tabasco", price: 0.40 },
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
@@ -250,9 +271,13 @@ const ingredients = {
         { name: "Καρύδι", price: 0.80 },
         { name: "Αμύγδαλο", price: 0.80 },
         { name: "Φουντούκι", price: 0.80 },
+        { name: "Extra καρύδι", price: 1.60 },
+        { name: "Extra αμύγδαλο", price: 1.60 },
+        { name: "Extra φουντούκι", price: 1.60 },
         
         // Φρούτα
         { name: "Μπανάνα φρούτο", price: 0.60 },
+        { name: "Extra μπανάνα φρούτο", price: 1.20 },
         
         // Extra
         { name: "Μπισκότο", price: 0.40 },
@@ -273,7 +298,26 @@ const ingredients = {
         { name: "Kinder Bueno", price: 2.00 },
         { name: "Smarties", price: 1.40 },
         { name: "Philadelphia", price: 1.00 },
-        { name: "Chips", price: 0.60 }
+        { name: "Chips", price: 0.60 },
+        { name: "Extra μπισκότο", price: 0.80 },
+        { name: "Extra μπισκότο Oreo", price: 1.00 },
+        { name: "Extra cookies", price: 1.20 },
+        { name: "Extra ινδοκάρυδο", price: 0.80 },
+        { name: "Extra τρούφα", price: 0.80 },
+        { name: "Extra φυστικοβούτυρο", price: 4.60 },
+        { name: "Extra μέλι", price: 2.20 },
+        { name: "Extra καραμέλα", price: 3.60 },
+        { name: "Extra marshmallows", price: 1.80 },
+        { name: "Extra Caprice", price: 1.60 },
+        { name: "Extra Maltesers", price: 2.80 },
+        { name: "Extra Snickers", price: 4.00 },
+        { name: "Extra Mars", price: 4.00 },
+        { name: "Extra Twix", price: 4.00 },
+        { name: "Extra Kit Kat", price: 4.00 },
+        { name: "Extra Kinder Bueno", price: 4.00 },
+        { name: "Extra Smarties", price: 2.80 },
+        { name: "Extra Philadelphia", price: 2.00 },
+        { name: "Extra chips", price: 1.20 }
     ],
     saltyIngredients: [
         // Τυριά
@@ -417,9 +461,11 @@ const ingredients = {
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
+        { name: "Μπριζόλα καπνιστή", price: 1.50 },
         { name: "Extra κοτόπουλο στήθος", price: 4.00 },
         { name: "Extra κοτομπουκιές", price: 3.60 },
         { name: "Extra σνίτσελ κοτόπουλο", price: 5.20 },
+        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Λαχανικά
         { name: "Ντομάτα", price: 0.40 },
@@ -457,6 +503,7 @@ const ingredients = {
         { name: "Philadelphia", price: 0.90 },
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
+        { name: "Tabasco", price: 0.10 },
         { name: "Extra μαγιονέζα", price: 0.80 },
         { name: "Extra ουγγαρέζα", price: 1.00 },
         { name: "Extra τυροσαλάτα", price: 1.60 },
@@ -472,6 +519,7 @@ const ingredients = {
         { name: "Extra ρώσικη σαλάτα", price: 1.20 },
         { name: "Extra Philadelphia", price: 1.80 },
         { name: "Extra γιαούρτι", price: 1.00 },
+        { name: "Extra Tabasco", price: 0.20 },
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
@@ -509,6 +557,29 @@ const closeOrderModal = document.getElementById('closeOrderModal');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
+    // Configure Google Review button link
+    const reviewBtn = document.getElementById('googleReviewBtn');
+    const reviewStars = document.querySelector('.review-stars');
+    if (reviewBtn) {
+        // Replace with your real Google Place ID for a direct review form
+        // Find Place ID: https://developers.google.com/maps/documentation/places/web-service/place-id
+        const GOOGLE_PLACE_ID = '';
+        if (GOOGLE_PLACE_ID && GOOGLE_PLACE_ID.trim().length > 0) {
+            reviewBtn.setAttribute('href', `https://search.google.com/local/writereview?placeid=${encodeURIComponent(GOOGLE_PLACE_ID)}`);
+        } else {
+            // Fallback: open Google Maps search for the shop if Place ID not set
+            const fallbackQuery = 'Τσώνας, Παύλου Μελά 106, Φλώρινα';
+            reviewBtn.setAttribute('href', `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fallbackQuery)}`);
+        }
+        // Make stars act like the button
+        if (reviewStars) {
+            reviewStars.style.cursor = 'pointer';
+            reviewStars.addEventListener('click', () => {
+                reviewBtn.click();
+            });
+        }
+    }
+
     // Category card click events
     document.querySelectorAll('.category-card').forEach(card => {
         card.addEventListener('click', function() {
@@ -528,6 +599,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Removed place order event listener
 });
+
+
 
 // Handle category clicks
 function handleCategoryClick(category) {
@@ -677,20 +750,44 @@ function showClubSandwiches() {
     // Re-add event listener for close button
     document.getElementById('closeModal').addEventListener('click', closeModalHandler);
     
-    modalBody.innerHTML = menuData.clubSandwiches.map(sandwich => `
-        <div class="menu-item">
-            <div class="menu-item-info">
-                <h4>${sandwich.name}</h4>
-                <p>${sandwich.description}</p>
+    modalBody.innerHTML = `
+        <div class="ingredient-category">
+            <div class="category-header-clean" onclick="toggleDipCategory('club-dips')">
+                <h4>Συνοδευτικά DIPS</h4>
+                <i class="fas fa-chevron-down category-icon"></i>
             </div>
-            <div class="menu-item-actions">
-                <div class="menu-item-price">€${sandwich.price.toFixed(2)}</div>
-                <button class="add-item-btn" onclick="addToOrderWithoutClose('${sandwich.name}', ${sandwich.price}, '${sandwich.description}')">
-                    <i class="fas fa-plus"></i>
-                </button>
+            <div class="category-content" id="category-club-dips">
+                ${menuData.dips.map(dip => `
+                    <div class="drink-item">
+                        <div class="drink-info">
+                            <span class="drink-name">${dip.name}</span>
+                            <span class="drink-price">+€${dip.price.toFixed(2)}</span>
+                        </div>
+                        <button class="add-item-btn" onclick="addDipToOrder('${dip.name}', ${dip.price}, 'Συνοδευτικό DIP')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                `).join('')}
             </div>
         </div>
-    `).join('');
+
+        <div class="menu-section">
+            ${menuData.clubSandwiches.map(sandwich => `
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h4>${sandwich.name}</h4>
+                        <p>${sandwich.description}</p>
+                    </div>
+                    <div class="menu-item-actions">
+                        <div class="menu-item-price">€${sandwich.price.toFixed(2)}</div>
+                        <button class="add-item-btn" onclick="addToOrderWithoutClose('${sandwich.name}', ${sandwich.price}, '${sandwich.description}')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
     showModal();
 }
 
@@ -813,29 +910,53 @@ function showPortions() {
     // Re-add event listener for close button
     document.getElementById('closeModal').addEventListener('click', closeModalHandler);
     
-    modalBody.innerHTML = menuData.portions.map(portion => `
-        <div class="menu-item">
-            <div class="menu-item-info">
-                <h4>${portion.name}</h4>
-                <p>${portion.description}</p>
+    modalBody.innerHTML = `
+        <div class="ingredient-category">
+            <div class="category-header-clean" onclick="toggleDipCategory('portions-dips')">
+                <h4>Συνοδευτικά DIPS</h4>
+                <i class="fas fa-chevron-down category-icon"></i>
             </div>
-            <div class="menu-item-actions">
-                <div class="menu-item-price">€${portion.price.toFixed(2)}</div>
-                <button class="add-item-btn" onclick="addToOrderWithoutClose('${portion.name}', ${portion.price}, '${portion.description}')">
-                    <i class="fas fa-plus"></i>
-                </button>
+            <div class="category-content" id="category-portions-dips">
+                ${menuData.dips.map(dip => `
+                    <div class="drink-item">
+                        <div class="drink-info">
+                            <span class="drink-name">${dip.name}</span>
+                            <span class="drink-price">+€${dip.price.toFixed(2)}</span>
+                        </div>
+                        <button class="add-item-btn" onclick="addDipToOrder('${dip.name}', ${dip.price}, 'Συνοδευτικό DIP')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                `).join('')}
             </div>
         </div>
-    `).join('');
+
+        <div class="menu-section">
+            ${menuData.portions.map(portion => `
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h4>${portion.name}</h4>
+                        <p>${portion.description}</p>
+                    </div>
+                    <div class="menu-item-actions">
+                        <div class="menu-item-price">€${portion.price.toFixed(2)}</div>
+                        <button class="add-item-btn" onclick="addToOrderWithoutClose('${portion.name}', ${portion.price}, '${portion.description}')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
     showModal();
 }
 
-// Show drinks with dropdown categories
+// Show drinks options (takeaway vs dine-in)
 function showDrinks() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Ποτά</h2>
+        <h2>Επιλέξτε Τρόπο Παραλαβής</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -843,6 +964,48 @@ function showDrinks() {
     
     // Re-add event listener for close button
     document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
+    modalBody.innerHTML = `
+        <div class="selection-grid">
+            <div class="selection-card" onclick="showDrinksMenu('takeaway')">
+                <div class="selection-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Take Away</h3>
+                <p>Παραλαβή από το κατάστημα</p>
+            </div>
+            <div class="selection-card" onclick="showDrinksMenu('dineIn')">
+                <div class="selection-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Κατανάλωση εντός</h3>
+                <p>Κάθισμα στο κατάστημα</p>
+            </div>
+        </div>
+    `;
+    showModal();
+}
+
+// Show drinks menu with specific pricing
+function showDrinksMenu(priceType) {
+    // Update modal header with back button
+    const modalHeader = document.querySelector('.modal-header');
+    const title = priceType === 'takeaway' ? 'Ποτά - Take Away' : 'Ποτά - Κατανάλωση εντός';
+    modalHeader.innerHTML = `
+        <button class="back-btn" onclick="showDrinks()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h2>${title}</h2>
+        <button class="close-btn" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Re-add event listener for close button
+    document.getElementById('closeModal').addEventListener('click', closeModalHandler);
+    
+    const priceProperty = priceType === 'takeaway' ? 'takeAwayPrice' : 'dineInPrice';
+    
     modalBody.innerHTML = `
         <div class="drinks-container">
             <div class="drink-category">
@@ -855,9 +1018,9 @@ function showDrinks() {
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
-                                <span class="drink-price">€${drink.price.toFixed(2)}</span>
+                                <span class="drink-price">€${drink[priceProperty].toFixed(2)}</span>
                             </div>
-                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink.price}, 'Αναψυκτικό')">
+                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink[priceProperty]}, 'Αναψυκτικό', '${priceType}')">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -875,9 +1038,9 @@ function showDrinks() {
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
-                                <span class="drink-price">€${drink.price.toFixed(2)}</span>
+                                <span class="drink-price">€${drink[priceProperty].toFixed(2)}</span>
                             </div>
-                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink.price}, 'Μπύρα')">
+                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink[priceProperty]}, 'Μπύρα', '${priceType}')">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -895,9 +1058,9 @@ function showDrinks() {
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
-                                <span class="drink-price">€${drink.price.toFixed(2)}</span>
+                                <span class="drink-price">€${drink[priceProperty].toFixed(2)}</span>
                             </div>
-                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink.price}, 'Κρασί')">
+                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink[priceProperty]}, 'Κρασί', '${priceType}')">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -915,9 +1078,9 @@ function showDrinks() {
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
-                                <span class="drink-price">€${drink.price.toFixed(2)}</span>
+                                <span class="drink-price">€${drink[priceProperty].toFixed(2)}</span>
                             </div>
-                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink.price}, 'Iced Tea')">
+                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink[priceProperty]}, 'Iced Tea', '${priceType}')">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -935,9 +1098,9 @@ function showDrinks() {
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
-                                <span class="drink-price">€${drink.price.toFixed(2)}</span>
+                                <span class="drink-price">€${drink[priceProperty].toFixed(2)}</span>
                             </div>
-                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink.price}, 'Χυμός')">
+                            <button class="add-item-btn" onclick="addDrinkToOrder('${drink.name}', ${drink[priceProperty]}, 'Χυμός', '${priceType}')">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -970,7 +1133,34 @@ function toggleDrinkCategory(categoryName) {
 }
 
 // Add drink to order
-function addDrinkToOrder(name, price, description) {
+function addDrinkToOrder(name, price, description, priceType) {
+    const serviceType = priceType === 'takeaway' ? 'Take Away' : 'Κατανάλωση εντός';
+    const fullDescription = `${description} - ${serviceType}`;
+    
+    currentOrder.push({
+        name: name,
+        price: price,
+        description: fullDescription
+    });
+    
+    // Show a brief confirmation message
+    const btn = event.target.closest('.add-item-btn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i>';
+    btn.classList.add('added');
+    
+    // Update floating button
+    updateFloatingButton();
+    
+    // Reset button after 1 second
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.remove('added');
+    }, 1000);
+}
+
+// Add salad to order
+function addSaladToOrder(name, price, description) {
     currentOrder.push({
         name: name,
         price: price,
@@ -993,8 +1183,28 @@ function addDrinkToOrder(name, price, description) {
     }, 1000);
 }
 
-// Add salad to order
-function addSaladToOrder(name, price, description) {
+// Toggle dip category dropdown
+function toggleDipCategory(categoryName) {
+    const categoryId = `category-${categoryName}`;
+    const categoryContent = document.getElementById(categoryId);
+    const categoryHeader = categoryContent.previousElementSibling;
+    const icon = categoryHeader.querySelector('.category-icon');
+    
+    if (categoryContent.classList.contains('show')) {
+        categoryContent.classList.remove('show');
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+        categoryHeader.classList.remove('active');
+    } else {
+        categoryContent.classList.add('show');
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+        categoryHeader.classList.add('active');
+    }
+}
+
+// Add dip to order
+function addDipToOrder(name, price, description) {
     currentOrder.push({
         name: name,
         price: price,
@@ -1044,7 +1254,7 @@ function showCustomCrepe() {
                     <h3>Φύλλο κρέπας</h3>
                 </div>
                 <div class="step-content">
-                    <div class="base-card" data-base-name="Κλασική Βάση Κρέπας" data-base-price="3.50" data-base-type="crepe">
+                    <div class="base-card" data-base-name="Κλασική Βάση Κρέπας" data-base-price="1.50" data-base-type="crepe">
                         <div class="base-info">
                             <h4>Κλασική Βάση Κρέπας</h4>
                             <div class="base-price">€1.50</div>
@@ -1110,6 +1320,7 @@ function showCustomCrepe() {
     
     // Initialize with sweet ingredients
     selectType('sweet');
+    updateAddToOrderButton(); // Initialize button state
     showModal();
 }
 
@@ -1137,7 +1348,7 @@ function showCustomToast() {
                     <h3>Ψωμί τοστ</h3>
                 </div>
                 <div class="step-content">
-                    <div class="base-card" data-base-name="Ψωμί Τοστ" data-base-price="2.00" data-base-type="toast">
+                    <div class="base-card" data-base-name="Ψωμί Τοστ" data-base-price="1.50" data-base-type="toast">
                         <div class="base-info">
                             <h4>Ψωμί Τοστ</h4>
                             <div class="base-price">€1.50</div>
@@ -1185,6 +1396,7 @@ function showCustomToast() {
     
     // Initialize with toast ingredients
     updateToastIngredientsList();
+    updateAddToOrderButton(); // Initialize button state
     showModal();
 }
 
@@ -1212,7 +1424,7 @@ function showCustomTortilla() {
                     <h3>Τορτίγια</h3>
                 </div>
                 <div class="step-content">
-                    <div class="base-card" data-base-name="Τορτίγια" data-base-price="2.50" data-base-type="tortilla">
+                    <div class="base-card" data-base-name="Τορτίγια" data-base-price="1.50" data-base-type="tortilla">
                         <div class="base-info">
                             <h4>Τορτίγια</h4>
                             <div class="base-price">€1.50</div>
@@ -1260,17 +1472,24 @@ function showCustomTortilla() {
     
     // Initialize with tortilla ingredients
     updateTortillaIngredientsList();
+    updateAddToOrderButton(); // Initialize button state
     showModal();
 }
 
 // Select base for custom order
 function selectBase(baseName, basePrice, type) {
     currentCustomOrder.base = { name: baseName, price: basePrice };
+    
+    // Recalculate total including base price and all selected ingredients
     currentCustomOrder.total = basePrice;
+    currentCustomOrder.ingredients.forEach(ingredient => {
+        currentCustomOrder.total += ingredient.price;
+    });
     
     // Update UI - remove selected class from all base cards
     document.querySelectorAll('.base-card').forEach(card => {
         card.classList.remove('selected');
+        card.classList.remove('base-required'); // Remove error highlighting
     });
     
     // Find and select the specific base card that was clicked
@@ -1324,50 +1543,98 @@ function categorizeIngredients(ingredientsArray) {
     return categories;
 }
 
-// Alternative function that works with comment-based categorization
+// Improved function that works with comment-based categorization
 function categorizeIngredientsByComments(ingredientsArray) {
     const categories = {};
-    let currentCategory = 'Άλλα';
     
-    // Create a simple mapping based on the comment structure
-    const categoryMapping = {
-        'Τυριά': ['Gouda', 'Mozzarella', 'Κασέρι καπνιστό', 'Cheddar', 'Φέτα', 'Μανούρι', 'La Vache qui rit', 'Philadelphia', 'Παρμεζάνα', 'Γραβιέρα'],
-        'Αλλαντικά': ['Πάριζα', 'Γαλοπούλα καπνιστή', 'Μπέικον', 'Σαλάμι μπύρας', 'Μπριζόλα καπνιστή'],
-        'Κρεατικά': ['Κοτόπουλο στήθος', 'Κοτομπουκιές', 'Σνίτσελ κοτόπουλο'],
-        'Λαχανικά': ['Ντομάτα', 'Μαρούλι', 'Πιπεριά πράσινη', 'Πιπεριά Φλωρίνης', 'Αγγούρι', 'Μανιτάρια', 'Ελιά ροδέλα', 'Καλαμπόκι', 'Iceberg'],
-        'Σάλτσες': ['Μαγιονέζα', 'Ουγγαρέζα', 'Τυροσαλάτα', 'Σως μουστάρδας', 'Tabasco', 'Ketchup', 'Μουστάρδα', 'BBQ', 'Golden BBQ', 'Σως Caesar`s', 'Σως sweet chili', 'Ρώσικη σαλάτα', 'Σως cocktail', 'Γιαούρτι'],
-        'Extra': ['Αυγό βραστό', 'Πατάτες τηγανητές', 'Chips', 'Τόνος', 'Μπούκοβο']
+    // Define precise category mappings based on the actual ingredient structure
+    const saltyCategories = {
+        'Τυριά': [
+            'Gouda', 'Mozzarella', 'Κασέρι καπνιστό', 'Cheddar', 'Φέτα', 'Μανούρι', 
+            'La Vache qui rit', 'Philadelphia', 'Παρμεζάνα', 'Γραβιέρα',
+            'Extra gouda', 'Extra mozzarella', 'Extra κασέρι καπνιστό', 'Extra cheddar',
+            'Extra φέτα', 'Extra μανούρι', 'Extra La Vache qui rit', 'Extra Philadelphia',
+            'Extra παρμεζάνα', 'Extra γραβιέρα'
+        ],
+        'Αλλαντικά': [
+            'Πάριζα', 'Γαλοπούλα καπνιστή', 'Μπέικον', 'Σαλάμι μπύρας', 'Μπριζόλα καπνιστή',
+            'Extra πάριζα', 'Extra γαλοπούλα καπνιστή', 'Extra μπέικον', 'Extra σαλάμι μπύρας',
+            'Extra μπριζόλα καπνιστή'
+        ],
+        'Κρεατικά': [
+            'Κοτόπουλο στήθος', 'Κοτομπουκιές', 'Σνίτσελ κοτόπουλο',
+            'Extra κοτόπουλο στήθος', 'Extra κοτομπουκιές', 'Extra σνίτσελ κοτόπουλο'
+        ],
+        'Λαχανικά': [
+            'Ντομάτα', 'Μαρούλι', 'Πιπεριά πράσινη', 'Πιπεριά Φλωρίνης', 'Αγγούρι', 
+            'Μανιτάρια', 'Ελιά ροδέλα', 'Καλαμπόκι', 'Iceberg',
+            'Extra ντομάτα', 'Extra μαρούλι', 'Extra πιπεριά πράσινη', 'Extra πιπεριά Φλωρίνης',
+            'Extra αγγούρι', 'Extra μανιτάρια', 'Extra ελιά ροδέλα', 'Extra καλαμπόκι', 'Extra iceberg'
+        ],
+        'Σάλτσες': [
+            'Μαγιονέζα', 'Ουγγαρέζα', 'Τυροσαλάτα', 'Σως μουστάρδας', 'Tabasco', 'Ketchup', 
+            'Μουστάρδα', 'BBQ', 'Golden BBQ', 'Σως Caesar`s', 'Σως sweet chili', 'Ρώσικη σαλάτα',
+            'Σως cocktail', 'Γιαούρτι', 'Extra μαγιονέζα', 'Extra ουγγαρέζα', 'Extra τυροσαλάτα',
+            'Extra σως μουστάρδας', 'Extra σως cocktail', 'Εxtra BBQ', 'Εxtra Golden BBQ',
+            'Εxtra sweet chili', 'Εxtra Caesar`s', 'Εxtra Tabasco', 'Extra Tabasco', 'Εxtra ketchup',
+            'Extra μουστάρδα', 'Extra ρώσικη σαλάτα', 'Extra γιαούρτι'
+        ],
+        'Extra': [
+            'Αυγό βραστό', 'Πατάτες τηγανητές', 'Chips', 'Τόνος', 'Μπούκοβο',
+            'Extra αυγό βραστό', 'Extra πατάτες τηγανητές', 'Extra chips', 'Extra τόνος', 'Extra μπούκοβο'
+        ]
     };
-    
+
     // Sweet ingredients mapping
-    const sweetCategoryMapping = {
-        'Πραλίνες': ['Πραλίνα', 'Merenda', 'Nutella'],
-        'Συνδυασμοί Πραλίνων': ['Merenda &', 'Πραλίνα Bueno &', 'Πραλίνα σοκολάτα λευκή &', 'Πραλίνα φράουλα &'],
-        'Σοκολάτες': ['Lacta', 'Milka', 'Nestle Crunch', 'ΙΟΝ', 'Σοκολάτα υγείας'],
-        'Ξηροί Καρποί': ['Καρύδι', 'Αμύγδαλο', 'Φουντούκι'],
-        'Φρούτα': ['Μπανάνα φρούτο'],
-        'Extra': ['Μπισκότο', 'Cookies', 'Ινδοκάρυδο', 'Τρούφα', 'Φυστικοβούτυρο', 'Μέλι', 'Καραμέλα', 'Marshmallows', 'Caprice', 'Maltesers', 'Snickers', 'Mars', 'Twix', 'Kit Kat', 'Kinder Bueno', 'Smarties', 'Chips']
+    const sweetCategories = {
+        'Πραλίνες': [
+            'Πραλίνα Dubai (με κομμάτια φυστικιού & φύλλο κανταΐφι)', 'Merenda', 'Πραλίνα Bueno', 
+            'Πραλίνα λευκή', 'Πραλίνα φράουλα', 'Nutella', 'Extra Πραλίνα Dubai (με κομμάτια φυστικιού & φύλλο κανταΐφι)',
+            'Extra Merenda', 'Extra Πραλίνα λευκή', 'Extra πραλίνα Bueno', 'Extra Πραλίνα φράουλα', 'Extra Nutella'
+        ],
+        'Συνδυασμοί Πραλίνων': [
+            'Merenda & πραλίνα Bueno', 'Merenda & πραλίνα λευκή', 'Merenda & πραλίνα φράουλα',
+            'Πραλίνα Bueno & πραλίνα λευκή', 'Πραλίνα Bueno & πραλίνα φράουλα', 'Πραλίνα Bueno & Nutella',
+            'Πραλίνα σοκολάτα λευκή & πραλίνα φράουλα', 'Πραλίνα σοκολάτα λευκή & Nutella', 'Πραλίνα φράουλα & Nutella'
+        ],
+        'Σοκολάτες': [
+            'Lacta', 'Milka φράουλα', 'Nestle Crunch λευκή', 'ΙΟΝ αμυγδάλου', 'Σοκολάτα υγείας'
+        ],
+        'Ξηροί Καρποί': [
+            'Καρύδι', 'Αμύγδαλο', 'Φουντούκι', 'Extra καρύδι', 'Extra αμύγδαλο', 'Extra φουντούκι'
+        ],
+        'Φρούτα': [
+            'Μπανάνα φρούτο', 'Extra μπανάνα φρούτο'
+        ],
+        'Extra': [
+            'Μπισκότο', 'Μπισκότο Oreo', 'Cookies', 'Ινδοκάρυδο', 'Τρούφα', 'Φυστικοβούτυρο',
+            'Μέλι', 'Καραμέλα', 'Marshmallows', 'Caprice', 'Maltesers', 'Snickers', 'Mars', 
+            'Twix', 'Kit Kat', 'Kinder Bueno', 'Smarties', 'Philadelphia', 'Chips',
+            'Extra μπισκότο', 'Extra μπισκότο Oreo', 'Extra cookies', 'Extra ινδοκάρυδο', 'Extra τρούφα',
+            'Extra φυστικοβούτυρο', 'Extra μέλι', 'Extra καραμέλα', 'Extra marshmallows', 'Extra Caprice',
+            'Extra Maltesers', 'Extra Snickers', 'Extra Mars', 'Extra Twix', 'Extra Kit Kat',
+            'Extra Kinder Bueno', 'Extra Smarties', 'Extra Philadelphia', 'Extra chips'
+        ]
     };
+    
+    // Determine if this is a sweet ingredients array by checking for sweet-specific items
+    const isSweet = ingredientsArray.some(ingredient => 
+        ingredient.name.includes('Nutella') || 
+        ingredient.name.includes('Merenda') || 
+        ingredient.name.includes('Πραλίνα') ||
+        ingredient.name.includes('Σοκολάτα')
+    );
+    
+    const categoryMapping = isSweet ? sweetCategories : saltyCategories;
     
     ingredientsArray.forEach(ingredient => {
-        // Find which category this ingredient belongs to
         let foundCategory = 'Άλλα';
         
-        // Check if this is a sweet ingredient first
-        for (const [category, items] of Object.entries(sweetCategoryMapping)) {
-            if (items.some(item => ingredient.name.includes(item))) {
+        // Find exact match for ingredient name
+        for (const [category, items] of Object.entries(categoryMapping)) {
+            if (items.includes(ingredient.name)) {
                 foundCategory = category;
                 break;
-            }
-        }
-        
-        // If not found in sweet categories, check salty categories
-        if (foundCategory === 'Άλλα') {
-            for (const [category, items] of Object.entries(categoryMapping)) {
-                if (items.some(item => ingredient.name.includes(item))) {
-                    foundCategory = category;
-                    break;
-                }
             }
         }
         
@@ -1505,7 +1772,17 @@ function toggleIngredient(ingredientName, ingredientPrice) {
     if (existingIndex > -1) {
         // Remove ingredient
         currentCustomOrder.ingredients.splice(existingIndex, 1);
-        currentCustomOrder.total -= ingredientPrice;
+        
+        // Recalculate total properly
+        if (currentCustomOrder.base) {
+            currentCustomOrder.total = currentCustomOrder.base.price;
+            currentCustomOrder.ingredients.forEach(ingredient => {
+                currentCustomOrder.total += ingredient.price;
+            });
+        } else {
+            // If no base selected, keep total at 0 but track ingredients
+            currentCustomOrder.total = 0;
+        }
         
         // Update UI
         const btn = event.target.closest('.add-ingredient-btn');
@@ -1514,7 +1791,17 @@ function toggleIngredient(ingredientName, ingredientPrice) {
     } else {
         // Add ingredient
         currentCustomOrder.ingredients.push({ name: ingredientName, price: ingredientPrice });
-        currentCustomOrder.total += ingredientPrice;
+        
+        // Recalculate total properly
+        if (currentCustomOrder.base) {
+            currentCustomOrder.total = currentCustomOrder.base.price;
+            currentCustomOrder.ingredients.forEach(ingredient => {
+                currentCustomOrder.total += ingredient.price;
+            });
+        } else {
+            // If no base selected, keep total at 0 but track ingredients
+            currentCustomOrder.total = 0;
+        }
         
         // Update UI
         const btn = event.target.closest('.add-ingredient-btn');
@@ -1531,12 +1818,30 @@ function updateCustomTotal() {
     if (totalElement) {
         totalElement.textContent = currentCustomOrder.total.toFixed(2);
     }
+    
+    // Update add to order button state
+    updateAddToOrderButton();
+}
+
+// Update add to order button based on base selection
+function updateAddToOrderButton() {
+    const addButton = document.querySelector('.add-to-order-btn');
+    if (addButton) {
+        if (!currentCustomOrder.base) {
+            addButton.classList.add('base-not-selected');
+            addButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Επιλέξτε Βάση Πρώτα';
+        } else {
+            addButton.classList.remove('base-not-selected');
+            addButton.innerHTML = 'Προσθήκη στην Παραγγελία';
+        }
+    }
 }
 
 // Add custom item to order
 function addCustomToOrder(type) {
     if (!currentCustomOrder.base) {
-        alert('Παρακαλώ επιλέξτε βάση!');
+        // Show better error message and highlight the base selection
+        showBaseSelectionError(type);
         return;
     }
     
@@ -1551,6 +1856,56 @@ function addCustomToOrder(type) {
         'Βασική συνταγή';
     
     addToOrder(typeNames[type], currentCustomOrder.total, description);
+}
+
+// Show base selection error with visual feedback
+function showBaseSelectionError(type) {
+    const typeNames = {
+        'crepe': 'κρέπας',
+        'toast': 'τοστ', 
+        'tortilla': 'τορτίγιας'
+    };
+    
+    // Create custom error modal content
+    const errorModal = document.createElement('div');
+    errorModal.className = 'base-error-modal';
+    errorModal.innerHTML = `
+        <div class="base-error-content">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Επιλογή Βάσης Απαιτείται</h3>
+            <p>Παρακαλώ επιλέξτε τη βάση ${typeNames[type]} πριν προσθέσετε στην παραγγελία.</p>
+            <button class="error-ok-btn" onclick="closeBaseError()">
+                Εντάξει
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(errorModal);
+    
+    // Highlight the base selection area
+    const baseCard = document.querySelector('.base-card');
+    if (baseCard) {
+        baseCard.classList.add('base-required');
+        setTimeout(() => {
+            baseCard.classList.remove('base-required');
+        }, 3000);
+    }
+    
+    // Scroll to base selection
+    const baseSection = document.querySelector('.builder-step');
+    if (baseSection) {
+        baseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+// Close base selection error modal
+function closeBaseError() {
+    const errorModal = document.querySelector('.base-error-modal');
+    if (errorModal) {
+        errorModal.remove();
+    }
 }
 
 // Add item to order
@@ -1633,6 +1988,13 @@ function showOrderSummary() {
     totalPrice.textContent = `€${total.toFixed(2)}`;
     
     orderModal.classList.add('active');
+
+    // Reset scroll position for order modal and page
+    const orderBody = orderModal.querySelector('.modal-body');
+    if (orderBody) {
+        orderBody.scrollTop = 0;
+    }
+    window.scrollTo(0, 0);
 }
 
 // Removed placeOrderHandler function
@@ -1640,6 +2002,11 @@ function showOrderSummary() {
 // Modal handlers
 function showModal() {
     modalOverlay.classList.add('active');
+    // Reset modal scroll and page scroll to top whenever opening content
+    if (modalBody) {
+        modalBody.scrollTop = 0;
+    }
+    window.scrollTo(0, 0);
 }
 
 function closeModalHandler() {
@@ -1664,7 +2031,7 @@ function addFloatingOrderButton() {
     }
 }
 
-// Add floating order button styles
+// Add floating order button styles and clean category header styles
 const floatingBtnStyles = `
     .floating-order-btn {
         position: fixed;
@@ -1710,6 +2077,121 @@ const floatingBtnStyles = `
         font-weight: 800;
         border: 2px solid #ffffff;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .category-header-clean {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        transition: all 0.3s ease;
+    }
+    
+    .category-header-clean:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .category-header-clean h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    
+    .ingredient-category {
+        margin-bottom: 1rem;
+    }
+    
+    .base-error-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        animation: fadeIn 0.3s ease-out;
+    }
+    
+    .base-error-content {
+        background: #2a2a2a;
+        border: 2px solid #ff4b4b;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(255, 75, 75, 0.4);
+    }
+    
+    .error-icon {
+        font-size: 3rem;
+        color: #ff4b4b;
+        margin-bottom: 20px;
+    }
+    
+    .base-error-content h3 {
+        color: #ffffff;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .base-error-content p {
+        color: #cccccc;
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+    
+    .error-ok-btn {
+        background: linear-gradient(135deg, #ff4b4b 0%, #dc2626 100%);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .error-ok-btn:hover {
+        background: linear-gradient(135deg, #dc2626 0%, #ff4b4b 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 75, 75, 0.4);
+    }
+    
+    .base-required {
+        border: 3px solid #ff4b4b !important;
+        background: rgba(255, 75, 75, 0.1) !important;
+        animation: pulse-red 1s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-red {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.7);
+        }
+        50% {
+            box-shadow: 0 0 0 10px rgba(255, 75, 75, 0);
+        }
+    }
+    
+    .add-to-order-btn.base-not-selected {
+        background: #666666 !important;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+    
+    .add-to-order-btn.base-not-selected:hover {
+        background: #666666 !important;
+        transform: none !important;
+        box-shadow: none !important;
     }
 `;
 
