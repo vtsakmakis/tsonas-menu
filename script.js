@@ -1,25 +1,25 @@
-// Menu Data - Based on Tsonas menu from e-food.gr
+Menu Data - Based on Tsonas menu from e-food.gr
 const menuData = {
     crepes: {
         sweet: [      
-            { name: "Κρέπα Τσώνας", description: "Με Lacta σοκολάτα, Oreo & μπανάνα", price: 5.80 },
-            { name: "Κρέπα Λιχούδης", description: "Με Merenda & πραλίνα λευκή, Bueno, ινδοκάρυδο & αμύγδαλο", price: 6.20 },
-            { name: "Κρέπα Ουράνιο Τόξο", description: "Με πραλίνα λευκή & πραλίνα φράουλα, marshmallows & Smarties", price: 5.30 },
-            { name: "Κρέπα Nutrella", description: "Με Nutella, μπισκότο, Bueno & τρούφα", price: 6.50 },
-            { name: "Κρέπα Fitness", description: "Με σοκολάτα υγείας, φουντούκι & μπανάνα", price: 5.70 },
-            { name: "Κρέπα Banoffee", description: "Με Merenda, καραμέλα, μπισκότο & μπανάνα", price: 5.80 }
+            { name: "Κρέπα Τσώνας", description: "Με Lacta σοκολάτα, Oreo & μπανάνα", price: 5.50 },
+            { name: "Κρέπα Λιχούδης", description: "Με Merenda & πραλίνα λευκή, Bueno, ινδοκάρυδο & αμύγδαλο", price: 5.80 },
+            { name: "Κρέπα Ουράνιο Τόξο", description: "Με πραλίνα λευκή & πραλίνα φράουλα, marshmallows & Smarties", price: 5.00 },
+            { name: "Κρέπα Nutrella", description: "Με Nutella, μπισκότο, Bueno & τρούφα", price: 6.10 },
+            { name: "Κρέπα Fitness", description: "Με σοκολάτα υγείας, φουντούκι & μπανάνα", price: 5.40 },
+            { name: "Κρέπα Banoffee", description: "Με Merenda, καραμέλα, μπισκότο & μπανάνα", price: 5.40 }
         ],
         savory: [
-            { name: "Κρέπα Κλασική", description: "Με κοτόπουλο, gouda, μανιτάρια & ουγγαρέζα", price: 6.10 },
-            { name: "Κρέπα Γιαννιώτικη", description: "Με κοτομπουκιές, gouda, πατάτες τηγανητές & ουγγαρέζα", price: 5.90 },
-            { name: "Κρέπα Σεφ", description: "Με σνίτσελ κοτόπουλο, μπέικον, πατάτες τηγανητές, Philadelphia & BBQ σως", price: 7.30 },
-            { name: "Κρέπα Τσώνας", description: "Με σνίτσελ κοτόπουλο, μπέικον, πατάτες τηγανητές, BBQ σως, τυροσαλάτα & ουγγαρέζα", price: 7.70 },
-            { name: "Κρέπα Ξα", description: "Με κοτόπουλο, μπέικον, gouda, αυγό βραστό, πιπεριά πράσινη & μαγιονέζα", price: 7.30 },
-            { name: "Κρέπα Hot", description: "Με κοτομπουκιές, σαλάμι μπύρας, gouda, τυροσαλάτα, σως cocktail & tabasco", price: 7.20 },
-            { name: "Κρέπα Σπαλιάρης", description: "Με κοτομπουκιές, διπλό μπέικον, διπλό gouda, chips, καλαμπόκι & ουγγαρέζα", price: 9.40 },
-            { name: "Κρέπα Μπετσούκος", description: "Με κοτόπουλο, κοτομπουκιές, γαλοπούλα, cheddar, La Vache qui rit, chips, ντομάτα & διπλή μαγιονέζα", price: 11.10 },
-            { name: "Κρέπα Χαίτης", description: "Με κοτόπουλο, μπέικον, gouda, αυγό βραστό, μανιτάρια, πιπεριά πράσινη, ουγγαρέζα & sweet chili σως", price: 8.40 },
-            { name: "Κρέπα Τυριών", description: "Με κασέρι καπνιστό, μανούρι, Philadelphia, cheddar & ρίγανη", price: 7.70 }
+            { name: "Κρέπα Κλασική", description: "Με κοτόπουλο, gouda, μανιτάρια & ουγγαρέζα", price: 5.70 },
+            { name: "Κρέπα Γιαννιώτικη", description: "Με κοτομπουκιές, gouda, πατάτες τηγανητές & ουγγαρέζα", price: 5.50 },
+            { name: "Κρέπα Σεφ", description: "Με σνίτσελ κοτόπουλο, μπέικον, πατάτες τηγανητές, Philadelphia, tabasco & BBQ σως", price: 7.00 },
+            { name: "Κρέπα Τσώνας", description: "Με σνίτσελ κοτόπουλο, μπέικον, πατάτες τηγανητές, BBQ σως, τυροσαλάτα & ουγγαρέζα", price: 7.10 },
+            { name: "Κρέπα Ξα", description: "Με κοτόπουλο, μπέικον, gouda, αυγό βραστό, πιπεριά πράσινη & μαγιονέζα", price: 6.70 },
+            { name: "Κρέπα Hot", description: "Με κοτομπουκιές, σαλάμι μπύρας, gouda, τυροσαλάτα, σως cocktail & tabasco", price: 6.70 },
+            { name: "Κρέπα Σπαλιάρης", description: "Με κοτομπουκιές, διπλό μπέικον, διπλό gouda, chips, καλαμπόκι & ουγγαρέζα", price: 8.60 },
+            { name: "Κρέπα Μπετσούκος", description: "Με κοτόπουλο, κοτομπουκιές, γαλοπούλα, cheddar, La Vache qui rit, chips, ντομάτα & διπλή μαγιονέζα", price: 9.30 },
+            { name: "Κρέπα Χαίτης", description: "Με κοτόπουλο, μπέικον, gouda, αυγό βραστό, μανιτάρια, πιπεριά πράσινη, ουγγαρέζα & sweet chili σως", price: 7.60 },
+            { name: "Κρέπα Τυριών", description: "Με κασέρι καπνιστό, μανούρι, Philadelphia, cheddar & ρίγανη", price: 7.30 }
         ]
     },
     clubSandwiches: [
@@ -79,30 +79,31 @@ const menuData = {
             { name: "Sprite 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
             { name: "Tuborg soda 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
             { name: "Pepsi twist 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Pepsi lime 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
             { name: "Coca-Cola 500ml", takeAwayPrice: 2.30, dineInPrice: 3.00 },
             { name: "Coca-Cola zero 500ml", takeAwayPrice: 2.30, dineInPrice: 3.00 },
             { name: "Coca-Cola 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Coca-Cola zero 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Fanta πορτοκαλάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Fanta λεμονάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
-            { name: "Βίκος pink grapefruit 250ml", takeAwayPrice: 1.80, dineInPrice: 2.00 },
-            { name: "Ξυνό νερό Φλώρινας 250ml", takeAwayPrice: 2.00, dineInPrice: 2.20 },
-            { name: "Νερό 500ml", takeAwayPrice: 0.50, dineInPrice: 0.70 },
-            { name: "Νερό 1.5lt", takeAwayPrice: 1.00, dineInPrice: 1.20 }
+            { name: "Βίκος pink grapefruit 250ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Ξυνό νερό Φλώρινας 250ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
+            { name: "Νερό 500ml", takeAwayPrice: 0.50, dineInPrice: 0.50 },
+            { name: "Νερό 1.5lt", takeAwayPrice: 1.00, dineInPrice: 1.00 }
         ],
         μπύρες: [
-            { name: "Άλφα 330ml", takeAwayPrice: 2.00, dineInPrice: 3.00 },
+            { name: "Άλφα 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
             { name: "Amstel 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
             { name: "Sol 330ml", takeAwayPrice: 2.70, dineInPrice: 3.50 },
             { name: "Βεργίνα 500ml", takeAwayPrice: 2.00, dineInPrice: 3.50 },
             { name: "Mythos Radler 330ml", takeAwayPrice: 2.00, dineInPrice: 2.50 }
         ],
         κρασιά: [
-            { name: "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
-            { name: "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
-            { name: "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 8.00 },
-            { name: "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 3.00, dineInPrice: 3.00 },
-            { name: "Ρετσίνα Γιώργου Γεωργιάδη 500ml", takeAwayPrice: 4.00, dineInPrice: 4.00 }
+            { name: "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml", takeAwayPrice: 2.50, dineInPrice: 3.50 },
+            { name: "Ρετσίνα Γιώργου Γεωργιάδη 500ml", takeAwayPrice: 3.50, dineInPrice: 4.00 }
         ],
         icedTea: [
             { name: "Lipton ice tea λεμόνι 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
@@ -135,16 +136,6 @@ const ingredients = {
         { name: "Philadelphia", price: 1.00 },
         { name: "Παρμεζάνα", price: 1.00 },
         { name: "Γραβιέρα", price: 1.40 },
-        { name: "Extra gouda", price: 2.40 },
-        { name: "Extra mozzarella", price: 3.00 },
-        { name: "Extra κασέρι καπνιστό", price: 4.00 },
-        { name: "Extra cheddar", price: 3.00 },
-        { name: "Extra φέτα", price: 2.00 },
-        { name: "Extra μανούρι", price: 2.60 },
-        { name: "Extra La Vache qui rit", price: 1.80 },
-        { name: "Extra Philadelphia", price: 2.00 },
-        { name: "Extra παρμεζάνα", price: 2.00 },
-        { name: "Extra γραβιέρα", price: 2.80 },
         
         // Αλλαντικά
         { name: "Πάριζα", price: 0.60 },
@@ -152,21 +143,12 @@ const ingredients = {
         { name: "Μπέικον", price: 0.70 },
         { name: "Σαλάμι μπύρας", price: 0.80 },
         { name: "Μπριζόλα καπνιστή", price: 1.50 },
-        { name: "Extra πάριζα", price: 1.20 },
-        { name: "Extra γαλοπούλα καπνιστή", price: 1.60 },
-        { name: "Extra μπέικον", price: 1.40 },
-        { name: "Extra σαλάμι μπύρας", price: 1.60 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Κρεατικά
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
         { name: "Μπριζόλα καπνιστή", price: 1.50 },
-        { name: "Extra κοτόπουλο στήθος", price: 4.00 },
-        { name: "Extra κοτομπουκιές", price: 3.60 },
-        { name: "Extra σνίτσελ κοτόπουλο", price: 5.20 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Λαχανικά
         { name: "Ντομάτα", price: 0.30 },
@@ -178,15 +160,6 @@ const ingredients = {
         { name: "Ελιά ροδέλα", price: 0.30 },
         { name: "Καλαμπόκι", price: 0.40 },
         { name: "Iceberg", price: 0.40 },
-        { name: "Extra ντομάτα", price: 0.60 },
-        { name: "Extra μαρούλι", price: 0.40 },
-        { name: "Extra πιπεριά πράσινη", price: 0.60 },
-        { name: "Extra πιπεριά Φλωρίνης", price: 0.60 },
-        { name: "Extra αγγούρι", price: 0.80 },
-        { name: "Extra μανιτάρια", price: 1.00 },
-        { name: "Extra ελιά ροδέλα", price: 0.60 },
-        { name: "Extra καλαμπόκι", price: 0.80 },
-        { name: "Extra iceberg", price: 0.80 },
         
         // Σάλτσες
         { name: "Μαγιονέζα", price: 0.40 },
@@ -205,59 +178,32 @@ const ingredients = {
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
         { name: "Tabasco", price: 0.20 },
-        { name: "Extra μαγιονέζα", price: 0.80 },
-        { name: "Extra ουγγαρέζα", price: 1.00 },
-        { name: "Extra τυροσαλάτα", price: 1.60 },
-        { name: "Extra σως μουστάρδας", price: 0.80 },
-        { name: "Extra σως cocktail", price: 0.80 },
-        { name: "Εxtra BBQ", price: 1.00 },
-        { name: "Εxtra Golden BBQ", price: 0.80 },
-        { name: "Εxtra sweet chili", price: 0.60 },
-        { name: "Εxtra Caesar`s", price: 1.00 },
-        { name: "Εxtra Tabasco", price: 0.40 },
-        { name: "Εxtra ketchup", price: 0.40 },
-        { name: "Extra μουστάρδα", price: 0.40 },
-        { name: "Extra ρώσικη σαλάτα", price: 1.20 },
-        { name: "Extra Philadelphia", price: 2.00 },
-        { name: "Extra γιαούρτι", price: 1.00 },
-        { name: "Extra Tabasco", price: 0.40 },
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
         { name: "Πατάτες τηγανητές", price: 0.50 },
         { name: "Chips", price: 0.60 },
         { name: "Τόνος", price: 2.50 },
-        { name: "Μπούκοβο", price: 0.00 },
-        { name: "Extra αυγό βραστό", price: 1.20 },
-        { name: "Extra πατάτες τηγανητές", price: 1.00 },
-        { name: "Extra chips", price: 1.00 },
-        { name: "Extra τόνος", price: 5.00 },
-        { name: "Extra μπούκοβο", price: 0.00 }
+        { name: "Μπούκοβο", price: 0.00 }
     ],
     sweetIngredients: [
         // Πραλίνες
-        { name: "Πραλίνα Dubai (με κομμάτια φυστικιού & φύλλο κανταΐφι)", price: 4.10 },
+        { name: "Πραλίνα Dubai (με κομμάτια φυστικιού & φύλλο κανταΐφι)", price: 3.90 },
         { name: "Merenda", price: 1.10 },
         { name: "Πραλίνα Bueno", price: 1.40 },
         { name: "Πραλίνα λευκή", price: 1.10 },
         { name: "Πραλίνα φράουλα", price: 1.30 },
         { name: "Nutella", price: 1.80 },
-        { name: "Extra Πραλίνα Dubai (με κομμάτια φυστικιού & φύλλο κανταΐφι)", price: 8.20 },
-        { name: "Extra Merenda", price: 2.20 },
-        { name: "Extra Πραλίνα λευκή", price: 2.20 },
-        { name: "Extra πραλίνα Bueno", price: 2.80 },
-        { name: "Extra Πραλίνα φράουλα", price: 2.60 },
-        { name: "Extra Nutella", price: 3.60 },
         
         // Συνδυασμοί Πραλίνων
         { name: "Merenda & πραλίνα Bueno", price: 1.30 },
-        { name: "Merenda & πραλίνα λευκή", price: 1.10 },
-        { name: "Merenda & πραλίνα φράουλα", price: 1.20 },
-        { name: "Πραλίνα Bueno & πραλίνα λευκή", price: 1.40 },
+        { name: "Merenda & πραλίνα λευκή", price: 1.20 },
+        { name: "Merenda & πραλίνα φράουλα", price: 1.30 },
+        { name: "Πραλίνα Bueno & πραλίνα λευκή", price: 1.30 },
         { name: "Πραλίνα Bueno & πραλίνα φράουλα", price: 1.40 },
-        { name: "Πραλίνα Bueno & Nutella", price: 1.70 },
-        { name: "Πραλίνα σοκολάτα λευκή & πραλίνα φράουλα", price: 1.20 },
-        { name: "Πραλίνα σοκολάτα λευκή & Nutella", price: 1.50 },
+        { name: "Πραλίνα Bueno & Nutella", price: 1.60 },
+        { name: "Πραλίνα λευκή & πραλίνα φράουλα", price: 1.30 },
+        { name: "Πραλίνα λευκή & Nutella", price: 1.50 },
         { name: "Πραλίνα φράουλα & Nutella", price: 1.60 },
         
         // Σοκολάτες
@@ -266,18 +212,21 @@ const ingredients = {
         { name: "Nestle Crunch λευκή", price: 2.60 },
         { name: "ΙΟΝ αμυγδάλου", price: 2.90 },
         { name: "Σοκολάτα υγείας", price: 2.50 },
+        { name: "Maltesers", price: 1.40 },
+        { name: "Snickers", price: 2.00 },
+        { name: "Mars", price: 2.00 },
+        { name: "Twix", price: 2.00 },
+        { name: "Kit Kat", price: 2.00 },
+        { name: "Kinder Bueno", price: 2.00 },
+        { name: "Smarties", price: 1.40 },
         
         // Ξηροί Καρποί
         { name: "Καρύδι", price: 0.80 },
         { name: "Αμύγδαλο", price: 0.80 },
         { name: "Φουντούκι", price: 0.80 },
-        { name: "Extra καρύδι", price: 1.60 },
-        { name: "Extra αμύγδαλο", price: 1.60 },
-        { name: "Extra φουντούκι", price: 1.60 },
         
         // Φρούτα
         { name: "Μπανάνα φρούτο", price: 0.60 },
-        { name: "Extra μπανάνα φρούτο", price: 1.20 },
         
         // Extra
         { name: "Μπισκότο", price: 0.40 },
@@ -290,34 +239,8 @@ const ingredients = {
         { name: "Καραμέλα", price: 1.80 },
         { name: "Marshmallows", price: 0.90 },
         { name: "Caprice", price: 0.80 },
-        { name: "Maltesers", price: 1.40 },
-        { name: "Snickers", price: 2.00 },
-        { name: "Mars", price: 2.00 },
-        { name: "Twix", price: 2.00 },
-        { name: "Kit Kat", price: 2.00 },
-        { name: "Kinder Bueno", price: 2.00 },
-        { name: "Smarties", price: 1.40 },
         { name: "Philadelphia", price: 1.00 },
-        { name: "Chips", price: 0.60 },
-        { name: "Extra μπισκότο", price: 0.80 },
-        { name: "Extra μπισκότο Oreo", price: 1.00 },
-        { name: "Extra cookies", price: 1.20 },
-        { name: "Extra ινδοκάρυδο", price: 0.80 },
-        { name: "Extra τρούφα", price: 0.80 },
-        { name: "Extra φυστικοβούτυρο", price: 4.60 },
-        { name: "Extra μέλι", price: 2.20 },
-        { name: "Extra καραμέλα", price: 3.60 },
-        { name: "Extra marshmallows", price: 1.80 },
-        { name: "Extra Caprice", price: 1.60 },
-        { name: "Extra Maltesers", price: 2.80 },
-        { name: "Extra Snickers", price: 4.00 },
-        { name: "Extra Mars", price: 4.00 },
-        { name: "Extra Twix", price: 4.00 },
-        { name: "Extra Kit Kat", price: 4.00 },
-        { name: "Extra Kinder Bueno", price: 4.00 },
-        { name: "Extra Smarties", price: 2.80 },
-        { name: "Extra Philadelphia", price: 2.00 },
-        { name: "Extra chips", price: 1.20 }
+        { name: "Chips", price: 0.60 }
     ],
     saltyIngredients: [
         // Τυριά
@@ -327,100 +250,56 @@ const ingredients = {
         { name: "Cheddar", price: 1.50 },
         { name: "Φέτα", price: 1.00 },
         { name: "Μανούρι", price: 1.30 },
-        { name: "La Vache qui rit", price: 1.00 },
-        { name: "Παρμεζάνα", price: 1.00 },
+        { name: "La Vache qui rit", price: 0.90 },
+        { name: "Παρμεζάνα", price: 2.00 },
         { name: "Γραβιέρα", price: 1.40 },
-        { name: "Extra gouda", price: 2.50 },
-        { name: "Extra mozzarella", price: 3.20 },
-        { name: "Extra κασέρι καπνιστό", price: 4.20 },
-        { name: "Extra cheddar", price: 3.20 },
-        { name: "Extra φέτα", price: 2.20 },
-        { name: "Extra μανούρι", price: 2.80 },
-        { name: "Extra La Vache qui rit", price: 2.00 },
-        { name: "Extra παρμεζάνα", price: 2.20 },
-        { name: "Extra γραβιέρα", price: 3.00 },
         
         // Αλλαντικά
-        { name: "Πάριζα", price: 0.70 },
-        { name: "Γαλοπούλα καπνιστή", price: 0.90 },
-        { name: "Μπέικον", price: 0.80 },
-        { name: "Σαλάμι μπύρας", price: 0.90 },
-        { name: "Μπριζόλα καπνιστή", price: 1.60 },
-        { name: "Extra πάριζα", price: 1.40 },
-        { name: "Extra γαλοπούλα καπνιστή", price: 1.80 },
-        { name: "Extra μπέικον", price: 1.60 },
-        { name: "Extra σαλάμι μπύρας", price: 1.80 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.20 },
+        { name: "Πάριζα", price: 0.60 },
+        { name: "Γαλοπούλα καπνιστή", price: 0.80 },
+        { name: "Μπέικον", price: 0.70 },
+        { name: "Σαλάμι μπύρας", price: 0.80 },
+        { name: "Μπριζόλα καπνιστή", price: 1.50 },
         
         // Κρεατικά
-        { name: "Κοτόπουλο στήθος", price: 2.10 },
-        { name: "Κοτομπουκιές", price: 1.90 },
-        { name: "Σνίτσελ κοτόπουλο", price: 2.70 },
-        { name: "Extra κοτόπουλο στήθος", price: 4.20 },
-        { name: "Extra κοτομπουκιές", price: 3.80 },
-        { name: "Extra σνίτσελ κοτόπουλο", price: 5.40 },
+        { name: "Κοτόπουλο στήθος", price: 2.00 },
+        { name: "Κοτομπουκιές", price: 1.80 },
+        { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
         
         // Λαχανικά
-        { name: "Ντομάτα", price: 0.40 },
-        { name: "Μαρούλι", price: 0.30 },
-        { name: "Πιπεριά πράσινη", price: 0.40 },
-        { name: "Πιπεριά Φλωρίνης", price: 0.40 },
+        { name: "Ντομάτα", price: 0.30 },
+        { name: "Μαρούλι", price: 0.20 },
+        { name: "Πιπεριά πράσινη", price: 0.30 },
+        { name: "Πιπεριά Φλωρίνης", price: 0.30 },
         { name: "Αγγούρι", price: 0.50 },
-        { name: "Μανιτάρια", price: 0.60 },
-        { name: "Ελιά ροδέλα", price: 0.40 },
-        { name: "Καλαμπόκι", price: 0.50 },
-        { name: "Iceberg", price: 0.50 },
-        { name: "Extra ντομάτα", price: 0.80 },
-        { name: "Extra μαρούλι", price: 0.60 },
-        { name: "Extra πιπεριά πράσινη", price: 0.80 },
-        { name: "Extra πιπεριά Φλωρίνης", price: 0.80 },
-        { name: "Extra αγγούρι", price: 1.00 },
-        { name: "Extra μανιτάρια", price: 1.20 },
-        { name: "Extra ελιά ροδέλα", price: 0.80 },
-        { name: "Extra καλαμπόκι", price: 1.00 },
-        { name: "Extra iceberg", price: 1.00 },
+        { name: "Μανιτάρια", price: 0.50 },
+        { name: "Ελιά ροδέλα", price: 0.30 },
+        { name: "Καλαμπόκι", price: 0.40 },
+        { name: "Iceberg", price: 0.40 },
         
         // Σάλτσες
-        { name: "Μαγιονέζα", price: 0.50 },
-        { name: "Ουγγαρέζα", price: 0.60 },
-        { name: "Τυροσαλάτα", price: 0.90 },
-        { name: "Σως μουστάρδας", price: 0.50 },
+        { name: "Μαγιονέζα", price: 0.40 },
+        { name: "Ουγγαρέζα", price: 0.50 },
+        { name: "Τυροσαλάτα", price: 0.80 },
+        { name: "Σως μουστάρδας", price: 0.40 },
         { name: "Tabasco", price: 0.20 },
-        { name: "Ketchup", price: 0.30 },
-        { name: "Μουστάρδα", price: 0.30 },
-        { name: "BBQ", price: 0.60 },
-        { name: "Golden BBQ", price: 0.50 },
-        { name: "Σως Caesar`s", price: 0.60 },
-        { name: "Σως sweet chili", price: 0.40 },
-        { name: "Ρώσικη σαλάτα", price: 0.70 },
-        { name: "Philadelphia", price: 1.10 },
-        { name: "Σως cocktail", price: 0.50 },
-        { name: "Γιαούρτι", price: 0.60 },
-        { name: "Extra μαγιονέζα", price: 1.00 },
-        { name: "Extra ουγγαρέζα", price: 1.20 },
-        { name: "Extra τυροσαλάτα", price: 1.80 },
-        { name: "Extra σως μουστάρδας", price: 1.00 },
-        { name: "Extra σως cocktail", price: 1.00 },
-        { name: "Εxtra BBQ", price: 1.20 },
-        { name: "Εxtra Golden BBQ", price: 1.00 },
-        { name: "Εxtra sweet chili", price: 0.80 },
-        { name: "Εxtra Caesar`s", price: 1.20 },
-        { name: "Εxtra ketchup", price: 0.60 },
-        { name: "Extra μουστάρδα", price: 0.60 },
-        { name: "Extra ρώσικη σαλάτα", price: 1.40 },
-        { name: "Extra Philadelphia", price: 2.20 },
-        { name: "Extra γιαούρτι", price: 1.20 },
-        { name: "Extra Tabasco", price: 0.40 },
+        { name: "Ketchup", price: 0.20 },
+        { name: "Μουστάρδα", price: 0.20 },
+        { name: "BBQ", price: 0.50 },
+        { name: "Golden BBQ", price: 0.40 },
+        { name: "Σως Caesar`s", price: 0.50 },
+        { name: "Σως sweet chili", price: 0.30 },
+        { name: "Ρώσικη σαλάτα", price: 0.60 },
+        { name: "Philadelphia", price: 1.00 },
+        { name: "Σως cocktail", price: 0.40 },
+        { name: "Γιαούρτι", price: 0.50 },
         
         // Extra
-        { name: "Αυγό βραστό", price: 0.70 },
-        { name: "Πατάτες τηγανητές", price: 0.60 },
-        { name: "Chips", price: 0.70 },
-        { name: "Τόνος", price: 2.60 },
-        { name: "Μπούκοβο", price: 0.00 },
-        { name: "Extra αυγό βραστό", price: 1.40 },
-        { name: "Extra πατάτες τηγανητές", price: 1.20 },
-        { name: "Extra chips", price: 1.40 }
+        { name: "Αυγό βραστό", price: 0.60 },
+        { name: "Πατάτες τηγανητές", price: 0.50 },
+        { name: "Chips", price: 0.60 },
+        { name: "Τόνος", price: 2.50 },
+        { name: "Μπούκοβο", price: 0.00 }
     ],
     tortillaIngredients: [
         // Τυριά
@@ -434,58 +313,29 @@ const ingredients = {
         { name: "Philadelphia", price: 1.00 },
         { name: "Παρμεζάνα", price: 1.00 },
         { name: "Γραβιέρα", price: 1.40 },
-        { name: "Extra gouda", price: 2.40 },
-        { name: "Extra mozzarella", price: 3.00 },
-        { name: "Extra κασέρι καπνιστό", price: 4.00 },
-        { name: "Extra cheddar", price: 3.00 },
-        { name: "Extra φέτα", price: 2.00 },
-        { name: "Extra μανούρι", price: 2.60 },
-        { name: "Extra La Vache qui rit", price: 1.80 },
-        { name: "Extra Philadelphia", price: 2.00 },
-        { name: "Extra παρμεζάνα", price: 2.00 },
-        { name: "Extra γραβιέρα", price: 2.80 },
         
         // Αλλαντικά
-        { name: "Πάριζα", price: 0.70 },
-        { name: "Γαλοπούλα καπνιστή", price: 0.90 },
-        { name: "Μπέικον", price: 0.80 },
-        { name: "Σαλάμι μπύρας", price: 0.90 },
-        { name: "Μπριζόλα καπνιστή", price: 1.60 },
-        { name: "Extra πάριζα", price: 1.40 },
-        { name: "Extra γαλοπούλα καπνιστή", price: 1.80 },
-        { name: "Extra μπέικον", price: 1.60 },
-        { name: "Extra σαλάμι μπύρας", price: 1.80 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.20 },
+        { name: "Πάριζα", price: 0.60 },
+        { name: "Γαλοπούλα καπνιστή", price: 0.80 },
+        { name: "Μπέικον", price: 0.70 },
+        { name: "Σαλάμι μπύρας", price: 0.80 },
+        { name: "Μπριζόλα καπνιστή", price: 1.50 },
         
         // Κρεατικά
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
-        { name: "Μπριζόλα καπνιστή", price: 1.50 },
-        { name: "Extra κοτόπουλο στήθος", price: 4.00 },
-        { name: "Extra κοτομπουκιές", price: 3.60 },
-        { name: "Extra σνίτσελ κοτόπουλο", price: 5.20 },
-        { name: "Extra μπριζόλα καπνιστή", price: 3.00 },
         
         // Λαχανικά
-        { name: "Ντομάτα", price: 0.40 },
-        { name: "Μαρούλι", price: 0.30 },
-        { name: "Πιπεριά πράσινη", price: 0.40 },
-        { name: "Πιπεριά Φλωρίνης", price: 0.40 },
-        { name: "Αγγούρι", price: 0.50 },
-        { name: "Μανιτάρια", price: 0.60 },
-        { name: "Ελιά ροδέλα", price: 0.40 },
-        { name: "Καλαμπόκι", price: 0.50 },
-        { name: "Iceberg", price: 0.50 },
-        { name: "Extra ντομάτα", price: 0.80 },
-        { name: "Extra μαρούλι", price: 0.60 },
-        { name: "Extra πιπεριά πράσινη", price: 0.80 },
-        { name: "Extra πιπεριά Φλωρίνης", price: 0.80 },
-        { name: "Extra αγγούρι", price: 1.00 },
-        { name: "Extra μανιτάρια", price: 1.20 },
-        { name: "Extra ελιά ροδέλα", price: 0.80 },
-        { name: "Extra καλαμπόκι", price: 1.00 },
-        { name: "Extra iceberg", price: 1.00 },
+        { name: "Ντομάτα", price: 0.30 },
+        { name: "Μαρούλι", price: 0.20 },
+        { name: "Πιπεριά πράσινη", price: 0.30 },
+        { name: "Πιπεριά Φλωρίνης", price: 0.30 },
+        { name: "Αγγούρι", price: 0.40 },
+        { name: "Μανιτάρια", price: 0.50 },
+        { name: "Ελιά ροδέλα", price: 0.30 },
+        { name: "Καλαμπόκι", price: 0.40 },
+        { name: "Iceberg", price: 0.40 },
         
         // Σάλτσες
         { name: "Μαγιονέζα", price: 0.40 },
@@ -503,35 +353,14 @@ const ingredients = {
         { name: "Philadelphia", price: 0.90 },
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
-        { name: "Tabasco", price: 0.10 },
-        { name: "Extra μαγιονέζα", price: 0.80 },
-        { name: "Extra ουγγαρέζα", price: 1.00 },
-        { name: "Extra τυροσαλάτα", price: 1.60 },
-        { name: "Extra σως μουστάρδας", price: 0.80 },
-        { name: "Extra σως cocktail", price: 0.80 },
-        { name: "Εxtra BBQ", price: 1.00 },
-        { name: "Εxtra Golden BBQ", price: 0.80 },
-        { name: "Εxtra sweet chili", price: 0.60 },
-        { name: "Εxtra Caesar`s", price: 1.00 },
-        { name: "Εxtra Tabasco", price: 0.20 },
-        { name: "Εxtra ketchup", price: 0.40 },
-        { name: "Extra μουστάρδα", price: 0.40 },
-        { name: "Extra ρώσικη σαλάτα", price: 1.20 },
-        { name: "Extra Philadelphia", price: 1.80 },
-        { name: "Extra γιαούρτι", price: 1.00 },
-        { name: "Extra Tabasco", price: 0.20 },
+        { name: "Tabasco", price: 0.20 },
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
         { name: "Πατάτες τηγανητές", price: 0.50 },
         { name: "Chips", price: 0.60 },
         { name: "Τόνος", price: 2.50 },
-        { name: "Μπούκοβο", price: 0.00 },
-        { name: "Extra αυγό βραστό", price: 1.20 },
-        { name: "Extra πατάτες τηγανητές", price: 1.00 },
-        { name: "Extra chips", price: 1.20 },
-        { name: "Extra τόνος", price: 5.00 },
-        { name: "Extra μπούκοβο", price: 0.00 }
+        { name: "Μπούκοβο", price: 0.00 }
     ]
 };
 
@@ -1006,19 +835,6 @@ function showDrinksMenu(priceType) {
     
     const priceProperty = priceType === 'takeaway' ? 'takeAwayPrice' : 'dineInPrice';
     
-    // Filter drinks for dine-in: remove 500ml and 1.5L soda drinks, but keep water
-    let filteredDrinks = menuData.drinks.αναψυκτικά;
-    if (priceType === 'dineIn') {
-        filteredDrinks = filteredDrinks.filter(drink => {
-            // Keep water 500ml
-            if (drink.name.includes('Νερό 500ml')) {
-                return true;
-            }
-            // Remove 500ml and 1.5L soda drinks
-            return !drink.name.includes('500ml') && !drink.name.includes('1.5lt');
-        });
-    }
-    
     modalBody.innerHTML = `
         <div class="drinks-container">
             <div class="drink-category">
@@ -1027,7 +843,7 @@ function showDrinksMenu(priceType) {
                     <i class="fas fa-chevron-down category-icon"></i>
                 </div>
                 <div class="category-content" id="category-αναψυκτικά">
-                    ${filteredDrinks.map(drink => `
+                    ${menuData.drinks.αναψυκτικά.map(drink => `
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
