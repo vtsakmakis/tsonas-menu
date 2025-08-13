@@ -1,4 +1,4 @@
-Menu Data - Based on Tsonas menu from e-food.gr
+// Menu Data - Based on Tsonas menu from e-food.gr
 const menuData = {
     crepes: {
         sweet: [      
@@ -313,29 +313,34 @@ const ingredients = {
         { name: "Philadelphia", price: 1.00 },
         { name: "Παρμεζάνα", price: 1.00 },
         { name: "Γραβιέρα", price: 1.40 },
+
         
         // Αλλαντικά
-        { name: "Πάριζα", price: 0.60 },
-        { name: "Γαλοπούλα καπνιστή", price: 0.80 },
-        { name: "Μπέικον", price: 0.70 },
-        { name: "Σαλάμι μπύρας", price: 0.80 },
-        { name: "Μπριζόλα καπνιστή", price: 1.50 },
+        { name: "Πάριζα", price: 0.70 },
+        { name: "Γαλοπούλα καπνιστή", price: 0.90 },
+        { name: "Μπέικον", price: 0.80 },
+        { name: "Σαλάμι μπύρας", price: 0.90 },
+        { name: "Μπριζόλα καπνιστή", price: 1.60 },
+
         
         // Κρεατικά
         { name: "Κοτόπουλο στήθος", price: 2.00 },
         { name: "Κοτομπουκιές", price: 1.80 },
         { name: "Σνίτσελ κοτόπουλο", price: 2.60 },
+        { name: "Μπριζόλα καπνιστή", price: 1.50 },
+
         
         // Λαχανικά
-        { name: "Ντομάτα", price: 0.30 },
-        { name: "Μαρούλι", price: 0.20 },
-        { name: "Πιπεριά πράσινη", price: 0.30 },
-        { name: "Πιπεριά Φλωρίνης", price: 0.30 },
-        { name: "Αγγούρι", price: 0.40 },
-        { name: "Μανιτάρια", price: 0.50 },
-        { name: "Ελιά ροδέλα", price: 0.30 },
-        { name: "Καλαμπόκι", price: 0.40 },
-        { name: "Iceberg", price: 0.40 },
+        { name: "Ντομάτα", price: 0.40 },
+        { name: "Μαρούλι", price: 0.30 },
+        { name: "Πιπεριά πράσινη", price: 0.40 },
+        { name: "Πιπεριά Φλωρίνης", price: 0.40 },
+        { name: "Αγγούρι", price: 0.50 },
+        { name: "Μανιτάρια", price: 0.60 },
+        { name: "Ελιά ροδέλα", price: 0.40 },
+        { name: "Καλαμπόκι", price: 0.50 },
+        { name: "Iceberg", price: 0.50 },
+
         
         // Σάλτσες
         { name: "Μαγιονέζα", price: 0.40 },
@@ -353,14 +358,16 @@ const ingredients = {
         { name: "Philadelphia", price: 0.90 },
         { name: "Σως cocktail", price: 0.40 },
         { name: "Γιαούρτι", price: 0.50 },
-        { name: "Tabasco", price: 0.20 },
+        { name: "Tabasco", price: 0.10 },
+
         
         // Extra
         { name: "Αυγό βραστό", price: 0.60 },
         { name: "Πατάτες τηγανητές", price: 0.50 },
         { name: "Chips", price: 0.60 },
         { name: "Τόνος", price: 2.50 },
-        { name: "Μπούκοβο", price: 0.00 }
+        { name: "Μπούκοβο", price: 0.00 },
+
     ]
 };
 
@@ -835,6 +842,19 @@ function showDrinksMenu(priceType) {
     
     const priceProperty = priceType === 'takeaway' ? 'takeAwayPrice' : 'dineInPrice';
     
+    // Filter drinks for dine-in: remove 500ml and 1.5L soda drinks, but keep water
+    let filteredDrinks = menuData.drinks.αναψυκτικά;
+    if (priceType === 'dineIn') {
+        filteredDrinks = filteredDrinks.filter(drink => {
+            // Keep water 500ml
+            if (drink.name.includes('Νερό 500ml')) {
+                return true;
+            }
+            // Remove 500ml and 1.5L soda drinks
+            return !drink.name.includes('500ml') && !drink.name.includes('1.5lt');
+        });
+    }
+    
     modalBody.innerHTML = `
         <div class="drinks-container">
             <div class="drink-category">
@@ -843,7 +863,7 @@ function showDrinksMenu(priceType) {
                     <i class="fas fa-chevron-down category-icon"></i>
                 </div>
                 <div class="category-content" id="category-αναψυκτικά">
-                    ${menuData.drinks.αναψυκτικά.map(drink => `
+                    ${filteredDrinks.map(drink => `
                         <div class="drink-item">
                             <div class="drink-info">
                                 <span class="drink-name">${drink.name}</span>
