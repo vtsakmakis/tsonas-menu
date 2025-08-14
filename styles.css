@@ -1994,3 +1994,109 @@ body {
 .review-btn:hover {
     background: linear-gradient(135deg, #dc2626 0%, #ff4b4b 100%);
 }
+
+/* Translation Button Styles */
+.translation-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.translate-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 60px;
+    height: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.translate-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 1);
+}
+
+.translate-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.translate-btn i {
+    font-size: 1.2rem;
+    color: #4f46e5;
+}
+
+.translate-btn span {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #4f46e5;
+}
+
+/* Translation state indicators */
+.translate-btn.translated {
+    background: rgba(16, 185, 129, 0.95);
+    color: white;
+}
+
+.translate-btn.translated i {
+    color: white;
+}
+
+.translate-btn.translated span {
+    color: white;
+}
+
+.translate-btn.translated:hover {
+    background: rgba(16, 185, 129, 1);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+/* Responsive design for translation button */
+@media (max-width: 768px) {
+    .translation-container {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .translate-btn {
+        padding: 6px 14px;
+        min-width: 56px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+    
+    .translate-btn i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .translation-container {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .translate-btn {
+        padding: 5px 12px;
+        min-width: 52px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    .translate-btn i {
+        font-size: 0.9rem;
+    }
+}
