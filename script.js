@@ -117,6 +117,537 @@ const menuData = {
     }
 };
 
+// Translation System
+let isTranslated = false;
+
+// Function to initialize translation button text
+function initializeTranslationButton() {
+    const translateText = document.getElementById('translateText');
+    if (translateText) {
+        translateText.textContent = isTranslated ? 'EN' : 'GR';
+    }
+}
+
+// English translations for menu items
+const englishTranslations = {
+    // Crepes - Sweet
+    "Κρέπα Τσώνας": "Tsonas Crepe",
+    "Κρέπα Λιχούδης": "Lihoudhs Crepe",
+    "Κρέπα Ουράνιο Τόξο": "Rainbow Crepe",
+    "Κρέπα Nutrella": "Nutrella Crepe",
+    "Κρέπα Fitness": "Fitness Crepe",
+    "Κρέπα Banoffee": "Banoffee Crepe",
+    
+    // Crepes - Savory
+    "Κρέπα Κλασική": "Classic Crepe",
+    "Κρέπα Γιαννιώτικη": "Gianniotikh Crepe",
+    "Κρέπα Σεφ": "Chef's Crepe",
+    "Κρέπα Ξα": "Xa Crepe",
+    "Κρέπα Hot": "Hot Crepe",
+    "Κρέπα Σπαλιάρης": "Spaliaris Crepe",
+    "Κρέπα Μπετσούκος": "Betsoukos Crepe",
+    "Κρέπα Χαίτης": "Hetis Crepe",
+    "Κρέπα Τυριών": "Cheese Crepe",
+    
+    // Club Sandwiches
+    "Club Sandwich Γαλοπούλα": "Club Sandwich Turkey",
+    "Club Sandwich Πάριζα": "Club Sandwich Ham",
+    "Club Sandwich Μπέικον": "Club Sandwich Bacon",
+    "Club Sandwich Σαλάμι Μπύρας": "Club Sandwich Beer Salami",
+    "Club Sandwich Κοτόπουλο": "Club Sandwich Chicken",
+    "Club Sandwich Κοτομπουκιές": "Club Sandwich Chicken Nuggets",
+    "Club Sandwich Σνίτσελ Κοτόπουλο": "Club Sandwich Chicken Schnitzel",
+    "Club Sandwich Μπριζόλα Καπνιστή": "Club Sandwich Smoked Brisket",
+    "Club Sandwich Νηστίσιμο": "Club Sandwich Vegetarian",
+    
+    // Toast
+    "Τοστ Τυρί": "Cheese Toast",
+    "Τοστ Χαμ & Τυρί": "Ham & Cheese Toast",
+    "Τοστ Γαλοπούλα": "Turkey Toast",
+    "Τοστ Τόνος": "Tuna Toast",
+    
+    // Tortillas
+    "Τορτίγια Χαμ": "Ham Tortilla",
+    "Τορτίγια Γαλοπούλα": "Turkey Tortilla",
+    "Τορτίγια Τόνος": "Tuna Tortilla",
+    "Τορτίγια Veggie": "Veggie Tortilla",
+    
+    // Salads
+    "Caesar's": "Caesar's",
+    
+    // Portions
+    "Μερίδα Πατάτες": "French Fries Portion",
+    "Μερίδα Κοτομπουκιές": "Chicken Nuggets Portion",
+    
+    // Dips
+    "ΜΑΓΙΟΝΕΖΑ": "MAYONNAISE",
+    "ΣΟΣ ΜΟΥΣΤΑΡΔΑΣ": "MUSTARD SAUCE",
+    "ΣΟΣ ΚΟΚΤΕΙΛ": "COCKTAIL SAUCE",
+    "GOLDEN BBQ": "GOLDEN BBQ",
+    "CEASARS": "CEASARS",
+    "ΜΟΥΣΤΑΡΔΑ": "MUSTARD",
+    "ΣΩΣ ΦΕΤΑΣ": "FETA SAUCE",
+    "ΤΥΡΟΣΑΛΑΤΑ": "CHEESE SALAD",
+    "ΟΥΓΓΑΡΕΖΑ": "HUNGARIAN",
+    "BBQ": "BBQ",
+    "PHILADELPHIA": "PHILADELPHIA",
+    "ΓΙΑΟΥΡΤΙ": "YOGURT",
+    "ΡΩΣΙΚΗ": "RUSSIAN",
+    "ΚΕΤΣΑΠ": "KETCHUP",
+    "SWEET CHILLY": "SWEET CHILLI",
+    "VEGAN MAYO": "VEGAN MAYO",
+    
+    // Drinks
+    "Άλφα 330ml": "Alpha 330ml",
+    "Amstel 330ml": "Amstel 330ml",
+    "Sol 330ml": "Sol 330ml",
+    "Βεργίνα 500ml": "Vergina 500ml",
+    "Mythos Radler 330ml": "Mythos Radler 330ml",
+    "Κρασί κόκκινο ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml": "Red Dry Wine Ideal Winery Vaeni Naoussa 750ml",
+    "Κρασί κόκκινο ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml": "Red Semi-Sweet Wine Ideal Winery Vaeni Naoussa 750ml",
+    "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml": "White Dry Wine Ideal Winery Vaeni Naoussa 750ml",
+    "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml": "White Semi-Sweet Wine Ideal Winery Vaeni Naoussa 750ml",
+    "Ρετσίνα Γιώργου Γεωργιάδη 500ml": "Retsina Georgiou Georgiadis 500ml",
+    "Lipton ice tea λεμόνι 330ml": "Lipton Ice Tea Lemon 330ml",
+    "Lipton ice tea ροδάκινο 330ml": "Lipton Ice Tea Peach 330ml",
+    "Lipton ice tea green lemon χωρίς ζάχαρη 330ml": "Lipton Ice Tea Green Lemon Sugar Free 330ml",
+    "Amita πορτοκάλι 250ml": "Amita Orange 250ml",
+    "Amita Motion 250ml": "Amita Motion 250ml",
+    "Βίκος pink grapefruit 250ml": "Vikos Pink Grapefruit 250ml",
+    "Ξυνό νερό Φλώρινας 250ml": "Sour Water Florina 250ml",
+    "Νερό 500ml": "Water 500ml",
+    "Νερό 1.5lt": "Water 1.5L"
+};
+
+// English translations for descriptions
+
+// English translations for ingredient categories
+const englishIngredientCategories = {
+    // Salty categories
+    'Τυριά': 'Cheeses',
+    'Αλλαντικά': 'Cold Cuts',
+    'Κρεατικά': 'Meats',
+    'Λαχανικά': 'Vegetables',
+    'Σάλτσες': 'Sauces',
+    'Extra': 'Extra',
+    
+    // Sweet categories
+    'Πραλίνες': 'Pralines',
+    'Συνδυασμοί Πραλίνων': 'Praline Combinations',
+    'Σοκολάτες': 'Chocolates',
+    'Ξηροί Καρποί': 'Nuts',
+    'Φρούτα': 'Fruits'
+};
+
+// English translations for ingredients
+const englishIngredients = {
+    // Bases
+    'Κλασική Βάση Κρέπας': 'Classic Crepe Base',
+    'Ψωμί Τοστ': 'Toast Bread',
+    'Τορτίγια': 'Tortilla',
+    
+    // Cheeses
+    'Gouda': 'Gouda',
+    'Mozzarella': 'Mozzarella',
+    'Κασέρι καπνιστό': 'Smoked Kasseri',
+    'Cheddar': 'Cheddar',
+    'Φέτα': 'Feta',
+    'Μανούρι': 'Manouri',
+    'La Vache qui rit': 'La Vache qui rit',
+    'Philadelphia': 'Philadelphia',
+    'Παρμεζάνα': 'Parmesan',
+    'Γραβιέρα': 'Graviera',
+    
+    // Cold Cuts
+    'Πάριζα': 'Ham',
+    'Γαλοπούλα καπνιστή': 'Smoked Turkey',
+    'Μπέικον': 'Bacon',
+    'Σαλάμι μπύρας': 'Beer Salami',
+    'Μπριζόλα καπνιστή': 'Smoked Brisket',
+    
+    // Meats
+    'Κοτόπουλο στήθος': 'Chicken Breast',
+    'Κοτομπουκιές': 'Chicken Nuggets',
+    'Σνίτσελ κοτόπουλο': 'Chicken Schnitzel',
+    
+    // Vegetables
+    'Ντομάτα': 'Tomato',
+    'Μαρούλι': 'Lettuce',
+    'Πιπεριά πράσινη': 'Green Pepper',
+    'Πιπεριά Φλωρίνης': 'Florina Pepper',
+    'Αγγούρι': 'Cucumber',
+    'Μανιτάρια': 'Mushrooms',
+    'Ελιά ροδέλα': 'Olive Slices',
+    'Καλαμπόκι': 'Corn',
+    'Iceberg': 'Iceberg',
+    
+    // Sauces
+    'Μαγιονέζα': 'Mayonnaise',
+    'Ουγγαρέζα': 'Hungarian',
+    'Τυροσαλάτα': 'Cheese Salad',
+    'Σως μουστάρδας': 'Mustard Sauce',
+    'Tabasco': 'Tabasco',
+    'Ketchup': 'Ketchup',
+    'Μουστάρδα': 'Mustard',
+    'BBQ': 'BBQ',
+    'Golden BBQ': 'Golden BBQ',
+    'Σως Caesar`s': 'Caesar Sauce',
+    'Σως sweet chili': 'Sweet Chili Sauce',
+    'Ρώσικη σαλάτα': 'Russian Salad',
+    'Σως cocktail': 'Cocktail Sauce',
+    'Γιαούρτι': 'Yogurt',
+    
+    // Extra
+    'Αυγό βραστό': 'Boiled Egg',
+    'Πατάτες τηγανητές': 'French Fries',
+    'Chips': 'Chips',
+    'Τόνος': 'Tuna',
+    'Μπούκοβο': 'Bukovo',
+    
+    // Sweet ingredients
+    'Πραλίνα Dubai (με κομμάτια φυστικιού & φύλλο κανταΐφι)': 'Dubai Praline (with peanut pieces & kataifi)',
+    'Merenda': 'Merenda',
+    'Πραλίνα Bueno': 'Bueno Praline',
+    'Πραλίνα λευκή': 'White Praline',
+    'Πραλίνα φράουλα': 'Strawberry Praline',
+    'Nutella': 'Nutella',
+    
+    // Praline combinations
+    'Merenda & πραλίνα Bueno': 'Merenda & Bueno Praline',
+    'Merenda & πραλίνα λευκή': 'Merenda & White Praline',
+    'Merenda & πραλίνα φράουλα': 'Merenda & Strawberry Praline',
+    'Πραλίνα Bueno & πραλίνα λευκή': 'Bueno Praline & White Praline',
+    'Πραλίνα Bueno & πραλίνα φράουλα': 'Bueno Praline & Strawberry Praline',
+    'Πραλίνα Bueno & Nutella': 'Bueno Praline & Nutella',
+    'Πραλίνα λευκή & πραλίνα φράουλα': 'White Praline & Strawberry Praline',
+    'Πραλίνα λευκή & Nutella': 'White Praline & Nutella',
+    'Πραλίνα φράουλα & Nutella': 'Strawberry Praline & Nutella',
+    
+    // Chocolates
+    'Lacta': 'Lacta',
+    'Milka φράουλα': 'Milka Strawberry',
+    'Nestle Crunch λευκή': 'Nestle Crunch White',
+    'ΙΟΝ αμυγδάλου': 'ION Almond',
+    'Σοκολάτα υγείας': 'Health Chocolate',
+    'Maltesers': 'Maltesers',
+    'Snickers': 'Snickers',
+    'Mars': 'Mars',
+    'Twix': 'Twix',
+    'Kit Kat': 'Kit Kat',
+    'Kinder Bueno': 'Kinder Bueno',
+    'Smarties': 'Smarties',
+    
+    // Nuts
+    'Καρύδι': 'Walnut',
+    'Αμύγδαλο': 'Almond',
+    'Φουντούκι': 'Hazelnut',
+    
+    // Fruits
+    'Μπανάνα φρούτο': 'Banana Fruit',
+    
+    // Other sweets
+    'Μπισκότο': 'Biscuit',
+    'Μπισκότο Oreo': 'Oreo Biscuit',
+    'Cookies': 'Cookies',
+    'Ινδοκάρυδο': 'Coconut',
+    'Τρούφα': 'Truffle',
+    'Φυστικοβούτυρο': 'Peanut Butter',
+    'Μέλι': 'Honey',
+    'Καραμέλα': 'Caramel',
+    'Marshmallows': 'Marshmallows',
+    'Caprice': 'Caprice',
+    'Philadelphia': 'Philadelphia'
+};
+
+// Function to translate ingredient names and categories
+function translateIngredientText(text, language) {
+    if (language === 'english') {
+        // First try to translate ingredient categories
+        if (englishIngredientCategories[text]) {
+            return englishIngredientCategories[text];
+        }
+        // Then try to translate ingredient names
+        if (englishIngredients[text]) {
+            return englishIngredients[text];
+        }
+        // If no translation found, return original text
+        return text;
+    }
+    return text;
+}
+const englishDescriptions = {
+    // Sweet Crepes
+    "Με Lacta σοκολάτα, Oreo & μπανάνα": "With Lacta chocolate, Oreo & banana",
+    "Με Merenda & πραλίνα λευκή, Bueno, ινδοκάρυδο & αμύγδαλο": "With Merenda & white praline, Bueno, coconut & almond",
+    "Με πραλίνα λευκή & πραλίνα φράουλα, marshmallows & Smarties": "With white praline & strawberry praline, marshmallows & Smarties",
+    "Με Nutella, μπισκότο, Bueno & τρούφα": "With Nutella, biscuit, Bueno & truffle",
+    "Με σοκολάτα υγείας, φουντούκι & μπανάνα": "With health chocolate, hazelnut & banana",
+    "Με Merenda, καραμέλα, μπισκότο & μπανάνα": "With Merenda, caramel, biscuit & banana",
+    
+    // Savory Crepes
+    "Με κοτόπουλο, gouda, μανιτάρια & ουγγαρέζα": "With chicken, gouda, mushrooms & Hungarian sauce",
+    "Με κοτομπουκιές, gouda, πατάτες τηγανητές & ουγγαρέζα": "With chicken nuggets, gouda, french fries & Hungarian sauce",
+    "Με σνίτσελ κοτόπουλο, μπέικον, πατάτες τηγανητές, Philadelphia, tabasco & BBQ σως": "With chicken schnitzel, bacon, french fries, Philadelphia, tabasco & BBQ sauce",
+    "Με σνίτσελ κοτόπουλο, μπέικον, πατάτες τηγανητές, BBQ σως, τυροσαλάτα & ουγγαρέζα": "With chicken schnitzel, bacon, french fries, BBQ sauce, cheese salad & Hungarian sauce",
+    "Με κοτόπουλο, μπέικον, gouda, αυγό βραστό, πιπεριά πράσινη & μαγιονέζα": "With chicken, bacon, gouda, boiled egg, green pepper & mayonnaise",
+    "Με κοτομπουκιές, σαλάμι μπύρας, gouda, τυροσαλάτα, σως cocktail & tabasco": "With chicken nuggets, beer salami, gouda, cheese salad, cocktail sauce & tabasco",
+    "Με κοτομπουκιές, διπλό μπέικον, διπλό gouda, chips, καλαμπόκι & ουγγαρέζα": "With chicken nuggets, double bacon, double gouda, chips, corn & Hungarian sauce",
+    "Με κοτόπουλο, κοτομπουκιές, γαλοπούλα, cheddar, La Vache qui rit, chips, ντομάτα & διπλή μαγιονέζα": "With chicken, chicken nuggets, turkey, cheddar, La Vache qui rit, chips, tomato & double mayonnaise",
+    "Με κοτόπουλο, μπέικον, gouda, αυγό βραστό, μανιτάρια, πιπεριά πράσινη, ουγγαρέζα & sweet chili σως": "With chicken, bacon, gouda, boiled egg, mushrooms, green pepper, Hungarian sauce & sweet chili sauce",
+    "Με κασέρι καπνιστό, μανούρι, Philadelphia, cheddar & ρίγανη": "With smoked kasseri, manouri, Philadelphia, cheddar & oregano",
+    
+    // Club Sandwiches
+    "Με γαλοπούλα, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With turkey, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με πάριζα, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With ham, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με μπέικον, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With bacon, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με σαλάμι μπύρας, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With beer salami, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με κοτόπουλο, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With chicken, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με κοτομπουκιές χειροποίητες, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With handmade chicken nuggets, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με σνίτσελ κοτόπουλο, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With chicken schnitzel, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με μπριζόλα καπνιστή, gouda, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With smoked brisket, gouda, tomato, lettuce & mayonnaise. Served with french fries",
+    "Με μπιφτέκι λαχανικών, ντομάτα, μαρούλι & μαγιονέζα. Συνοδεύεται από πατάτες τηγανητές": "With vegetable patty, tomato, lettuce & mayonnaise. Served with french fries",
+    
+    // Toast
+    "Κλασικό τοστ με τυρί": "Classic toast with cheese",
+    "Με χαμ και τυρί": "With ham and cheese",
+    "Με γαλοπούλα και τυρί": "With turkey and cheese",
+    "Με τόνο και μαγιονέζα": "With tuna and mayonnaise",
+    
+    // Tortillas
+    "Με χαμ, τυρί και λαχανικά": "With ham, cheese and vegetables",
+    "Με γαλοπούλα και σως": "With turkey and sauce",
+    "Με τόνο και λαχανικά": "With tuna and vegetables",
+    "Με λαχανικά και τυρί": "With vegetables and cheese",
+    
+    // Salads
+    "Με σνίτσελ κοτόπουλο, iceberg, μπέικον, παρμεζάνα, καλαμπόκι, τηγανητή τορτίγια με πάπρικα & Caesar`s sauce": "With chicken schnitzel, iceberg, bacon, parmesan, corn, fried tortilla with paprika & Caesar's sauce",
+    
+    // Portions
+    "Πατάτες τηγανητές": "French fries",
+    "Κοτομπουκιές χειροποίητες": "Handmade chicken nuggets"
+};
+
+// Function to toggle translation
+function toggleTranslation() {
+    isTranslated = !isTranslated;
+    
+    // Update button appearance
+    const translateBtn = document.getElementById('translateBtn');
+    const translateText = document.getElementById('translateText');
+    
+    if (isTranslated) {
+        translateBtn.classList.add('translated');
+        translateText.textContent = 'EN';
+        translatePage('english');
+    } else {
+        translateBtn.classList.remove('translated');
+        translateText.textContent = 'GR';
+        translatePage('greek');
+    }
+}
+
+// Function to translate the entire page
+function translatePage(language) {
+    // Translate elements with data attributes
+    const elementsWithData = document.querySelectorAll('[data-greek][data-english]');
+    elementsWithData.forEach(element => {
+        if (language === 'english') {
+            element.textContent = element.getAttribute('data-english');
+        } else {
+            element.textContent = element.getAttribute('data-greek');
+        }
+    });
+    
+    // Translate menu data dynamically
+    translateMenuData(language);
+    
+    // Update any open modals
+    if (modalOverlay.classList.contains('active')) {
+        updateModalContent(language);
+    }
+    
+    // Update order summary if open
+    if (orderModal.classList.contains('active')) {
+        updateOrderSummary(language);
+    }
+    
+    // Update ingredient lists if custom order modals are open
+    if (currentCustomOrder && currentCustomOrder.type) {
+        const ingredientsList = document.getElementById('ingredientsList');
+        if (ingredientsList) { // Only update if the element exists
+            if (currentCustomOrder.type === 'toast') {
+                updateToastIngredientsList();
+            } else if (currentCustomOrder.type === 'tortilla') {
+                updateTortillaIngredientsList();
+            } else if (currentCustomOrder.type === 'sweet' || currentCustomOrder.type === 'salty') {
+                updateIngredientsList();
+            }
+            
+            // Update the total display after ingredient lists are updated
+            setTimeout(() => updateCustomTotal(), 0);
+        }
+    }
+    
+    // Update base names in custom order modals
+    updateBaseNames(language);
+}
+
+// Function to translate menu data
+function translateMenuData(language) {
+    if (language === 'english') {
+        // Translate menu items
+        Object.keys(englishTranslations).forEach(greekName => {
+            const englishName = englishTranslations[greekName];
+            
+            // Update crepes
+            if (menuData.crepes.sweet) {
+                menuData.crepes.sweet.forEach(crepe => {
+                    if (crepe.name === greekName) {
+                        crepe.name = englishName;
+                    }
+                });
+            }
+            if (menuData.crepes.savory) {
+                menuData.crepes.savory.forEach(crepe => {
+                    if (crepe.name === greekName) {
+                        crepe.name = englishName;
+                    }
+                });
+            }
+            
+            // Update club sandwiches
+            menuData.clubSandwiches.forEach(sandwich => {
+                if (sandwich.name === greekName) {
+                    sandwich.name = englishName;
+                }
+            });
+            
+            // Update toast
+            menuData.toast.forEach(toast => {
+                if (toast.name === greekName) {
+                    toast.name = englishName;
+                }
+            });
+            
+            // Update tortillas
+            menuData.tortillas.forEach(tortilla => {
+                if (tortilla.name === greekName) {
+                    tortilla.name = englishName;
+                }
+            });
+            
+            // Update salads
+            menuData.salads.forEach(salad => {
+                if (salad.name === greekName) {
+                    salad.name = englishName;
+                }
+            });
+            
+            // Update portions
+            menuData.portions.forEach(portion => {
+                if (portion.name === greekName) {
+                    portion.name = englishName;
+                }
+            });
+            
+            // Update dips
+            menuData.dips.forEach(dip => {
+                if (dip.name === greekName) {
+                    dip.name = englishName;
+                }
+            });
+            
+            // Update drinks
+            Object.keys(menuData.drinks).forEach(category => {
+                menuData.drinks[category].forEach(drink => {
+                    if (drink.name === greekName) {
+                        drink.name = englishName;
+                    }
+                });
+            });
+        });
+        
+        // Translate descriptions
+        Object.keys(englishDescriptions).forEach(greekDesc => {
+            const englishDesc = englishDescriptions[greekDesc];
+            
+            // Update crepes
+            if (menuData.crepes.sweet) {
+                menuData.crepes.sweet.forEach(crepe => {
+                    if (crepe.description === greekDesc) {
+                        crepe.description = englishDesc;
+                    }
+                });
+            }
+            if (menuData.crepes.savory) {
+                menuData.crepes.savory.forEach(crepe => {
+                    if (crepe.description === greekDesc) {
+                        crepe.description = englishDesc;
+                    }
+                });
+            }
+            
+            // Update club sandwiches
+            menuData.clubSandwiches.forEach(sandwich => {
+                if (sandwich.description === greekDesc) {
+                    sandwich.description = englishDesc;
+                }
+            });
+            
+            // Update toast
+            menuData.toast.forEach(toast => {
+                if (toast.description === greekDesc) {
+                    toast.description = englishDesc;
+                }
+            });
+            
+            // Update tortillas
+            menuData.tortillas.forEach(tortilla => {
+                if (tortilla.description === greekDesc) {
+                    tortilla.description = englishDesc;
+                }
+            });
+            
+            // Update salads
+            menuData.salads.forEach(salad => {
+                if (salad.description === greekDesc) {
+                    salad.description = englishDesc;
+                }
+            });
+            
+            // Update portions
+            menuData.portions.forEach(portion => {
+                if (portion.description === greekDesc) {
+                    portion.description = englishDesc;
+                }
+            });
+        });
+    } else {
+        // Restore Greek menu data (you would need to store original data)
+        // For now, we'll just reload the page to restore original data
+        location.reload();
+    }
+}
+
+// Function to update modal content when language changes
+function updateModalContent(language) {
+    // This function would update any open modal content
+    // Implementation depends on which modal is currently open
+    if (language === 'english') {
+        // Refresh the current modal content to show translated text
+        // This will be handled by the individual modal functions
+    }
+}
+
+// Function to update order summary when language changes
+function updateOrderSummary(language) {
+    // This function would update the order summary display
+    // Implementation depends on current order state
+    if (orderModal.classList.contains('active')) {
+        showOrderSummary();
+    }
+}
+
 // Ingredients for custom orders with sweet/salty categorization
 const ingredients = {
     bases: [
@@ -393,6 +924,9 @@ const closeOrderModal = document.getElementById('closeOrderModal');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize translation button text
+    initializeTranslationButton();
+    
     // Configure Google Review button link
     const reviewBtn = document.getElementById('googleReviewBtn');
     const reviewStars = document.querySelector('.review-stars');
@@ -470,7 +1004,7 @@ function showCrepeOptions() {
     // Reset modal header to original structure
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Επιλέξτε Τύπο Κρέπας</h2>
+        <h2 data-greek="Επιλέξτε Τύπο Κρέπας" data-english="Choose Crepe Type">Επιλέξτε Τύπο Κρέπας</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -485,22 +1019,28 @@ function showCrepeOptions() {
                 <div class="selection-icon">
                     <img src="images/sweet.png" alt="Sweet Crepes Icon" class="selection-image">
                 </div>
-                <h3>Γλυκές Κρέπες</h3>
+                <h3 data-greek="Γλυκές Κρέπες" data-english="Sweet Crepes">Γλυκές Κρέπες</h3>
             </div>
             <div class="selection-card" onclick="showSavoryCrepes()">
                 <div class="selection-icon">
                     <img src="images/salty.png" alt="Salty Crepes Icon" class="selection-image">
                 </div>
-                <h3>Αλμυρές Κρέπες</h3>
+                <h3 data-greek="Αλμυρές Κρέπες" data-english="Savory Crepes">Αλμυρές Κρέπες</h3>
             </div>
             <div class="selection-card custom" onclick="showCustomCrepe()">
                 <div class="selection-icon">
                     <img src="images/pencil.png" alt="Custom Crepe Icon" class="selection-image">
                 </div>
-                <h3>Η Κρέπα Μου</h3>
+                <h3 data-greek="Η Κρέπα Μου" data-english="My Crepe">Η Κρέπα Μου</h3>
             </div>
         </div>
     `;
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -512,7 +1052,7 @@ function showSweetCrepes() {
         <button class="back-btn" onclick="showCrepeOptions()">
             <i class="fas fa-arrow-left"></i>
         </button>
-        <h2>Γλυκές Κρέπες</h2>
+        <h2 data-greek="Γλυκές Κρέπες" data-english="Sweet Crepes">Γλυκές Κρέπες</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -535,6 +1075,12 @@ function showSweetCrepes() {
             </div>
         </div>
     `).join('');
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -546,7 +1092,7 @@ function showSavoryCrepes() {
         <button class="back-btn" onclick="showCrepeOptions()">
             <i class="fas fa-arrow-left"></i>
         </button>
-        <h2>Αλμυρές Κρέπες</h2>
+        <h2 data-greek="Αλμυρές Κρέπες" data-english="Savory Crepes">Αλμυρές Κρέπες</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -569,6 +1115,12 @@ function showSavoryCrepes() {
             </div>
         </div>
     `).join('');
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -577,7 +1129,7 @@ function showClubSandwiches() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Club Sandwiches</h2>
+        <h2 data-greek="Club Sandwiches" data-english="Club Sandwiches">Club Sandwiches</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -589,7 +1141,7 @@ function showClubSandwiches() {
     modalBody.innerHTML = `
         <div class="ingredient-category">
             <div class="category-header-clean" onclick="toggleDipCategory('club-dips')">
-                <h4>Συνοδευτικά DIPS</h4>
+                <h4 data-greek="Συνοδευτικά DIPS" data-english="Accompaniment DIPS">Συνοδευτικά DIPS</h4>
                 <i class="fas fa-chevron-down category-icon"></i>
             </div>
             <div class="category-content" id="category-club-dips">
@@ -624,6 +1176,12 @@ function showClubSandwiches() {
             `).join('')}
         </div>
     `;
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -632,7 +1190,7 @@ function showToastMenu() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Κλασικά Τοστ</h2>
+        <h2 data-greek="Κλασικά Τοστ" data-english="Classic Toast">Κλασικά Τοστ</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -650,6 +1208,12 @@ function showToastMenu() {
             <div class="menu-item-price">€${toast.price.toFixed(2)}</div>
         </div>
     `).join('');
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -658,7 +1222,7 @@ function showTortillaMenu() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Κλασικές Τορτίγια</h2>
+        <h2 data-greek="Κλασικές Τορτίγια" data-english="Classic Tortillas">Κλασικές Τορτίγια</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -676,6 +1240,12 @@ function showTortillaMenu() {
             <div class="menu-item-price">€${tortilla.price.toFixed(2)}</div>
         </div>
     `).join('');
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -696,7 +1266,7 @@ function showSalads() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Σαλάτες</h2>
+        <h2 data-greek="Σαλάτες" data-english="Salads">Σαλάτες</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -729,6 +1299,11 @@ function showSalads() {
         });
     });
     
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -737,7 +1312,7 @@ function showPortions() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Μερίδες</h2>
+        <h2 data-greek="Μερίδες" data-english="Portions">Μερίδες</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -749,7 +1324,7 @@ function showPortions() {
     modalBody.innerHTML = `
         <div class="ingredient-category">
             <div class="category-header-clean" onclick="toggleDipCategory('portions-dips')">
-                <h4>Συνοδευτικά DIPS</h4>
+                <h4 data-greek="Συνοδευτικά DIPS" data-english="Accompaniment DIPS">Συνοδευτικά DIPS</h4>
                 <i class="fas fa-chevron-down category-icon"></i>
             </div>
             <div class="category-content" id="category-portions-dips">
@@ -784,6 +1359,12 @@ function showPortions() {
             `).join('')}
         </div>
     `;
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -792,7 +1373,7 @@ function showDrinks() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Επιλέξτε Τρόπο Παραλαβής</h2>
+        <h2 data-greek="Επιλέξτε Τρόπο Παραλαβής" data-english="Choose Pickup Method">Επιλέξτε Τρόπο Παραλαβής</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -808,17 +1389,23 @@ function showDrinks() {
                     <i class="fas fa-shopping-bag"></i>
                 </div>
                 <h3>Take Away</h3>
-                <p>Παραλαβή από το κατάστημα</p>
+                <p data-greek="Παραλαβή από το κατάστημα" data-english="Pickup from the store">Παραλαβή από το κατάστημα</p>
             </div>
             <div class="selection-card" onclick="showDrinksMenu('dineIn')">
                 <div class="selection-icon">
                     <i class="fas fa-utensils"></i>
                 </div>
-                <h3>Κατανάλωση εντός</h3>
-                <p>Κάθισμα στο κατάστημα</p>
+                <h3 data-greek="Κατανάλωση εντός" data-english="Dine In">Κατανάλωση εντός</h3>
+                <p data-greek="Κάθισμα στο κατάστημα" data-english="Seating in the store">Κάθισμα στο κατάστημα</p>
             </div>
         </div>
     `;
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -831,7 +1418,7 @@ function showDrinksMenu(priceType) {
         <button class="back-btn" onclick="showDrinks()">
             <i class="fas fa-arrow-left"></i>
         </button>
-        <h2>${title}</h2>
+        <h2 data-greek="${title}" data-english="${priceType === 'takeaway' ? 'Drinks - Take Away' : 'Drinks - Dine In'}">${title}</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -859,7 +1446,7 @@ function showDrinksMenu(priceType) {
         <div class="drinks-container">
             <div class="drink-category">
                 <div class="category-header" onclick="toggleDrinkCategory('αναψυκτικά')">
-                    <h4>Αναψυκτικά</h4>
+                    <h4 data-greek="Αναψυκτικά" data-english="Soft Drinks">Αναψυκτικά</h4>
                     <i class="fas fa-chevron-down category-icon"></i>
                 </div>
                 <div class="category-content" id="category-αναψυκτικά">
@@ -879,7 +1466,7 @@ function showDrinksMenu(priceType) {
 
             <div class="drink-category">
                 <div class="category-header" onclick="toggleDrinkCategory('μπύρες')">
-                    <h4>Μπύρες</h4>
+                    <h4 data-greek="Μπύρες" data-english="Beers">Μπύρες</h4>
                     <i class="fas fa-chevron-down category-icon"></i>
                 </div>
                 <div class="category-content" id="category-μπύρες">
@@ -899,7 +1486,7 @@ function showDrinksMenu(priceType) {
 
             <div class="drink-category">
                 <div class="category-header" onclick="toggleDrinkCategory('κρασιά')">
-                    <h4>Κρασιά - Αποστάγματα</h4>
+                    <h4 data-greek="Κρασιά - Αποστάγματα" data-english="Wines - Spirits">Κρασιά - Αποστάγματα</h4>
                     <i class="fas fa-chevron-down category-icon"></i>
                 </div>
                 <div class="category-content" id="category-κρασιά">
@@ -939,7 +1526,7 @@ function showDrinksMenu(priceType) {
 
             <div class="drink-category">
                 <div class="category-header" onclick="toggleDrinkCategory('χυμοί')">
-                    <h4>Χυμοί</h4>
+                    <h4 data-greek="Χυμοί" data-english="Juices">Χυμοί</h4>
                     <i class="fas fa-chevron-down category-icon"></i>
                 </div>
                 <div class="category-content" id="category-χυμοί">
@@ -958,6 +1545,12 @@ function showDrinksMenu(priceType) {
             </div>
         </div>
     `;
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -983,7 +1576,12 @@ function toggleDrinkCategory(categoryName) {
 
 // Add drink to order
 function addDrinkToOrder(name, price, description, priceType) {
-    const serviceType = priceType === 'takeaway' ? 'Take Away' : 'Κατανάλωση εντός';
+    let serviceType;
+    if (isTranslated) {
+        serviceType = priceType === 'takeaway' ? 'Take Away' : 'Dine In';
+    } else {
+        serviceType = priceType === 'takeaway' ? 'Take Away' : 'Κατανάλωση εντός';
+    }
     const fullDescription = `${description} - ${serviceType}`;
     
     currentOrder.push({
@@ -1036,28 +1634,35 @@ function addSaladToOrder(name, price, description) {
 function toggleDipCategory(categoryName) {
     const categoryId = `category-${categoryName}`;
     const categoryContent = document.getElementById(categoryId);
-    const categoryHeader = categoryContent.previousElementSibling;
-    const icon = categoryHeader.querySelector('.category-icon');
-    
-    if (categoryContent.classList.contains('show')) {
-        categoryContent.classList.remove('show');
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
-        categoryHeader.classList.remove('active');
-    } else {
-        categoryContent.classList.add('show');
-        icon.classList.remove('fa-chevron-down');
-        icon.classList.add('fa-chevron-up');
-        categoryHeader.classList.add('active');
+    if (categoryContent) {
+        const categoryHeader = categoryContent.previousElementSibling;
+        const icon = categoryHeader.querySelector('.category-icon');
+        
+        if (categoryContent.classList.contains('show')) {
+            categoryContent.classList.remove('show');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+            categoryHeader.classList.remove('active');
+        } else {
+            categoryContent.classList.add('show');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+            categoryHeader.classList.add('active');
+        }
     }
 }
 
 // Add dip to order
 function addDipToOrder(name, price, description) {
+    let translatedDescription = description;
+    if (isTranslated && description === 'Συνοδευτικό DIP') {
+        translatedDescription = 'Accompaniment DIP';
+    }
+    
     currentOrder.push({
         name: name,
         price: price,
-        description: description
+        description: translatedDescription
     });
     
     // Show a brief confirmation message
@@ -1086,7 +1691,7 @@ function showCustomCrepe() {
         <button class="back-btn" onclick="showCrepeOptions()">
             <i class="fas fa-arrow-left"></i>
         </button>
-        <h2>Η Κρέπα Μου</h2>
+        <h2 data-greek="Η Κρέπα Μου" data-english="My Crepe">Η Κρέπα Μου</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -1100,15 +1705,15 @@ function showCustomCrepe() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">1</div>
-                    <h3>Φύλλο κρέπας</h3>
+                    <h3 data-greek="Φύλλο κρέπας" data-english="Crepe Base">Φύλλο κρέπας</h3>
                 </div>
                 <div class="step-content">
                     <div class="base-card" data-base-name="Κλασική Βάση Κρέπας" data-base-price="1.50" data-base-type="crepe">
                         <div class="base-info">
-                            <h4>Κλασική Βάση Κρέπας</h4>
+                            <h4 data-greek="Κλασική Βάση Κρέπας" data-english="Classic Crepe Base">Κλασική Βάση Κρέπας</h4>
                             <div class="base-price">€1.50</div>
                         </div>
-                        <button class="base-btn">Διάλεξε βάση</button>
+                        <button class="base-btn" data-greek="Διάλεξε βάση" data-english="Choose Base">Διάλεξε βάση</button>
                     </div>
                 </div>
             </div>
@@ -1117,14 +1722,14 @@ function showCustomCrepe() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">2</div>
-                    <h3>Διάλεξε τύπο</h3>
+                    <h3 data-greek="Διάλεξε τύπο" data-english="Choose Type">Διάλεξε τύπο</h3>
                 </div>
                 <div class="step-content">
                     <div class="type-buttons">
-                        <button class="type-btn sweet-btn active" onclick="selectType('sweet')">
+                        <button class="type-btn sweet-btn active" onclick="selectType('sweet')" data-greek="Γλυκιά" data-english="Sweet">
                             Γλυκιά
                         </button>
-                        <button class="type-btn salty-btn" onclick="selectType('salty')">
+                        <button class="type-btn salty-btn" onclick="selectType('salty')" data-greek="Αλμυρή" data-english="Savory">
                             Αλμυρή
                         </button>
                     </div>
@@ -1135,7 +1740,7 @@ function showCustomCrepe() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">3</div>
-                    <h3>Πρόσθεσε υλικά</h3>
+                    <h3 data-greek="Πρόσθεσε υλικά" data-english="Add Ingredients">Πρόσθεσε υλικά</h3>
                 </div>
                 <div class="step-content">
                     <div class="ingredients-list" id="ingredientsList">
@@ -1147,10 +1752,10 @@ function showCustomCrepe() {
             <!-- Summary -->
             <div class="builder-summary-new">
                 <div class="summary-total">
-                    <h3>Σύνολο</h3>
+                    <h3 data-greek="Σύνολο" data-english="Total">Σύνολο</h3>
                     <div class="total-price">€<span id="customTotal">0.00</span></div>
                 </div>
-                <button class="add-to-order-btn" onclick="addCustomToOrder('crepe')">
+                <button class="add-to-order-btn" onclick="addCustomToOrder('crepe')" data-greek="Προσθήκη στην Παραγγελία" data-english="Add to Order">
                     Προσθήκη στην Παραγγελία
                 </button>
             </div>
@@ -1170,6 +1775,12 @@ function showCustomCrepe() {
     // Initialize with sweet ingredients
     selectType('sweet');
     updateAddToOrderButton(); // Initialize button state
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -1180,7 +1791,7 @@ function showCustomToast() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Το Τοστ Μου</h2>
+        <h2 data-greek="Το Τοστ Μου" data-english="My Toast">Το Τοστ Μου</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -1194,15 +1805,15 @@ function showCustomToast() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">1</div>
-                    <h3>Ψωμί τοστ</h3>
+                    <h3 data-greek="Ψωμί τοστ" data-english="Toast Bread">Ψωμί τοστ</h3>
                 </div>
                 <div class="step-content">
                     <div class="base-card" data-base-name="Ψωμί Τοστ" data-base-price="1.50" data-base-type="toast">
                         <div class="base-info">
-                            <h4>Ψωμί Τοστ</h4>
+                            <h4 data-greek="Ψωμί Τοστ" data-english="Toast Bread">Ψωμί Τοστ</h4>
                             <div class="base-price">€1.50</div>
                         </div>
-                        <button class="base-btn">Διάλεξε βάση</button>
+                        <button class="base-btn" data-greek="Διάλεξε βάση" data-english="Choose Base">Διάλεξε βάση</button>
                     </div>
                 </div>
             </div>
@@ -1211,7 +1822,7 @@ function showCustomToast() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">2</div>
-                    <h3>Πρόσθεσε υλικά</h3>
+                    <h3 data-greek="Πρόσθεσε υλικά" data-english="Add Ingredients">Πρόσθεσε υλικά</h3>
                 </div>
                 <div class="step-content">
                     <div class="ingredients-list" id="ingredientsList">
@@ -1223,10 +1834,10 @@ function showCustomToast() {
             <!-- Summary -->
             <div class="builder-summary-new">
                 <div class="summary-total">
-                    <h3>Σύνολο</h3>
+                    <h3 data-greek="Σύνολο" data-english="Total">Σύνολο</h3>
                     <div class="total-price">€<span id="customTotal">0.00</span></div>
                 </div>
-                <button class="add-to-order-btn" onclick="addCustomToOrder('toast')">
+                <button class="add-to-order-btn" onclick="addCustomToOrder('toast')" data-greek="Προσθήκη στην Παραγγελία" data-english="Add to Order">
                     Προσθήκη στην Παραγγελία
                 </button>
             </div>
@@ -1246,6 +1857,12 @@ function showCustomToast() {
     // Initialize with toast ingredients
     updateToastIngredientsList();
     updateAddToOrderButton(); // Initialize button state
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -1256,7 +1873,7 @@ function showCustomTortilla() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2>Η Τορτίγια Μου</h2>
+        <h2 data-greek="Η Τορτίγια Μου" data-english="My Tortilla">Η Τορτίγια Μου</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
@@ -1270,15 +1887,15 @@ function showCustomTortilla() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">1</div>
-                    <h3>Τορτίγια</h3>
+                    <h3 data-greek="Τορτίγια" data-english="Tortilla">Τορτίγια</h3>
                 </div>
                 <div class="step-content">
                     <div class="base-card" data-base-name="Τορτίγια" data-base-price="1.50" data-base-type="tortilla">
                         <div class="base-info">
-                            <h4>Τορτίγια</h4>
+                            <h4 data-greek="Τορτίγια" data-english="Tortilla">Τορτίγια</h4>
                             <div class="base-price">€1.50</div>
                         </div>
-                        <button class="base-btn">Διάλεξε βάση</button>
+                        <button class="base-btn" data-greek="Διάλεξε βάση" data-english="Choose Base">Διάλεξε βάση</button>
                     </div>
                 </div>
             </div>
@@ -1287,7 +1904,7 @@ function showCustomTortilla() {
             <div class="builder-step">
                 <div class="step-header">
                     <div class="step-number">2</div>
-                    <h3>Πρόσθεσε υλικά</h3>
+                    <h3 data-greek="Πρόσθεσε υλικά" data-english="Add Ingredients">Πρόσθεσε υλικά</h3>
                 </div>
                 <div class="step-content">
                     <div class="ingredients-list" id="ingredientsList">
@@ -1299,10 +1916,10 @@ function showCustomTortilla() {
             <!-- Summary -->
             <div class="builder-summary-new">
                 <div class="summary-total">
-                    <h3>Σύνολο</h3>
+                    <h3 data-greek="Σύνολο" data-english="Total">Σύνολο</h3>
                     <div class="total-price">€<span id="customTotal">0.00</span></div>
                 </div>
-                <button class="add-to-order-btn" onclick="addCustomToOrder('tortilla')">
+                <button class="add-to-order-btn" onclick="addCustomToOrder('tortilla')" data-greek="Προσθήκη στην Παραγγελία" data-english="Add to Order">
                     Προσθήκη στην Παραγγελία
                 </button>
             </div>
@@ -1322,6 +1939,12 @@ function showCustomTortilla() {
     // Initialize with tortilla ingredients
     updateTortillaIngredientsList();
     updateAddToOrderButton(); // Initialize button state
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
+    
     showModal();
 }
 
@@ -1335,6 +1958,8 @@ function selectBase(baseName, basePrice, type) {
         currentCustomOrder.total += ingredient.price;
     });
     
+    console.log('Base selected:', baseName, 'Price:', basePrice, 'Total:', currentCustomOrder.total);
+    
     // Update UI - remove selected class from all base cards
     document.querySelectorAll('.base-card').forEach(card => {
         card.classList.remove('selected');
@@ -1345,7 +1970,8 @@ function selectBase(baseName, basePrice, type) {
     const baseCards = document.querySelectorAll('.base-card');
     baseCards.forEach(card => {
         const cardName = card.querySelector('h4').textContent;
-        if (cardName === baseName) {
+        const originalName = card.querySelector('h4').getAttribute('data-greek') || cardName;
+        if (originalName === baseName) {
             card.classList.add('selected');
         }
     });
@@ -1418,7 +2044,7 @@ function categorizeIngredientsByComments(ingredientsArray) {
             'Ντομάτα', 'Μαρούλι', 'Πιπεριά πράσινη', 'Πιπεριά Φλωρίνης', 'Αγγούρι', 
             'Μανιτάρια', 'Ελιά ροδέλα', 'Καλαμπόκι', 'Iceberg',
             'Extra ντομάτα', 'Extra μαρούλι', 'Extra πιπεριά πράσινη', 'Extra πιπεριά Φλωρίνης',
-            'Extra αγγούρι', 'Extra μανιτάρια', 'Extra ελιά ροδέλα', 'Extra καλαμπόκι', 'Extra iceberg'
+            'Extra αγγούρι', 'Extra μπριζόλα καπνιστή', 'Extra μανιτάρια', 'Extra ελιά ροδέλα', 'Extra καλαμπόκι', 'Extra iceberg'
         ],
         'Σάλτσες': [
             'Μαγιονέζα', 'Ουγγαρέζα', 'Τυροσαλάτα', 'Σως μουστάρδας', 'Tabasco', 'Ketchup', 
@@ -1444,10 +2070,11 @@ function categorizeIngredientsByComments(ingredientsArray) {
         'Συνδυασμοί Πραλίνων': [
             'Merenda & πραλίνα Bueno', 'Merenda & πραλίνα λευκή', 'Merenda & πραλίνα φράουλα',
             'Πραλίνα Bueno & πραλίνα λευκή', 'Πραλίνα Bueno & πραλίνα φράουλα', 'Πραλίνα Bueno & Nutella',
-            'Πραλίνα σοκολάτα λευκή & πραλίνα φράουλα', 'Πραλίνα σοκολάτα λευκή & Nutella', 'Πραλίνα φράουλα & Nutella'
+            'Πραλίνα λευκή & πραλίνα φράουλα', 'Πραλίνα λευκή & Nutella', 'Πραλίνα φράουλα & Nutella'
         ],
         'Σοκολάτες': [
-            'Lacta', 'Milka φράουλα', 'Nestle Crunch λευκή', 'ΙΟΝ αμυγδάλου', 'Σοκολάτα υγείας'
+            'Lacta', 'Milka φράουλα', 'Nestle Crunch λευκή', 'ΙΟΝ αμυγδάλου', 'Σοκολάτα υγείας',
+            'Maltesers', 'Snickers', 'Mars', 'Twix', 'Kit Kat', 'Kinder Bueno', 'Smarties'
         ],
         'Ξηροί Καρποί': [
             'Καρύδι', 'Αμύγδαλο', 'Φουντούκι', 'Extra καρύδι', 'Extra αμύγδαλο', 'Extra φουντούκι'
@@ -1457,12 +2084,10 @@ function categorizeIngredientsByComments(ingredientsArray) {
         ],
         'Extra': [
             'Μπισκότο', 'Μπισκότο Oreo', 'Cookies', 'Ινδοκάρυδο', 'Τρούφα', 'Φυστικοβούτυρο',
-            'Μέλι', 'Καραμέλα', 'Marshmallows', 'Caprice', 'Maltesers', 'Snickers', 'Mars', 
-            'Twix', 'Kit Kat', 'Kinder Bueno', 'Smarties', 'Philadelphia', 'Chips',
+            'Μέλι', 'Καραμέλα', 'Marshmallows', 'Caprice', 'Philadelphia', 'Chips',
             'Extra μπισκότο', 'Extra μπισκότο Oreo', 'Extra cookies', 'Extra ινδοκάρυδο', 'Extra τρούφα',
             'Extra φυστικοβούτυρο', 'Extra μέλι', 'Extra καραμέλα', 'Extra marshmallows', 'Extra Caprice',
-            'Extra Maltesers', 'Extra Snickers', 'Extra Mars', 'Extra Twix', 'Extra Kit Kat',
-            'Extra Kinder Bueno', 'Extra Smarties', 'Extra Philadelphia', 'Extra chips'
+            'Extra Philadelphia', 'Extra chips'
         ]
     };
     
@@ -1477,7 +2102,7 @@ function categorizeIngredientsByComments(ingredientsArray) {
     const categoryMapping = isSweet ? sweetCategories : saltyCategories;
     
     ingredientsArray.forEach(ingredient => {
-        let foundCategory = 'Άλλα';
+        let foundCategory = null;
         
         // Find exact match for ingredient name
         for (const [category, items] of Object.entries(categoryMapping)) {
@@ -1487,21 +2112,105 @@ function categorizeIngredientsByComments(ingredientsArray) {
             }
         }
         
-        if (!categories[foundCategory]) {
-            categories[foundCategory] = [];
+        // Only add ingredient if we found a category for it
+        if (foundCategory) {
+            if (!categories[foundCategory]) {
+                categories[foundCategory] = [];
+            }
+            categories[foundCategory].push(ingredient);
         }
-        categories[foundCategory].push(ingredient);
     });
     
     return categories;
 }
 
+// Function to get translated ingredient categories and names
+function getTranslatedIngredientsList(ingredientsArray, language) {
+    const categorizedIngredients = categorizeIngredientsByComments(ingredientsArray);
+    const translatedCategories = {};
+    
+    Object.entries(categorizedIngredients).forEach(([category, ingredients]) => {
+        const translatedCategory = translateIngredientText(category, language);
+        translatedCategories[translatedCategory] = {
+            originalCategory: category, // Keep original Greek category name for IDs
+            ingredients: ingredients.map(ingredient => ({
+                ...ingredient,
+                translatedName: translateIngredientText(ingredient.name, language)
+            }))
+        };
+    });
+    
+    return translatedCategories;
+}
+
+// Function to update base names in custom order modals
+function updateBaseNames(language) {
+    // Only update if we're in a custom order modal
+    const baseCards = document.querySelectorAll('.base-card');
+    if (baseCards.length === 0) return; // Exit if no base cards exist
+    
+    baseCards.forEach(card => {
+        const baseNameElement = card.querySelector('h4');
+        if (baseNameElement) {
+            const greekName = baseNameElement.getAttribute('data-greek');
+            const englishName = baseNameElement.getAttribute('data-english');
+            if (greekName && englishName) {
+                baseNameElement.textContent = language === 'english' ? englishName : greekName;
+            }
+        }
+        
+        // Update base selection button text
+        const baseBtn = card.querySelector('.base-btn');
+        if (baseBtn) {
+            const greekText = baseBtn.getAttribute('data-greek');
+            const englishText = baseBtn.getAttribute('data-english');
+            if (greekText && englishText) {
+                baseBtn.textContent = language === 'english' ? englishText : greekText;
+            }
+        }
+    });
+    
+    // Update step headers
+    const stepHeaders = document.querySelectorAll('.step-header h3');
+    stepHeaders.forEach(header => {
+        const greekText = header.getAttribute('data-greek');
+        const englishText = header.getAttribute('data-english');
+        if (greekText && englishText) {
+            header.textContent = language === 'english' ? englishText : greekText;
+        }
+    });
+    
+    // Update summary text
+    const summaryTotal = document.querySelector('.summary-total h3');
+    if (summaryTotal) {
+        const greekText = summaryTotal.getAttribute('data-greek');
+        const englishText = summaryTotal.getAttribute('data-english');
+        if (greekText && englishText) {
+            summaryTotal.textContent = language === 'english' ? englishText : greekText;
+        }
+    }
+    
+    const addToOrderBtn = document.querySelector('.add-to-order-btn');
+    if (addToOrderBtn) {
+        const greekText = addToOrderBtn.getAttribute('data-greek');
+        const englishText = addToOrderBtn.getAttribute('data-english');
+        if (greekText && englishText) {
+            addToOrderBtn.textContent = language === 'english' ? englishText : greekText;
+        }
+    }
+}
+
 // Toggle category dropdown
 function toggleCategory(categoryName) {
-    const categoryId = `category-${categoryName.replace(/\s+/g, '-')}`;
-    const categoryContent = document.getElementById(categoryId);
-    const categoryHeader = categoryContent.previousElementSibling;
+    // Find the category content by looking for the closest ingredient-category parent
+    const categoryHeader = event.target.closest('.category-header');
+    if (!categoryHeader) return;
+    
+    const categoryContent = categoryHeader.nextElementSibling;
+    if (!categoryContent) return;
+    
     const icon = categoryHeader.querySelector('.category-icon');
+    if (!icon) return;
     
     if (categoryContent.classList.contains('show')) {
         categoryContent.classList.remove('show');
@@ -1519,6 +2228,8 @@ function toggleCategory(categoryName) {
 // Update ingredients list based on type with categories
 function updateIngredientsList() {
     const ingredientsList = document.getElementById('ingredientsList');
+    if (!ingredientsList) return; // Exit if element doesn't exist
+    
     let currentIngredients;
     
     if (currentCustomOrder.type === 'toast') {
@@ -1531,22 +2242,23 @@ function updateIngredientsList() {
             ingredients.saltyIngredients;
     }
     
-    const categorizedIngredients = categorizeIngredientsByComments(currentIngredients);
+    const language = isTranslated ? 'english' : 'greek';
+    const translatedCategories = getTranslatedIngredientsList(currentIngredients, language);
     
-    ingredientsList.innerHTML = Object.entries(categorizedIngredients).map(([category, ingredients]) => `
+    ingredientsList.innerHTML = Object.entries(translatedCategories).map(([category, categoryData]) => `
         <div class="ingredient-category">
             <div class="category-header" onclick="toggleCategory('${category}')">
                 <h4>${category}</h4>
                 <i class="fas fa-chevron-down category-icon"></i>
             </div>
-            <div class="category-content" id="category-${category.replace(/\s+/g, '-')}">
-                ${ingredients.map(ingredient => `
+            <div class="category-content" id="category-${categoryData.originalCategory.replace(/\s+/g, '-')}">
+                ${categoryData.ingredients.map(ingredient => `
                     <div class="ingredient-item-new">
                         <div class="ingredient-info">
-                            <span class="ingredient-name">${ingredient.name}</span>
+                            <span class="ingredient-name">${ingredient.translatedName || ingredient.name}</span>
                             <span class="ingredient-price">€${ingredient.price.toFixed(2)}</span>
                         </div>
-                        <button class="add-ingredient-btn" onclick="toggleIngredient('${ingredient.name}', ${ingredient.price})">
+                        <button class="add-ingredient-btn" onclick="toggleIngredient('${ingredient.name}', ${ingredient.price}, event)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -1558,24 +2270,27 @@ function updateIngredientsList() {
 
 function updateToastIngredientsList() {
     const ingredientsList = document.getElementById('ingredientsList');
+    if (!ingredientsList) return; // Exit if element doesn't exist
+    
     const currentIngredients = ingredients.toastIngredients;
     
-    const categorizedIngredients = categorizeIngredientsByComments(currentIngredients);
+    const language = isTranslated ? 'english' : 'greek';
+    const translatedCategories = getTranslatedIngredientsList(currentIngredients, language);
     
-    ingredientsList.innerHTML = Object.entries(categorizedIngredients).map(([category, ingredients]) => `
+    ingredientsList.innerHTML = Object.entries(translatedCategories).map(([category, categoryData]) => `
         <div class="ingredient-category">
             <div class="category-header" onclick="toggleCategory('${category}')">
                 <h4>${category}</h4>
                 <i class="fas fa-chevron-down category-icon"></i>
             </div>
-            <div class="category-content" id="category-${category.replace(/\s+/g, '-')}">
-                ${ingredients.map(ingredient => `
+            <div class="category-content" id="category-${categoryData.originalCategory.replace(/\s+/g, '-')}">
+                ${categoryData.ingredients.map(ingredient => `
                     <div class="ingredient-item-new">
                         <div class="ingredient-info">
-                            <span class="ingredient-name">${ingredient.name}</span>
+                            <span class="ingredient-name">${ingredient.translatedName || ingredient.name}</span>
                             <span class="ingredient-price">€${ingredient.price.toFixed(2)}</span>
                         </div>
-                        <button class="add-ingredient-btn" onclick="toggleIngredient('${ingredient.name}', ${ingredient.price})">
+                        <button class="add-ingredient-btn" onclick="toggleIngredient('${ingredient.name}', ${ingredient.price}, event)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -1587,24 +2302,27 @@ function updateToastIngredientsList() {
 
 function updateTortillaIngredientsList() {
     const ingredientsList = document.getElementById('ingredientsList');
+    if (!ingredientsList) return; // Exit if element doesn't exist
+    
     const currentIngredients = ingredients.tortillaIngredients;
     
-    const categorizedIngredients = categorizeIngredientsByComments(currentIngredients);
+    const language = isTranslated ? 'english' : 'greek';
+    const translatedCategories = getTranslatedIngredientsList(currentIngredients, language);
     
-    ingredientsList.innerHTML = Object.entries(categorizedIngredients).map(([category, ingredients]) => `
+    ingredientsList.innerHTML = Object.entries(translatedCategories).map(([category, categoryData]) => `
         <div class="ingredient-category">
             <div class="category-header" onclick="toggleCategory('${category}')">
                 <h4>${category}</h4>
                 <i class="fas fa-chevron-down category-icon"></i>
             </div>
-            <div class="category-content" id="category-${category.replace(/\s+/g, '-')}">
-                ${ingredients.map(ingredient => `
+            <div class="category-content" id="category-${categoryData.originalCategory.replace(/\s+/g, '-')}">
+                ${categoryData.ingredients.map(ingredient => `
                     <div class="ingredient-item-new">
                         <div class="ingredient-info">
-                            <span class="ingredient-name">${ingredient.name}</span>
+                            <span class="ingredient-name">${ingredient.translatedName || ingredient.name}</span>
                             <span class="ingredient-price">€${ingredient.price.toFixed(2)}</span>
                         </div>
-                        <button class="add-ingredient-btn" onclick="toggleIngredient('${ingredient.name}', ${ingredient.price})">
+                        <button class="add-ingredient-btn" onclick="toggleIngredient('${ingredient.name}', ${ingredient.price}, event)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -1615,7 +2333,7 @@ function updateTortillaIngredientsList() {
 }
 
 // Toggle ingredient selection
-function toggleIngredient(ingredientName, ingredientPrice) {
+function toggleIngredient(ingredientName, ingredientPrice, event) {
     const existingIndex = currentCustomOrder.ingredients.findIndex(ing => ing.name === ingredientName);
     
     if (existingIndex > -1) {
@@ -1635,8 +2353,10 @@ function toggleIngredient(ingredientName, ingredientPrice) {
         
         // Update UI
         const btn = event.target.closest('.add-ingredient-btn');
-        btn.innerHTML = '<i class="fas fa-plus"></i>';
-        btn.classList.remove('added');
+        if (btn) {
+            btn.innerHTML = '<i class="fas fa-plus"></i>';
+            btn.classList.remove('added');
+        }
     } else {
         // Add ingredient
         currentCustomOrder.ingredients.push({ name: ingredientName, price: ingredientPrice });
@@ -1654,8 +2374,10 @@ function toggleIngredient(ingredientName, ingredientPrice) {
         
         // Update UI
         const btn = event.target.closest('.add-ingredient-btn');
-        btn.innerHTML = '<i class="fas fa-check"></i>';
-        btn.classList.add('added');
+        if (btn) {
+            btn.innerHTML = '<i class="fas fa-check"></i>';
+            btn.classList.add('added');
+        }
     }
     
     updateCustomTotal();
@@ -1665,7 +2387,11 @@ function toggleIngredient(ingredientName, ingredientPrice) {
 function updateCustomTotal() {
     const totalElement = document.getElementById('customTotal');
     if (totalElement) {
+        console.log('Updating total:', currentCustomOrder.total);
+        console.log('Current custom order:', currentCustomOrder);
         totalElement.textContent = currentCustomOrder.total.toFixed(2);
+    } else {
+        console.log('customTotal element not found');
     }
     
     // Update add to order button state
@@ -1678,10 +2404,18 @@ function updateAddToOrderButton() {
     if (addButton) {
         if (!currentCustomOrder.base) {
             addButton.classList.add('base-not-selected');
-            addButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Επιλέξτε Βάση Πρώτα';
+            if (isTranslated) {
+                addButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Select Base First';
+            } else {
+                addButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Επιλέξτε Βάση Πρώτα';
+            }
         } else {
             addButton.classList.remove('base-not-selected');
-            addButton.innerHTML = 'Προσθήκη στην Παραγγελία';
+            if (isTranslated) {
+                addButton.innerHTML = 'Add to Order';
+            } else {
+                addButton.innerHTML = 'Προσθήκη στην Παραγγελία';
+            }
         }
     }
 }
@@ -1695,14 +2429,21 @@ function addCustomToOrder(type) {
     }
     
     const typeNames = {
-        'crepe': 'Η Κρέπα Μου',
-        'toast': 'Το Τοστ Μου',
-        'tortilla': 'Η Τορτίγια Μου'
+        'crepe': isTranslated ? 'My Crepe' : 'Η Κρέπα Μου',
+        'toast': isTranslated ? 'My Toast' : 'Το Τοστ Μου',
+        'tortilla': isTranslated ? 'My Tortilla' : 'Η Τορτίγια Μου'
     };
     
-    const description = currentCustomOrder.ingredients.length > 0 ? 
-        `Με ${currentCustomOrder.ingredients.map(ing => ing.name).join(', ')}` : 
-        'Βασική συνταγή';
+    let description;
+    if (isTranslated) {
+        description = currentCustomOrder.ingredients.length > 0 ? 
+            `With ${currentCustomOrder.ingredients.map(ing => ing.name).join(', ')}` : 
+            'Basic recipe';
+    } else {
+        description = currentCustomOrder.ingredients.length > 0 ? 
+            `Με ${currentCustomOrder.ingredients.map(ing => ing.name).join(', ')}` : 
+            'Βασική συνταγή';
+    }
     
     addToOrder(typeNames[type], currentCustomOrder.total, description);
 }
@@ -1710,9 +2451,9 @@ function addCustomToOrder(type) {
 // Show base selection error with visual feedback
 function showBaseSelectionError(type) {
     const typeNames = {
-        'crepe': 'κρέπας',
-        'toast': 'τοστ', 
-        'tortilla': 'τορτίγιας'
+        'crepe': isTranslated ? 'crepe' : 'κρέπας',
+        'toast': isTranslated ? 'toast' : 'τοστ', 
+        'tortilla': isTranslated ? 'tortilla' : 'τορτίγιας'
     };
     
     // Create custom error modal content
@@ -1723,15 +2464,20 @@ function showBaseSelectionError(type) {
             <div class="error-icon">
                 <i class="fas fa-exclamation-triangle"></i>
             </div>
-            <h3>Επιλογή Βάσης Απαιτείται</h3>
-            <p>Παρακαλώ επιλέξτε τη βάση ${typeNames[type]} πριν προσθέσετε στην παραγγελία.</p>
-            <button class="error-ok-btn" onclick="closeBaseError()">
+            <h3 data-greek="Επιλογή Βάσης Απαιτείται" data-english="Base Selection Required">Επιλογή Βάσης Απαιτείται</h3>
+            <p data-greek="Παρακαλώ επιλέξτε τη βάση ${typeNames[type]} πριν προσθέσετε στην παραγγελία." data-english="Please select the ${typeNames[type]} base before adding to the order.">Παρακαλώ επιλέξτε τη βάση ${typeNames[type]} πριν προσθέσετε στην παραγγελία.</p>
+            <button class="error-ok-btn" onclick="closeBaseError()" data-greek="Εντάξει" data-english="OK">
                 Εντάξει
             </button>
         </div>
     `;
     
     document.body.appendChild(errorModal);
+    
+    // Apply current translation if needed
+    if (isTranslated) {
+        translatePage('english');
+    }
     
     // Highlight the base selection area
     const baseCard = document.querySelector('.base-card');
@@ -1759,9 +2505,12 @@ function closeBaseError() {
 
 // Add item to order
 function addToOrder(name, price, description) {
+    // Ensure price is a number
+    const numericPrice = parseFloat(price) || 0;
+    
     currentOrder.push({
         name: name,
-        price: price,
+        price: numericPrice,
         description: description
     });
     
@@ -1771,9 +2520,12 @@ function addToOrder(name, price, description) {
 
 // Add item to order without closing modal
 function addToOrderWithoutClose(name, price, description) {
+    // Ensure price is a number
+    const numericPrice = parseFloat(price) || 0;
+    
     currentOrder.push({
         name: name,
-        price: price,
+        price: numericPrice,
         description: description
     });
     
@@ -1781,6 +2533,7 @@ function addToOrderWithoutClose(name, price, description) {
     const btn = event.target.closest('.add-item-btn');
     const originalHTML = btn.innerHTML;
     btn.innerHTML = '<i class="fas fa-check"></i>';
+    btn.classList.add('base-not-selected');
     btn.classList.add('added');
     
     // Update floating button
@@ -1790,6 +2543,7 @@ function addToOrderWithoutClose(name, price, description) {
     setTimeout(() => {
         btn.innerHTML = originalHTML;
         btn.classList.remove('added');
+        btn.classList.remove('base-not-selected');
     }, 1000);
 }
 
@@ -1814,27 +2568,103 @@ function removeFromOrder(index) {
 // Show order summary
 function showOrderSummary() {
     if (currentOrder.length === 0) {
-        alert('Η παραγγελία σας είναι άδεια!');
+        if (isTranslated) {
+            alert('Your order is empty!');
+        } else {
+            alert('Η παραγγελία σας είναι άδεια!');
+        }
         return;
     }
     
-    orderSummary.innerHTML = currentOrder.map((item, index) => `
-        <div class="order-item">
-            <div class="order-item-info">
-                <h4>${item.name}</h4>
-                <p>${item.description}</p>
-            </div>
-            <div class="order-item-actions">
-                <div class="order-item-price">€${item.price.toFixed(2)}</div>
-                <button class="remove-item-btn" onclick="removeFromOrder(${index})">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-        </div>
-    `).join('');
+    // Ensure all prices are numbers and calculate total
+    let total = 0;
+    console.log('Starting total calculation...'); // Debug
     
-    const total = currentOrder.reduce((sum, item) => sum + item.price, 0);
-    totalPrice.textContent = `€${total.toFixed(2)}`;
+    const orderItems = currentOrder.map((item, index) => {
+        // Ensure price is a number
+        const itemPrice = parseFloat(item.price) || 0;
+        total += itemPrice;
+        
+        console.log(`Item: ${item.name}, Price: ${item.price}, Parsed: ${itemPrice}, Running total: ${total}`); // Debug
+        
+        // Translate item name if in English mode
+        let displayName = item.name;
+        let displayDescription = item.description;
+        
+        if (isTranslated && englishTranslations[item.name]) {
+            displayName = englishTranslations[item.name];
+        }
+        
+        if (isTranslated && englishDescriptions[item.description]) {
+            displayDescription = englishDescriptions[item.description];
+        }
+        
+        return `
+            <div class="order-item">
+                <div class="order-item-info">
+                    <h4>${displayName}</h4>
+                    <p>${displayDescription}</p>
+                </div>
+                <div class="order-item-actions">
+                    <div class="order-item-price">€${itemPrice.toFixed(2)}</div>
+                    <button class="remove-item-btn" onclick="removeFromOrder(${index})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+    
+    orderSummary.innerHTML = orderItems.join('');
+    
+    console.log('Final total calculated:', total); // Debug
+    
+    // Debug: Check what elements exist
+    console.log('All elements with "order" in ID:', document.querySelectorAll('[id*="order"]'));
+    console.log('All elements with "total" in ID:', document.querySelectorAll('[id*="total"]'));
+    
+    // Update the order modal total
+    const orderTotalElement = document.getElementById('orderTotalPrice');
+    console.log('Order total element found:', orderTotalElement); // Debug
+    if (orderTotalElement) {
+        orderTotalElement.textContent = total.toFixed(2);
+        console.log('Updated order total to:', total.toFixed(2)); // Debug
+    } else {
+        console.log('Order total element NOT found!'); // Debug
+        console.log('Trying alternative selectors...'); // Debug
+        
+        // Try alternative ways to find the element
+        console.log('Looking for .order-total elements:', document.querySelectorAll('.order-total'));
+        console.log('Looking for .order-total h3 elements:', document.querySelectorAll('.order-total h3'));
+        console.log('Looking for .order-total span elements:', document.querySelectorAll('.order-total span'));
+        
+        const alternativeElement = document.querySelector('.order-total span');
+        if (alternativeElement) {
+            console.log('Found element via class selector:', alternativeElement);
+            alternativeElement.textContent = total.toFixed(2);
+            console.log('Updated via class selector to:', total.toFixed(2));
+        } else {
+            console.log('Element not found via class selector either');
+            
+            // Try to update the h3 element directly
+            const h3Element = document.querySelector('.order-total h3');
+            if (h3Element) {
+                console.log('Found h3 element, updating it directly');
+                // Get the current text (either "Total: " or "Σύνολο: ")
+                const currentText = h3Element.textContent.replace(/€[\d.]+/, ''); // Remove any existing price
+                h3Element.textContent = currentText + '€' + total.toFixed(2);
+                console.log('Updated h3 element to:', h3Element.textContent);
+            } else {
+                console.log('H3 element not found either');
+            }
+        }
+    }
+    
+    // Update main page total if it exists
+    const mainTotalElement = document.getElementById('totalPrice');
+    if (mainTotalElement) {
+        mainTotalElement.textContent = `€${total.toFixed(2)}`;
+    }
     
     orderModal.classList.add('active');
 
@@ -2099,26 +2929,49 @@ function closeErrorModal() {
 }
 
 // Enhanced order functions
+function updateOrderDisplay() {
+    // Update floating button
+    updateFloatingButton();
+    
+    // Update order summary if modal is open
+    if (orderModal.classList.contains('active')) {
+        showOrderSummary();
+    }
+}
+
 function clearOrder() {
     try {
         currentOrder = [];
         updateOrderDisplay();
         closeOrderModalHandler();
     } catch (error) {
-        showError('Σφάλμα κατά τον καθαρισμό της παραγγελίας');
+        if (isTranslated) {
+            showError('Error clearing the order');
+        } else {
+            showError('Σφάλμα κατά τον καθαρισμό της παραγγελίας');
+        }
     }
 }
 
 function confirmOrder() {
     try {
         if (currentOrder.length === 0) {
-            showError('Η παραγγελία σας είναι άδεια');
+            if (isTranslated) {
+                showError('Your order is empty');
+            } else {
+                showError('Η παραγγελία σας είναι άδεια');
+            }
             return;
         }
         
         const total = currentOrder.reduce((sum, item) => sum + item.price, 0);
         const orderText = currentOrder.map(item => `${item.name} - €${item.price.toFixed(2)}`).join('\n');
-        const message = `Νέα Παραγγελία:\n\n${orderText}\n\nΣύνολο: €${total.toFixed(2)}`;
+        let message;
+        if (isTranslated) {
+            message = `New Order:\n\n${orderText}\n\nTotal: €${total.toFixed(2)}`;
+        } else {
+            message = `Νέα Παραγγελία:\n\n${orderText}\n\nΣύνολο: €${total.toFixed(2)}`;
+        }
         
         // Open phone dialer with pre-filled message
         const phoneNumber = 'tel:+306912345678'; // Replace with actual phone number
@@ -2129,6 +2982,10 @@ function confirmOrder() {
         // window.open(whatsappUrl);
         
     } catch (error) {
-        showError('Σφάλμα κατά την επιβεβαίωση της παραγγελίας');
+        if (isTranslated) {
+            showError('Error confirming the order');
+        } else {
+            showError('Σφάλμα κατά την επιβεβαίωση της παραγγελίας');
+        }
     }
 } 
