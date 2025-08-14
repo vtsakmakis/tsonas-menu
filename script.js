@@ -1129,7 +1129,7 @@ function showClubSandwiches() {
     // Update modal header
     const modalHeader = document.querySelector('.modal-header');
     modalHeader.innerHTML = `
-        <h2 data-greek="Club Sandwiches" data-english="Club Sandwiches">Club Sandwiches</h2>
+        <h2 data-greek="Club Sandwiches" data-english="Club">Club Sandwiches</h2>
         <button class="close-btn" id="closeModal">
             <i class="fas fa-times"></i>
         </button>
