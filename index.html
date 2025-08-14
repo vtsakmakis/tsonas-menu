@@ -52,15 +52,23 @@
     <!-- Header Section -->
     <header class="header">
         <div class="header-content">
+            <!-- Translation Button -->
+            <div class="translation-container">
+                <button id="translateBtn" class="translate-btn" onclick="toggleTranslation()">
+                    <i class="fas fa-language"></i>
+                    <span id="translateText">GR</span>
+                </button>
+            </div>
+            
             <h1 class="main-title">Crepes <br> in da hood</h1>
             <div class="info-section">
                 <div class="hours">
                     <i class="fas fa-clock" style="color: #ff4b4b;"></i>
-                    <span>Καθημερινά 17:30 με 1:30</span>
+                    <span data-greek="Καθημερινά 17:30 με 1:30" data-english="Daily 17:30 to 1:30">Καθημερινά 17:30 με 1:30</span>
                 </div>
                 <div class="address">
                     <i class="fas fa-map-marker-alt" style="color: #ff4b4b;"></i>
-                    <span>Παύλου Μελά 106 Φλώρινα</span>
+                    <span data-greek="Παύλου Μελά 106 Φλώρινα" data-english="Pavlou Mela 106 Florina">Παύλου Μελά 106 Φλώρινα</span>
                 </div>
             </div>
             <!-- Logo moved here under the address -->
@@ -78,7 +86,7 @@
                     <div class="category-icon">
                         <img src="images/crepe.png" alt="Crepe Icon" class="category-image">
                     </div>
-                    <h3>Κρέπες</h3>
+                    <h3 data-greek="Κρέπες" data-english="Crepes">Κρέπες</h3>
                    
                 </div>
 
@@ -86,7 +94,7 @@
                     <div class="category-icon">
                         <img src="images/club-sandwitch.png" alt="Club Sandwich Icon" class="category-image">
                     </div>
-                    <h3>Club </h3>
+                    <h3 data-greek="Club " data-english="Club Sandwiches">Club </h3>
                     
                 </div>
             </div>
@@ -96,7 +104,7 @@
                     <div class="category-icon">
                         <img src="images/Toast.png" alt="Toast Icon" class="category-image">
                     </div>
-                    <h3>Τοστ</h3>
+                    <h3 data-greek="Τοστ" data-english="Toast">Τοστ</h3>
                    
                 </div>
 
@@ -104,7 +112,7 @@
                     <div class="category-icon">
                         <img src="images/tortilla.png" alt="Tortilla Icon" class="category-image">
                     </div>
-                    <h3>Τορτίγια</h3>
+                    <h3 data-greek="Τορτίγια" data-english="Tortillas">Τορτίγια</h3>
                    
                 </div>
 
@@ -112,7 +120,7 @@
                     <div class="category-icon">
                         <img src="images/salad.png" alt="Salad Icon" class="category-image">
                     </div>
-                    <h3>Σαλάτες</h3>
+                    <h3 data-greek="Σαλάτες" data-english="Salads">Σαλάτες</h3>
                   
                 </div>
             </div>
@@ -122,7 +130,7 @@
                     <div class="category-icon">
                         <img src="images/μεριδες.png" alt="Portions Icon" class="category-image">
                     </div>
-                    <h3>Μερίδες</h3>
+                    <h3 data-greek="Μερίδες" data-english="Portions">Μερίδες</h3>
                   
                 </div>
 
@@ -130,7 +138,7 @@
                     <div class="category-icon">
                         <img src="images/Drinks.png" alt="Drinks Icon" class="category-image">
                     </div>
-                    <h3>Ποτά</h3>
+                    <h3 data-greek="Ποτά" data-english="Drinks">Ποτά</h3>
                   
                 </div>
             </div>
@@ -140,7 +148,7 @@
     <!-- Google Review CTA Section -->
     <section class="review-section">
         <div class="review-card">
-            <h2>Σας άρεσε; Αξιολογήστε μας στο Google</h2>
+            <h2 data-greek="Σας άρεσε; Αξιολογήστε μας στο Google" data-english="Did you like it? Rate us on Google">Σας άρεσε; Αξιολογήστε μας στο Google</h2>
             <div class="review-stars" aria-hidden="true">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -148,10 +156,10 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
             </div>
-            <p>Η γνώμη σας μας βοηθά να γινόμαστε καλύτεροι.</p>
+            <p data-greek="Η γνώμη σας μας βοηθά να γινόμαστε καλύτεροι." data-english="Your opinion helps us become better.">Η γνώμη σας μας βοηθά να γινόμαστε καλύτεροι.</p>
             <a id="googleReviewBtn" class="btn review-btn" target="_blank" rel="noopener">
                 <i class="fab fa-google"></i>
-                Γράψτε Αξιολόγηση
+                <span data-greek="Γράψτε Αξιολόγηση" data-english="Write Review">Γράψτε Αξιολόγηση</span>
             </a>
         </div>
     </section>
@@ -163,7 +171,7 @@
                 <button class="close-btn" id="closeModal">
                     <i class="fas fa-times"></i>
                 </button>
-                <h2 id="modalTitle">Επιλογή</h2>
+                <h2 id="modalTitle" data-greek="Επιλογή" data-english="Selection">Επιλογή</h2>
             </div>
             <div class="modal-body" id="modalBody">
                 <!-- Dynamic content will be inserted here -->
@@ -175,7 +183,7 @@
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner">
             <div class="spinner"></div>
-            <p>Φόρτωση...</p>
+            <p data-greek="Φόρτωση..." data-english="Loading...">Φόρτωση...</p>
         </div>
     </div>
 
@@ -186,14 +194,14 @@
                 <button class="close-btn" id="closeOrderModal">
                     <i class="fas fa-times"></i>
                 </button>
-                <h2>Η Παραγγελία Σας</h2>
+                <h2 data-greek="Η Παραγγελία Σας" data-english="Your Order">Η Παραγγελία Σας</h2>
             </div>
             <div class="modal-body">
                 <div class="order-summary" id="orderSummary">
                     <!-- Order items will be displayed here -->
                 </div>
                 <div class="order-total">
-                    <h3>Σύνολο: <span id="totalPrice">€0.00</span></h3>
+                    <h3 data-greek="Σύνολο: " data-english="Total: ">Total: <span id="orderTotalPrice">€0.00</span></h3>
                 </div>
             </div>
         </div>
@@ -203,10 +211,10 @@
     <div class="modal-overlay" id="errorModal">
         <div class="modal-content error-modal">
             <div class="modal-header">
-                <h2>Σφάλμα</h2>
+                <h2 data-greek="Σφάλμα" data-english="Error">Σφάλμα</h2>
             </div>
             <div class="modal-body">
-                <div class="error-message" id="errorMessage">
+                <div class="error-message" id="errorMessage" data-greek="Προέκυψε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά." data-english="An error occurred. Please try again.">
                     Προέκυψε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά.
                 </div>
                 <button class="btn" onclick="closeErrorModal()">OK</button>
