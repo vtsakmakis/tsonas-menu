@@ -87,6 +87,8 @@ const menuData = {
             { name: "Fanta πορτοκαλάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Fanta λεμονάδα 1.5lt", takeAwayPrice: 3.30, dineInPrice: 3.50 },
             { name: "Βίκος pink grapefruit 250ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Κρίνος Φράουλα 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
+            { name: "Κρίνος Πορτοκαλάδα 330ml", takeAwayPrice: 1.80, dineInPrice: 2.50 },
             { name: "Ξυνό νερό Φλώρινας 250ml", takeAwayPrice: 2.00, dineInPrice: 2.50 },
             { name: "Νερό 500ml", takeAwayPrice: 0.50, dineInPrice: 0.50 },
             { name: "Νερό 1.5lt", takeAwayPrice: 1.00, dineInPrice: 1.00 }
@@ -208,12 +210,18 @@ const englishTranslations = {
     "Κρασί λευκό ξηρό Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml": "White Dry Wine Ideal Winery Vaeni Naoussa 750ml",
     "Κρασί λευκό ημίγλυκο Ιδεώδης Οινοποιείο Vaeni Naoussa 750ml": "White Semi-Sweet Wine Ideal Winery Vaeni Naoussa 750ml",
     "Ρετσίνα Γιώργου Γεωργιάδη 500ml": "Retsina Georgiou Georgiadis 500ml",
+    "Fanta πορτοκαλάδα 330ml": "Fanta Orange 330ml",
+    "Fanta λεμονάδα 330ml": "Fanta Lemon 330ml",
+    "Fanta πορτοκαλάδα 1.5lt": "Fanta Orange 1.5L",
+    "Fanta λεμονάδα 1.5lt": "Fanta Lemon 1.5L",
     "Lipton ice tea λεμόνι 330ml": "Lipton Ice Tea Lemon 330ml",
     "Lipton ice tea ροδάκινο 330ml": "Lipton Ice Tea Peach 330ml",
     "Lipton ice tea green lemon χωρίς ζάχαρη 330ml": "Lipton Ice Tea Green Lemon Sugar Free 330ml",
     "Amita πορτοκάλι 250ml": "Amita Orange 250ml",
     "Amita Motion 250ml": "Amita Motion 250ml",
     "Βίκος pink grapefruit 250ml": "Vikos Pink Grapefruit 250ml",
+    "Κρίνος Φράουλα 330ml": "Krinos Strawberry 330ml",
+    "Κρίνος Πορτοκαλάδα 330ml": "Krinos Orange 330ml",
     "Ξυνό νερό Φλώρινας 250ml": "Sour Water Florina 250ml",
     "Νερό 500ml": "Water 500ml",
     "Νερό 1.5lt": "Water 1.5L"
@@ -957,6 +965,8 @@ document.addEventListener('DOMContentLoaded', function() {
             handleCategoryClick(category);
         });
     });
+    
+
 
     // Modal close events
     closeModal.addEventListener('click', closeModalHandler);
@@ -1751,6 +1761,16 @@ function showCustomCrepe() {
 
             <!-- Summary -->
             <div class="builder-summary-new">
+                <!-- Selected Ingredients Display -->
+                <div class="selected-ingredients-display" id="selectedIngredientsDisplay" style="display: none;">
+                    <div class="ingredients-display-header">
+                        <h3 data-greek="Επιλεγμένα Υλικά" data-english="Selected Ingredients">Επιλεγμένα Υλικά</h3>
+                    </div>
+                    <div class="ingredients-display-list" id="ingredientsDisplayList">
+                        <!-- Selected ingredients will be shown here -->
+                    </div>
+                </div>
+                
                 <div class="summary-total">
                     <h3 data-greek="Σύνολο" data-english="Total">Σύνολο</h3>
                     <div class="total-price">€<span id="customTotal">0.00</span></div>
@@ -1833,6 +1853,16 @@ function showCustomToast() {
 
             <!-- Summary -->
             <div class="builder-summary-new">
+                <!-- Selected Ingredients Display -->
+                <div class="selected-ingredients-display" id="selectedIngredientsDisplay" style="display: none;">
+                    <div class="ingredients-display-header">
+                        <h3 data-greek="Επιλεγμένα Υλικά" data-english="Selected Ingredients">Επιλεγμένα Υλικά</h3>
+                    </div>
+                    <div class="ingredients-display-list" id="ingredientsDisplayList">
+                        <!-- Selected ingredients will be shown here -->
+                    </div>
+                </div>
+                
                 <div class="summary-total">
                     <h3 data-greek="Σύνολο" data-english="Total">Σύνολο</h3>
                     <div class="total-price">€<span id="customTotal">0.00</span></div>
@@ -1915,6 +1945,16 @@ function showCustomTortilla() {
 
             <!-- Summary -->
             <div class="builder-summary-new">
+                <!-- Selected Ingredients Display -->
+                <div class="selected-ingredients-display" id="selectedIngredientsDisplay" style="display: none;">
+                    <div class="ingredients-display-header">
+                        <h3 data-greek="Επιλεγμένα Υλικά" data-english="Selected Ingredients">Επιλεγμένα Υλικά</h3>
+                    </div>
+                    <div class="ingredients-display-list" id="ingredientsDisplayList">
+                        <!-- Selected ingredients will be shown here -->
+                    </div>
+                </div>
+                
                 <div class="summary-total">
                     <h3 data-greek="Σύνολο" data-english="Total">Σύνολο</h3>
                     <div class="total-price">€<span id="customTotal">0.00</span></div>
@@ -1977,6 +2017,7 @@ function selectBase(baseName, basePrice, type) {
     });
     
     updateCustomTotal();
+    updateIngredientsDisplay(); // Update the ingredients display
 }
 
 // Select type (sweet/salty)
@@ -1996,6 +2037,7 @@ function selectType(type) {
     
     // Update ingredients list
     updateIngredientsList();
+    updateIngredientsDisplay(); // Update the ingredients display
 }
 
 // Helper function to categorize ingredients
@@ -2381,6 +2423,7 @@ function toggleIngredient(ingredientName, ingredientPrice, event) {
     }
     
     updateCustomTotal();
+    updateIngredientsDisplay(); // Update the ingredients display
 }
 
 // Update custom total display
@@ -2396,6 +2439,39 @@ function updateCustomTotal() {
     
     // Update add to order button state
     updateAddToOrderButton();
+}
+
+// Update ingredients display
+function updateIngredientsDisplay() {
+    const displayContainer = document.getElementById('selectedIngredientsDisplay');
+    const displayList = document.getElementById('ingredientsDisplayList');
+    const summaryContainer = document.querySelector('.builder-summary-new');
+    
+    if (!displayContainer || !displayList || !summaryContainer) {
+        return; // Elements not found
+    }
+    
+    if (currentCustomOrder.ingredients.length === 0) {
+        // Hide the display if no ingredients
+        displayContainer.style.display = 'none';
+        summaryContainer.classList.remove('has-ingredients');
+        summaryContainer.classList.add('no-ingredients');
+        return;
+    }
+    
+    // Show the display and populate with ingredients
+    displayContainer.style.display = 'block';
+    summaryContainer.classList.add('has-ingredients');
+    summaryContainer.classList.remove('no-ingredients');
+    
+    const ingredientsHTML = currentCustomOrder.ingredients.map(ingredient => `
+        <div class="ingredient-display-item">
+            <span class="ingredient-display-name">${ingredient.name}</span>
+            <span class="ingredient-display-price">+€${ingredient.price.toFixed(2)}</span>
+        </div>
+    `).join('');
+    
+    displayList.innerHTML = ingredientsHTML;
 }
 
 // Update add to order button based on base selection
@@ -2508,11 +2584,23 @@ function addToOrder(name, price, description) {
     // Ensure price is a number
     const numericPrice = parseFloat(price) || 0;
     
+    // Check if this is a custom order with ingredients
+    let ingredients = null;
+    if (currentCustomOrder && currentCustomOrder.ingredients && currentCustomOrder.ingredients.length > 0) {
+        ingredients = currentCustomOrder.ingredients.map(ing => ing.name);
+        console.log('Adding item with ingredients:', name, ingredients); // Debug
+    } else {
+        console.log('Adding item without ingredients:', name); // Debug
+    }
+    
     currentOrder.push({
         name: name,
         price: numericPrice,
-        description: description
+        description: description,
+        ingredients: ingredients
     });
+    
+    console.log('Current order after adding:', currentOrder); // Debug
     
     closeModalHandler();
     showOrderSummary();
@@ -2523,10 +2611,20 @@ function addToOrderWithoutClose(name, price, description) {
     // Ensure price is a number
     const numericPrice = parseFloat(price) || 0;
     
+    // Check if this is a custom order with ingredients
+    let ingredients = null;
+    if (currentCustomOrder && currentCustomOrder.ingredients && currentCustomOrder.ingredients.length > 0) {
+        ingredients = currentCustomOrder.ingredients.map(ing => ing.name);
+        console.log('Adding item without close with ingredients:', name, ingredients); // Debug
+    } else {
+        console.log('Adding item without close without ingredients:', name); // Debug
+    }
+    
     currentOrder.push({
         name: name,
         price: numericPrice,
-        description: description
+        description: description,
+        ingredients: ingredients
     });
     
     // Show a brief confirmation message
@@ -2616,6 +2714,8 @@ function showOrderSummary() {
     });
     
     orderSummary.innerHTML = orderItems.join('');
+    
+
     
     console.log('Final total calculated:', total); // Debug
     
