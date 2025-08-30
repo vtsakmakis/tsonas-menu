@@ -39,6 +39,28 @@
 
 </head>
 <body>
+    <!-- Language Selection Modal -->
+    <div id="languageModal" class="language-modal">
+        <div class="language-modal-content">
+            <div class="language-modal-header">
+                <h2>Choose Language</h2>
+                <p>Επιλέξτε γλώσσα</p>
+            </div>
+            
+            <div class="language-buttons">
+                <button class="lang-btn greek" onclick="selectLanguage('greek')">
+                    <span class="flag greek-flag"></span>
+                    <span class="text">Ελληνικά</span>
+                </button>
+                
+                <button class="lang-btn english" onclick="selectLanguage('english')">
+                    <span class="flag english-flag"></span>
+                    <span class="text">English</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating Crepes Background -->
     <div class="floating-crepe"></div>
     <div class="floating-crepe"></div>
@@ -73,7 +95,7 @@
             <div class="translation-container">
                 <button id="translateBtn" class="translate-btn" onclick="toggleTranslation()">
                     <i class="fas fa-language"></i>
-                    <span id="translateText">GR</span>
+                    <span id="translateFlag">🇬🇷</span>
                 </button>
             </div>
             
