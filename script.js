@@ -506,7 +506,7 @@ function selectLanguage(language) {
         if (translateBtn && translateFlag) {
             if (isTranslated) {
                 translateBtn.classList.add('translated');
-                translateFlag.textContent = 'EN';
+                translateFlag.textContent = '🇬🇧';
             } else {
                 translateBtn.classList.remove('translated');
                 translateFlag.textContent = '🇬🇷';
@@ -534,7 +534,7 @@ function toggleTranslation() {
     
     if (isTranslated) {
         translateBtn.classList.add('translated');
-        translateFlag.textContent = 'EN';
+        translateFlag.textContent = '🇬🇧';
         translatePage('english');
     } else {
         translateBtn.classList.remove('translated');
