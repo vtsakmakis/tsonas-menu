@@ -122,13 +122,7 @@ const menuData = {
 // Translation System
 let isTranslated = false;
 
-// Function to initialize translation button text
-function initializeTranslationButton() {
-    const translateText = document.getElementById('translateText');
-    if (translateText) {
-        translateText.textContent = isTranslated ? 'EN' : 'GR';
-    }
-}
+
 
 // English translations for menu items
 const englishTranslations = {
@@ -257,7 +251,7 @@ const englishIngredients = {
     // Cheeses
     'Gouda': 'Gouda',
     'Mozzarella': 'Mozzarella',
-    'Κασέρι καπνιστό': 'Smoked Kasseri',
+    'Κασέρι καπνιστό': 'Smoked Cheese',
     'Cheddar': 'Cheddar',
     'Φέτα': 'Feta',
     'Μανούρι': 'Manouri',
@@ -435,21 +429,116 @@ const englishDescriptions = {
     "Κοτομπουκιές χειροποίητες": "Handmade chicken nuggets"
 };
 
+// Language selection modal functionality
+function showLanguageModal() {
+    console.log('showLanguageModal called');
+    
+    // Prevent multiple modals from showing
+    if (document.body.classList.contains('modal-shown')) {
+        console.log('Modal already shown, ignoring');
+        return;
+    }
+    
+    const languageModal = document.getElementById('languageModal');
+    if (languageModal) {
+        languageModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('modal-shown');
+        console.log('Language modal shown successfully');
+    } else {
+        console.error('Language modal element not found');
+    }
+}
+
+function hideLanguageModal() {
+    console.log('hideLanguageModal called');
+    
+    const languageModal = document.getElementById('languageModal');
+    if (languageModal) {
+        languageModal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.classList.remove('modal-shown');
+        console.log('Language modal hidden successfully');
+    } else {
+        console.error('Language modal element not found');
+    }
+}
+
+function selectLanguage(language) {
+    console.log('Language selected:', language);
+    
+    // Prevent multiple rapid calls
+    if (document.body.classList.contains('language-selecting')) {
+        console.log('Language selection already in progress, ignoring');
+        return;
+    }
+    
+    document.body.classList.add('language-selecting');
+    
+    try {
+        // Set the language
+        if (language === 'english') {
+            isTranslated = true;
+            console.log('Setting to English');
+            // Call translatePage for English
+            try {
+                translatePage('english');
+            } catch (error) {
+                console.error('Error translating to English:', error);
+            }
+        } else {
+            isTranslated = false;
+            console.log('Setting to Greek - restoring Greek content');
+            // For Greek, restore the Greek content
+            try {
+                translatePage('greek');
+            } catch (error) {
+                console.error('Error restoring Greek content:', error);
+            }
+        }
+        
+        // Hide the modal first
+        hideLanguageModal();
+        
+        // Update the translation button
+        const translateBtn = document.getElementById('translateBtn');
+        const translateFlag = document.getElementById('translateFlag');
+        if (translateBtn && translateFlag) {
+            if (isTranslated) {
+                translateBtn.classList.add('translated');
+                translateFlag.textContent = 'EN';
+            } else {
+                translateBtn.classList.remove('translated');
+                translateFlag.textContent = '🇬🇷';
+            }
+        }
+        
+        console.log('Language selection complete, isTranslated:', isTranslated);
+    } catch (error) {
+        console.error('Error during language selection:', error);
+    } finally {
+        // Remove the flag after a short delay
+        setTimeout(() => {
+            document.body.classList.remove('language-selecting');
+        }, 100);
+    }
+}
+
 // Function to toggle translation
 function toggleTranslation() {
     isTranslated = !isTranslated;
     
     // Update button appearance
     const translateBtn = document.getElementById('translateBtn');
-    const translateText = document.getElementById('translateText');
+    const translateFlag = document.getElementById('translateFlag');
     
     if (isTranslated) {
         translateBtn.classList.add('translated');
-        translateText.textContent = 'EN';
+        translateFlag.textContent = 'EN';
         translatePage('english');
     } else {
         translateBtn.classList.remove('translated');
-        translateText.textContent = 'GR';
+        translateFlag.textContent = '🇬🇷';
         translatePage('greek');
     }
 }
@@ -493,11 +582,19 @@ function translatePage(language) {
             
             // Update the total display after ingredient lists are updated
             setTimeout(() => updateCustomTotal(), 0);
+            
+            // Update the selected ingredients display to show translated names
+            updateIngredientsDisplay();
         }
     }
     
     // Update base names in custom order modals
     updateBaseNames(language);
+    
+    // Update selected ingredients display if there are any selected ingredients
+    if (currentCustomOrder && currentCustomOrder.ingredients && currentCustomOrder.ingredients.length > 0) {
+        updateIngredientsDisplay();
+    }
 }
 
 // Function to translate menu data
@@ -631,9 +728,120 @@ function translateMenuData(language) {
             });
         });
     } else {
-        // Restore Greek menu data (you would need to store original data)
-        // For now, we'll just reload the page to restore original data
-        location.reload();
+        // Restore Greek menu data
+        // Since the original data is already in Greek, we need to restore it
+        // We'll create a mapping from English back to Greek
+        const greekTranslations = {};
+        Object.keys(englishTranslations).forEach(greekName => {
+            const englishName = englishTranslations[greekName];
+            greekTranslations[englishName] = greekName;
+        });
+        
+        // Restore menu items to Greek
+        Object.keys(greekTranslations).forEach(englishName => {
+            const greekName = greekTranslations[englishName];
+            
+            // Update crepes
+            if (menuData.crepes.sweet) {
+                menuData.crepes.sweet.forEach(crepe => {
+                    if (crepe.name === englishName) {
+                        crepe.name = greekName;
+                    }
+                });
+            }
+            if (menuData.crepes.savory) {
+                menuData.crepes.savory.forEach(crepe => {
+                    if (crepe.name === englishName) {
+                        crepe.name = greekName;
+                    }
+                });
+            }
+            
+            // Update club sandwiches
+            menuData.clubSandwiches.forEach(sandwich => {
+                if (sandwich.name === englishName) {
+                    sandwich.name = greekName;
+                }
+            });
+            
+            // Update toast
+            menuData.toast.forEach(toast => {
+                if (toast.name === englishName) {
+                    toast.name = greekName;
+                }
+            });
+            
+            // Update tortillas
+            menuData.tortillas.forEach(tortilla => {
+                if (tortilla.name === englishName) {
+                    tortilla.name = greekName;
+                }
+            });
+            
+            // Update salads
+            menuData.salads.forEach(salad => {
+                if (salad.name === englishName) {
+                    salad.name = greekName;
+                }
+            });
+            
+            // Update portions
+            menuData.portions.forEach(portion => {
+                if (portion.name === englishName) {
+                    portion.name = greekName;
+                }
+            });
+            
+            // Update dips
+            menuData.dips.forEach(dip => {
+                if (dip.name === englishName) {
+                    dip.name = greekName;
+                }
+            });
+            
+            // Update drinks
+            Object.keys(menuData.drinks).forEach(category => {
+                menuData.drinks[category].forEach(drink => {
+                    if (drink.name === englishName) {
+                        drink.name = greekName;
+                    }
+                });
+            });
+        });
+        
+        // Restore descriptions to Greek
+        const greekDescriptions = {};
+        Object.keys(englishDescriptions).forEach(greekDesc => {
+            const englishDesc = englishDescriptions[greekDesc];
+            greekDescriptions[englishDesc] = greekDesc;
+        });
+        
+        Object.keys(greekDescriptions).forEach(englishDesc => {
+            const greekDesc = greekDescriptions[englishDesc];
+            
+            // Update crepes
+            if (menuData.crepes.sweet) {
+                menuData.crepes.sweet.forEach(crepe => {
+                    if (crepe.description === englishDesc) {
+                        crepe.description = greekDesc;
+                    }
+                });
+            }
+            if (menuData.crepes.savory) {
+                menuData.crepes.savory.forEach(crepe => {
+                    if (crepe.description === englishDesc) {
+                        crepe.description = greekDesc;
+                    }
+                });
+            }
+            
+            // Update club sandwiches
+            menuData.clubSandwiches.forEach(sandwich => {
+                if (sandwich.description === englishDesc) {
+                    sandwich.description = greekDesc;
+                }
+            });
+        });
     }
 }
 
@@ -932,8 +1140,17 @@ const closeOrderModal = document.getElementById('closeOrderModal');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize translation button text
-    initializeTranslationButton();
+    // Always show language selection modal
+    showLanguageModal();
+    
+    // Translation button is already initialized with flag emojis
+    
+    // Add keyboard event listener for language modal
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            hideLanguageModal();
+        }
+    });
     
     // Configure Google Review button link
     const reviewBtn = document.getElementById('googleReviewBtn');
@@ -2464,12 +2681,16 @@ function updateIngredientsDisplay() {
     summaryContainer.classList.add('has-ingredients');
     summaryContainer.classList.remove('no-ingredients');
     
-    const ingredientsHTML = currentCustomOrder.ingredients.map(ingredient => `
-        <div class="ingredient-display-item">
-            <span class="ingredient-display-name">${ingredient.name}</span>
-            <span class="ingredient-display-price">+€${ingredient.price.toFixed(2)}</span>
-        </div>
-    `).join('');
+    const ingredientsHTML = currentCustomOrder.ingredients.map(ingredient => {
+        // Translate the ingredient name to the current language
+        const translatedName = translateIngredientText(ingredient.name, isTranslated ? 'english' : 'greek');
+        return `
+            <div class="ingredient-display-item">
+                <span class="ingredient-display-name">${translatedName}</span>
+                <span class="ingredient-display-price">+€${ingredient.price.toFixed(2)}</span>
+            </div>
+        `;
+    }).join('');
     
     displayList.innerHTML = ingredientsHTML;
 }
@@ -2513,11 +2734,11 @@ function addCustomToOrder(type) {
     let description;
     if (isTranslated) {
         description = currentCustomOrder.ingredients.length > 0 ? 
-            `With ${currentCustomOrder.ingredients.map(ing => ing.name).join(', ')}` : 
+            `With ${currentCustomOrder.ingredients.map(ing => translateIngredientText(ing.name, 'english')).join(', ')}` : 
             'Basic recipe';
     } else {
         description = currentCustomOrder.ingredients.length > 0 ? 
-            `Με ${currentCustomOrder.ingredients.map(ing => ing.name).join(', ')}` : 
+            `Με ${currentCustomOrder.ingredients.map(ing => translateIngredientText(ing.name, 'greek')).join(', ')}` : 
             'Βασική συνταγή';
     }
     
