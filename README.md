@@ -1,92 +1,155 @@
 # Τσώνας - Crepes in da hood
 
-Ένα όμορφο, mobile-first menu website για την κρεπερί Τσώνας στη Φλώρινα.
+A beautiful, modern menu website for Tsonas Creperie in Florina, Greece. This is a mobile-first, interactive menu platform that showcases the complete range of delicious crepes, sandwiches, and custom creations.
 
-## Χαρακτηριστικά
+## ✨ **Features**
 
-- 🎨 **Όμορφο Design**: Σύγχρονο, mobile-first design με χρώματα μαύρο και κόκκινο
-- 📱 **Mobile Optimized**: Σχεδιασμένο αποκλειστικά για smartphone
-- 🍽️ **Πλήρες Menu**: Όλα τα προϊόντα από το e-food.gr
-- ⚡ **Interactive**: Δυνατότητα δημιουργίας custom παραγγελιών
-- 💰 **Real-time Pricing**: Αυτόματος υπολογισμός τιμών
-- 🇬🇷 **Ελληνική Γλώσσα**: Πλήρως στα ελληνικά
+- 🎨 **Modern Design**: Sleek, contemporary interface with dark theme and red accents
+- 📱 **Mobile-First**: Optimized exclusively for smartphones and mobile devices
+- 🍽️ **Complete Menu**: Full product catalog from e-food.gr integration
+- ⚡ **Interactive Experience**: Real-time custom order creation with ingredient selection
+- 💰 **Dynamic Pricing**: Automatic price calculation as you build your order
+- 🌍 **Bilingual Support**: Full Greek and English language support
+- 🔗 **Social Integration**: Instagram and TikTok links for social media engagement
 
-## Δομή Menu
+## 🍽️ **Menu Structure**
 
-### Κρέπες
-- **Γλυκές Κρέπες**: Nutella, Σοκολάτα, Καραμέλα, Μιλκ, Φράουλα, Μπανάνα
-- **Αλμυρές Κρέπες**: Τυρί, Χαμ, Γαλοπούλα, Τόνος, Λουκάνικο, Γαρίδες
-- **Η Κρέπα Μου**: Custom δημιουργία με επιλογή συστατικών
+### **Sweet & Savory Crepes**
+- **Sweet Crepes**: Nutella, Chocolate, Caramel, Milk, Strawberry, Banana
+- **Savory Crepes**: Cheese, Ham, Turkey, Tuna, Sausage, Shrimp
+- **My Crepe**: Custom creation with ingredient selection
 
-### Club Sandwiches
-- Club Χαμ, Γαλοπούλα, Τόνος, Λουκάνικο, Veggie
+### **Club Sandwiches**
+- Ham, Turkey, Tuna, Sausage, Veggie options with fries
 
-### Τοστ
-- **Το Τοστ Μου**: Custom δημιουργία με επιλογή συστατικών
+### **Custom Builders**
+- **My Toast**: Custom toast creation with ingredient selection
+- **My Tortilla**: Custom tortilla creation with ingredient selection
 
-### Τορτίγια
-- **Η Τορτίγια Μου**: Custom δημιουργία με επιλογή συστατικών
+### **Additional Items**
+- Salads, Portions, Dips, and Beverages
 
-### Σαλάτες
-- Σαλάτα Καίσαρος, Ελληνική, Τόνος, Veggie
+## 🛠️ **Custom Order System**
 
-## Custom Δημιουργία
+### **How It Works:**
+1. **Choose Base**: Crepe (sweet/savory), Toast Bread, or Tortilla
+2. **Select Ingredients**:
+   - **Proteins**: Ham, Turkey, Tuna, Sausage, Bacon, Shrimp
+   - **Cheeses**: Gouda, Mozzarella, Feta, Parmesan, Manouri
+   - **Vegetables**: Lettuce, Tomato, Cucumber, Onion, Pepper, Mushrooms
+   - **Sauces**: Mustard, Mayonnaise, Ketchup, BBQ, Chili, Hungarian
+   - **Extras**: Egg, Olives, Pickles, Croutons, Chips
 
-Για "Η Κρέπα Μου", "Το Τοστ Μου", και "Η Τορτίγια Μου":
+### **Real-Time Features:**
+- Live ingredient display as you select
+- Instant price calculation
+- Visual feedback for selections
+- Ingredient summary before adding to cart
 
-1. **Επιλέξτε Βάση**: Κρέπα (γλυκιά/αλμυρή), Ψωμί Τοστ, ή Τορτίγια
-2. **Επιλέξτε Συστατικά**:
-   - **Proteins**: Χαμ, Γαλοπούλα, Τόνος, Λουκάνικο, Μπέικον, Γαρίδες
-   - **Τυριά**: Τυρί, Φέτα, Παρμεζάνα, Μοτσαρέλα
-   - **Λαχανικά**: Σαλάτα, Ντομάτα, Αγγούρι, Κρεμμύδι, Πιπεριά, Μαρούλι
-   - **Σως**: Μουστάρδα, Μαγιονέζα, Κετσάπ, BBQ, Τσίλι
-   - **Extras**: Αυγό, Ελιές, Αγγουράκι, Κρουτόν
+## 🎯 **User Experience**
 
-## Χρήση
+### **Navigation:**
+- Intuitive category-based menu system
+- Smooth modal transitions
+- Touch-friendly interface
+- Responsive design for all screen sizes
 
-1. Ανοίξτε το `index.html` στον browser
-2. Επιλέξτε κατηγορία από το menu
-3. Επιλέξτε προϊόν ή δημιουργήστε custom
-4. Προσθέστε στην παραγγελία
-5. Δείτε το σύνολο και επιβεβαιώστε την παραγγελία
+### **Order Management:**
+- Add items to cart without closing modals
+- Real-time order summary
+- Easy item removal
+- Total price calculation
 
-## Αρχεία
+### **Language Support:**
+- Seamless Greek/English toggle
+- Translated menu items
+- Bilingual ingredient names
+- Localized descriptions
 
-- `index.html` - Κύριο HTML file
-- `styles.css` - CSS styling
-- `script.js` - JavaScript functionality
-- `README.md` - Αυτό το αρχείο
+## 🚀 **Getting Started**
 
-## Τεχνολογίες
+1. Open `index.html` in your web browser
+2. Browse menu categories or use the translation button
+3. Select products or create custom items
+4. Add ingredients and see real-time pricing
+5. Add to cart and review your order
+6. View order summary with total
 
-- HTML5
-- CSS3 (Flexbox, Grid, Animations)
-- Vanilla JavaScript
-- Font Awesome Icons
-- Google Fonts (Inter)
+## 📁 **File Structure**
 
-## Χρώματα
+- `index.html` - Main HTML structure and content
+- `styles.css` - Complete styling with responsive design
+- `script.js` - Interactive functionality and menu logic
+- `images/` - Product icons and branding assets
+- `README.md` - This documentation file
 
-- **Primary**: Μαύρο (#1a1a1a, #2d2d2d)
-- **Accent**: Κόκκινο (#dc2626, #b91c1c)
-- **Highlight**: Κίτρινο (#fbbf24)
-- **Text**: Λευκό (#ffffff)
+## 🛠️ **Technologies Used**
 
-## Responsive Design
+- **HTML5**: Semantic markup and structure
+- **CSS3**: Flexbox, Grid, Animations, Glassmorphism effects
+- **Vanilla JavaScript**: Custom order logic and interactions
+- **Font Awesome**: Professional icons throughout the interface
+- **Google Fonts**: Inter and Poppins for modern typography
 
-Το website είναι σχεδιασμένο για mobile devices με:
-- Touch-friendly buttons
-- Large tap targets
-- Scrollable modals
-- Optimized typography
+## 🎨 **Design System**
 
-## Browser Support
+### **Color Palette:**
+- **Primary**: Dark themes (#1a1a1a, #2d2d2d)
+- **Accent**: Red tones (#dc2626, #b91c1c)
+- **Highlight**: Gold (#fbbf24)
+- **Text**: White (#ffffff)
+- **Glassmorphism**: Semi-transparent overlays with backdrop blur
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
+### **Visual Elements:**
+- Floating crepe animations in background
+- Smooth hover effects and transitions
+- Professional shadows and borders
+- Responsive grid layouts
+
+## 📱 **Responsive Design**
+
+### **Mobile Optimization:**
+- Touch-friendly buttons and interactions
+- Large tap targets for easy navigation
+- Scrollable modal content
+- Optimized typography for small screens
+- Adaptive layouts for different screen sizes
+
+### **Breakpoints:**
+- **Desktop**: Full feature set with larger elements
+- **Tablet (768px)**: Optimized spacing and sizing
+- **Mobile (480px)**: Compact layout for small screens
+- **Small Mobile (360px)**: Minimal layout for very small devices
+
+## 🌐 **Browser Compatibility**
+
+- **Chrome** (recommended for best experience)
+- **Firefox** (full support)
+- **Safari** (full support)
+- **Edge** (full support)
+
+## 🔗 **Social Media Integration**
+
+- **Instagram**: Direct link to @tsonasfood
+- **TikTok**: Direct link to @tsonasfood
+- **Positioned**: Left side of header for easy access
+- **Styling**: Authentic platform colors and hover effects
+
+## 📍 **Location & Contact**
+
+- **Address**: Pavlou Mela 106, Florina, Greece
+- **Hours**: Daily 17:30 - 01:30
+- **Specialty**: Custom crepes, sandwiches, and Greek cuisine
+
+## 🚀 **Performance Features**
+
+- **Optimized Images**: Compressed product icons
+- **Smooth Animations**: 60fps transitions and effects
+- **Fast Loading**: Minimal external dependencies
+- **Touch Optimized**: Responsive interactions for mobile devices
 
 ---
 
-**Δημιουργήθηκε με ❤️ για την κρεπερί Τσώνας** 
+**Built with ❤️ for Tsonas Creperie - Bringing the best crepes to Florina!**
+
+*Experience the perfect blend of traditional Greek flavors with modern digital convenience.* 
